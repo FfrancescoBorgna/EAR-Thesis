@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2023.5.21)  12 JAN 2024 14:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2023.5.21)  12 JAN 2024 17:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1477,10 +1477,19 @@ Package microtype Info: Character `029' is missing
 
 ] (content/chapters.tex (content/RelatedWorks/RelatedWorks.tex
 Chapter 1.
-(content/RelatedWorks/Photogrammetry/photogrammetry.tex))) (content/appendix.tex [1
+(content/RelatedWorks/Photogrammetry/photogrammetry.tex [1
 
 
 ]
+<images/relatedWorks/Pinhole.png, id=108, 254.8722pt x 183.084pt>
+File: images/relatedWorks/Pinhole.png Graphic file (type png)
+<use images/relatedWorks/Pinhole.png>
+Package pdftex.def Info: images/relatedWorks/Pinhole.png  used on input line 25.
+(pdftex.def)             Requested size: 125.47737pt x 90.13377pt.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 32.
+ (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [2 <./images/relatedWorks/Pinhole.png>]))) (content/appendix.tex [3]
 Appendix A.
 (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
@@ -1493,9 +1502,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-) [2
+) [4
 
-] [3
+] [5
 
 
 ] (thesis.aux)
@@ -1509,17 +1518,17 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45134 strings out of 478345
- 895260 string characters out of 5838446
+ 45243 strings out of 478345
+ 897371 string characters out of 5838446
  1870851 words of memory out of 5000000
- 64361 multiletter control sequences out of 15000+600000
- 609351 words of font info for 144 fonts, out of 8000000 for 9000
+ 64418 multiletter control sequences out of 15000+600000
+ 623552 words of font info for 168 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 138i,11n,134p,2508b,2002s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc}</Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmcsc10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr6.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt12.pfb>
-Output written on thesis.pdf (13 pages, 237954 bytes).
+ 138i,16n,134p,2508b,2002s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ts1.enc}</Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmcsc10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmex10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr6.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt12.pfb>
+Output written on thesis.pdf (15 pages, 340023 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 33 named destinations out of 1000 (max. 500000)
- 57930 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 215 PDF objects out of 1000 (max. 8388607)
+ 36 named destinations out of 1000 (max. 500000)
+ 68175 words of extra memory for PDF output out of 74296 (max. 10000000)
 

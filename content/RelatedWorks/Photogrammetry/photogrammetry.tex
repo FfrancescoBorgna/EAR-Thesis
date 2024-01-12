@@ -5,3 +5,90 @@ the environment through the process of recording,
 measuring and interpreting photographic images and patterns 
 of electromagnetic radiant imagery and other 
 phenomena}\cite{examplewebsite}.
+
+It comprises all techniques concerned with making measurements of
+real-world objects features from images.
+Its utility range from the measuring of coordinates, quantification
+of distances, heights, areas and volumes, preparation
+of topographic maps, to generation of digital elevation 
+models and orthophotographs. The functioning rely mostly on optics and projective geometry rules. 
+
+\vspace{12pt}
+
+As first assumption we have the modellization of the camera as a simplified
+version of itself: the \textit{Pinhole Camera}. As in the first designed
+cameras(\textit{camera obscura}), in the Pinhole Camera world's light is 
+captured through a pinhole and then projected into the \textit{focal plane}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.3\linewidth]{images/relatedWorks/Pinhole.png} % Replace "example-image" with your image file name
+    \caption{Pinhole Camera}
+    \label{fig:pinhole}
+  \end{figure}
+  
+A Pinhole camera is characterized by two collection of parameters:
+\begin{itemize}
+    \item  \textbf{Extrinsic} parameters: gives us information on location
+                                        and rotation in the world.
+    \item  \textbf{Intrinscic} parameters: gives us internal property such as:
+                                    focal length, field of view, resolution...
+\end{itemize}  
+These parameters can be rewritten in their corresponding matrices:
+\[
+  Intrinsic=K= \begin{bmatrix}
+    f_{x} & s & c_{x} \\
+    0 & f_{y} & c_{y} \\
+    0 & 0     & 1     \\
+  \end{bmatrix}
+\]
+where:
+\begin{itemize}
+    \item $f_{x},f_{y}$ are are the \textit{focal lengths} of the camera in the x and y directions, 
+    they are needed to keep the image aspect ratio.
+    \item $c_{x},c_{y}$ are the coordinates of the \textit{principal point}
+    (the point where the optical axis intersects the image plane).
+\end{itemize}
+
+\[
+  Extrinsic= \begin{bmatrix}
+    \textbf{R}_{3x3} & \textbf{t}_{3x1}  \\
+    0_{1x3} & \textbf{1}_{1x1}  \\
+  \end{bmatrix}
+\]
+where:
+\begin{itemize}
+    \item $\textbf{R}_{3x3}$ is a rotation matrix
+    \item $\textbf{t}_{3x1}$ is a translation vector
+\end{itemize}
+Extrinsic matrix is also known as the 4x4 transformation matrix 
+that converts points from the world coordinate system to the camera
+coordinate system.
+
+Exploting homogeneous coordinates we can rewrite the image capturing process as the 
+following combination of matrices:
+\begin{align*}
+    \begin{bmatrix}
+        u \\
+        v \\
+        z
+      \end{bmatrix}
+    &= \begin{bmatrix}
+        f_{x} & s & c_{x} & 0 \\
+        0 & f_{y} & c_{y} & 0\\
+        0 & 0     & 1     & 0\\
+      \end{bmatrix} \begin{bmatrix}
+        \textbf{R}_{3x3} & \textbf{t}_{3x1}  \\
+        0_{1x3} & \textbf{1}_{1x1}  \\
+      \end{bmatrix}
+      \begin{bmatrix}
+        X_w \\
+        Y_w \\
+        Z_w \\
+        1    
+      \end{bmatrix}
+  \end{align*}
+
+
+
+
