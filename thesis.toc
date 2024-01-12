@@ -1,0 +1,11 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{List of Tables}{vi}{section*.1}%
+\contentsline {chapter}{List of Figures}{vii}{section*.2}%
+\contentsline {chapter}{Acronyms}{ix}{section*.3}%
+\contentsline {chapter}{\numberline {1}Related Works}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Photogrammetry}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {A}Galileo}{2}{appendix.A}%
+\contentsline {chapter}{Bibliography}{3}{lstnumber.-1.2}%
