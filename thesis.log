@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2023.5.21)  12 JAN 2024 17:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2023.5.21)  19 JAN 2024 16:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1328,11 +1328,11 @@ File: translations-basic-dictionary-english.trsl (english translation file `tran
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 35.
  (common/config.tex) (common/toptesi_config.tex
-<images/logo/logoPoliTo_symbol_only.pdf, id=34, 282.30469pt x 282.30469pt>
-File: images/logo/logoPoliTo_symbol_only.pdf Graphic file (type pdf)
-<use images/logo/logoPoliTo_symbol_only.pdf>
-Package pdftex.def Info: images/logo/logoPoliTo_symbol_only.pdf  used on input line 2.
-(pdftex.def)             Requested size: 142.26335pt x 142.26378pt.
+<images/logo/Logo_PoliTo_new.png, id=73, 334.1283pt x 310.0383pt>
+File: images/logo/Logo_PoliTo_new.png Graphic file (type png)
+<use images/logo/Logo_PoliTo_new.png>
+Package pdftex.def Info: images/logo/Logo_PoliTo_new.png  used on input line 2.
+(pdftex.def)             Requested size: 153.3185pt x 142.26378pt.
 ) (common/frontpage.tex
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
@@ -1374,10 +1374,10 @@ Package microtype Info: Character `029' is missing
 LaTeX Font Warning: Font shape `T1/lmr/bx/sc' undefined
 (Font)              using `T1/lmr/bx/n' instead on input line 5.
 
-File: images/logo/logoPoliTo_symbol_only.pdf Graphic file (type pdf)
-<use images/logo/logoPoliTo_symbol_only.pdf>
-Package pdftex.def Info: images/logo/logoPoliTo_symbol_only.pdf  used on input line 13.
-(pdftex.def)             Requested size: 142.26378pt x 142.26335pt.
+File: images/logo/Logo_PoliTo_new.png Graphic file (type png)
+<use images/logo/Logo_PoliTo_new.png>
+Package pdftex.def Info: images/logo/Logo_PoliTo_new.png  used on input line 13.
+(pdftex.def)             Requested size: 142.26378pt x 132.00343pt.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/21'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1421,7 +1421,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 
 
-{/Users/francesco/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map} <./images/logo/logoPoliTo_symbol_only.pdf>])
+{/Users/francesco/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map} <./images/logo/Logo_PoliTo_new.png>])
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1475,26 +1475,94 @@ Package microtype Info: Character `029' is missing
 
 
 
-] (content/chapters.tex (content/RelatedWorks/RelatedWorks.tex
-Chapter 1.
-(content/RelatedWorks/Photogrammetry/photogrammetry.tex [1
+] (content/chapters.tex (content/RelatedWorks/RelatedWorks.tex [1
 
+
+] (content/RelatedWorks/Datasets/datasets.tex) [2]
+Chapter 1.
+(content/RelatedWorks/NeuralRendering/neural.tex) [3
 
 ]
-<images/relatedWorks/Pinhole.png, id=108, 254.8722pt x 183.084pt>
+Chapter 2.
+(content/RelatedWorks/Photogrammetry/photogrammetry.tex [4
+
+]
+Chapter 3.
+<images/relatedWorks/Pinhole.png, id=191, 254.8722pt x 183.084pt>
 File: images/relatedWorks/Pinhole.png Graphic file (type png)
 <use images/relatedWorks/Pinhole.png>
 Package pdftex.def Info: images/relatedWorks/Pinhole.png  used on input line 25.
 (pdftex.def)             Requested size: 125.47737pt x 90.13377pt.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 32.
- (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/ts1lmr.fd
+(/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [2 <./images/relatedWorks/Pinhole.png>]))) (content/appendix.tex [3]
-Appendix A.
-(/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 16.
+) [5
+
+ <./images/relatedWorks/Pinhole.png>]
+<images/relatedWorks/CameraReferences.png, id=199, 345.4506pt x 173.9298pt>
+File: images/relatedWorks/CameraReferences.png Graphic file (type png)
+<use images/relatedWorks/CameraReferences.png>
+Package pdftex.def Info: images/relatedWorks/CameraReferences.png  used on input line 96.
+(pdftex.def)             Requested size: 292.77629pt x 147.41373pt.
+ (content/RelatedWorks/Photogrammetry/sfm.tex
+<images/relatedWorks/camera_Sfm.png, id=201, 433.62pt x 289.08pt>
+File: images/relatedWorks/camera_Sfm.png Graphic file (type png)
+<use images/relatedWorks/camera_Sfm.png>
+Package pdftex.def Info: images/relatedWorks/camera_Sfm.png  used on input line 14.
+(pdftex.def)             Requested size: 334.60422pt x 223.0819pt.
+ [6] [7 <./images/relatedWorks/CameraReferences.png> <./images/relatedWorks/camera_Sfm.png>]
+<images/relatedWorks/feature_building.jpg, id=220, 451.6875pt x 401.5pt>
+File: images/relatedWorks/feature_building.jpg Graphic file (type jpg)
+<use images/relatedWorks/feature_building.jpg>
+Package pdftex.def Info: images/relatedWorks/feature_building.jpg  used on input line 43.
+(pdftex.def)             Requested size: 334.60422pt x 297.44229pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8] [9 <./images/relatedWorks/feature_building.jpg>]
+<images/relatedWorks/Sift_out.png, id=237, 1133.9163pt x 369.2997pt>
+File: images/relatedWorks/Sift_out.png Graphic file (type png)
+<use images/relatedWorks/Sift_out.png>
+Package pdftex.def Info: images/relatedWorks/Sift_out.png  used on input line 65.
+(pdftex.def)             Requested size: 501.90312pt x 163.4616pt.
+<images/relatedWorks/correspondance.png, id=238, 398.9304pt x 241.3818pt>
+File: images/relatedWorks/correspondance.png Graphic file (type png)
+<use images/relatedWorks/correspondance.png>
+Package pdftex.def Info: images/relatedWorks/correspondance.png  used on input line 81.
+(pdftex.def)             Requested size: 418.25368pt x 253.08636pt.
+LaTeX Font Info:    Calculating math sizes for size <10.00012> on input line 87.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.00012> on input line 87.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.00005> on input line 87.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.00006> on input line 87.
+<images/relatedWorks/epipolar.png, id=240, 1215.54124pt x 476.78125pt>
+File: images/relatedWorks/epipolar.png Graphic file (type png)
+<use images/relatedWorks/epipolar.png>
+Package pdftex.def Info: images/relatedWorks/epipolar.png  used on input line 93.
+(pdftex.def)             Requested size: 418.25368pt x 164.05319pt.
+ [10 <./images/relatedWorks/Sift_out.png>] [11 <./images/relatedWorks/correspondance.png> <./images/relatedWorks/epipolar.png>]
+<images/relatedWorks/Essential.png, id=259, 458.4327pt x 214.6419pt>
+File: images/relatedWorks/Essential.png Graphic file (type png)
+<use images/relatedWorks/Essential.png>
+Package pdftex.def Info: images/relatedWorks/Essential.png  used on input line 114.
+(pdftex.def)             Requested size: 418.25368pt x 195.83862pt.
+ [12 <./images/relatedWorks/Essential.png>] [13]
+<images/relatedWorks/MultiViews.png, id=295, 698.1282pt x 353.6412pt>
+File: images/relatedWorks/MultiViews.png Graphic file (type png)
+<use images/relatedWorks/MultiViews.png>
+Package pdftex.def Info: images/relatedWorks/MultiViews.png  used on input line 201.
+(pdftex.def)             Requested size: 334.60422pt x 169.49222pt.
+ (content/RelatedWorks/Photogrammetry/colmap.tex
+<images/relatedWorks/sparse.png, id=296, 1888.05376pt x 567.11874pt>
+File: images/relatedWorks/sparse.png Graphic file (type png)
+<use images/relatedWorks/sparse.png>
+Package pdftex.def Info: images/relatedWorks/sparse.png  used on input line 4.
+(pdftex.def)             Requested size: 418.25368pt x 125.63185pt.
+ [14 <./images/relatedWorks/MultiViews.png>]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 38.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 38.
  (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1502,9 +1570,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-) [4
+ [15 <./images/relatedWorks/sparse.png>] [16]) (content/RelatedWorks/Photogrammetry/monocular.tex))))) (content/appendix.tex [17]
+Appendix A.
+(/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+) [18
 
-] [5
+]
+Appendix B.
+) [19
+
+] [20
 
 
 ] (thesis.aux)
@@ -1512,23 +1588,27 @@ Package microtype Info: Loading generic protrusion settings for font family
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: B97AF8D23CA6FF2DC469778BF5B17493;744.
+(rerunfilecheck)             Checksum: D2C8843C78C9A0432079B716BB061341;2628.
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45243 strings out of 478345
- 897371 string characters out of 5838446
- 1870851 words of memory out of 5000000
- 64418 multiletter control sequences out of 15000+600000
- 623552 words of font info for 168 fonts, out of 8000000 for 9000
+ 45760 strings out of 478345
+ 908506 string characters out of 5838446
+ 2104851 words of memory out of 5000000
+ 64659 multiletter control sequences out of 15000+600000
+ 673679 words of font info for 254 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 138i,16n,134p,2508b,2002s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ts1.enc}</Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmcsc10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmex10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr6.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt12.pfb>
-Output written on thesis.pdf (15 pages, 340023 bytes).
+ 138i,16n,134p,2508b,3110s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ts1.enc}</Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmcsc10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmex10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi6.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi7.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr6.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr7.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri7.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy7.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt12.pfb>
+Output written on thesis.pdf (30 pages, 3018046 bytes).
 PDF statistics:
- 215 PDF objects out of 1000 (max. 8388607)
- 36 named destinations out of 1000 (max. 500000)
- 68175 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 560 PDF objects out of 1000 (max. 8388607)
+ 152 named destinations out of 1000 (max. 500000)
+ 92876 words of extra memory for PDF output out of 106986 (max. 10000000)
 

@@ -20,9 +20,121 @@
 \refsection{0}
   \datalist[entry]{none/global//global/global}
     \entry{examplewebsite}{online}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{note}{ASPRS online Archived May 20, 2015, at the Wayback Machine}
+      \name{author}{2}{}{%
+        {{hash=279ede0c6bdbd7d26309becd159053d8}{%
+           family={Wolf},
+           familyi={W\bibinitperiod}}}%
+        {{hash=a50315202d50c580970997530725557c}{%
+           family={Dewitt},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{37cea26d29f0d7909029827ca820918f}
+      \strng{fullhash}{37cea26d29f0d7909029827ca820918f}
+      \strng{bibnamehash}{37cea26d29f0d7909029827ca820918f}
+      \strng{authorbibnamehash}{37cea26d29f0d7909029827ca820918f}
+      \strng{authornamehash}{37cea26d29f0d7909029827ca820918f}
+      \strng{authorfullhash}{37cea26d29f0d7909029827ca820918f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{note}{2000; McGlone, 2004}
+    \endentry
+    \entry{sfm_matlab}{online}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{note}{Mathworks 2023}
+      \verb{urlraw}
+      \verb https://www.mathworks.com/help/vision/ug/structure-from-motion.html#:~:text=Structure%20from%20motion%20(SfM)%20is,localization%20and%20mapping%20(vSLAM).
+      \endverb
+      \verb{url}
+      \verb https://www.mathworks.com/help/vision/ug/structure-from-motion.html#:~:text=Structure%20from%20motion%20(SfM)%20is,localization%20and%20mapping%20(vSLAM).
+      \endverb
+    \endentry
+    \entry{open_cv}{online}{}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{note}{OpenCV 2024}
+      \verb{urlraw}
+      \verb https://docs.opencv.org/4.x/df/d54/tutorial_py_features_meaning.html
+      \endverb
+      \verb{url}
+      \verb https://docs.opencv.org/4.x/df/d54/tutorial_py_features_meaning.html
+      \endverb
+    \endentry
+    \entry{colmap}{online}{}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{note}{Colmap 2024}
+      \verb{urlraw}
+      \verb https://colmap.github.io/index.html
+      \endverb
+      \verb{url}
+      \verb https://colmap.github.io/index.html
+      \endverb
+    \endentry
+    \entry{schoenberger2016sfm}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=e4ed718dd19b3fee6b128ed86216cb38}{%
+           family={Schönberger},
+           familyi={S\bibinitperiod},
+           given={Johannes\bibnamedelima Lutz},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=4af0c62bceb93c143845555052179bc8}{%
+           family={Frahm},
+           familyi={F\bibinitperiod},
+           given={Jan-Michael},
+           giveni={J\bibinithyphendelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a4b1342454668721b1324a50fbe5111}
+      \strng{fullhash}{3a4b1342454668721b1324a50fbe5111}
+      \strng{bibnamehash}{3a4b1342454668721b1324a50fbe5111}
+      \strng{authorbibnamehash}{3a4b1342454668721b1324a50fbe5111}
+      \strng{authornamehash}{3a4b1342454668721b1324a50fbe5111}
+      \strng{authorfullhash}{3a4b1342454668721b1324a50fbe5111}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{title}{Structure-from-Motion Revisited}
+      \field{year}{2016}
+    \endentry
+    \entry{schoenberger2016mvs}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=e4ed718dd19b3fee6b128ed86216cb38}{%
+           family={Schönberger},
+           familyi={S\bibinitperiod},
+           given={Johannes\bibnamedelima Lutz},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=5f1753342eeb31f586476075441283c4}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Enliang},
+           giveni={E\bibinitperiod}}}%
+        {{hash=501629493a5ead2d23ee597103478ce8}{%
+           family={Pollefeys},
+           familyi={P\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4af0c62bceb93c143845555052179bc8}{%
+           family={Frahm},
+           familyi={F\bibinitperiod},
+           given={Jan-Michael},
+           giveni={J\bibinithyphendelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{88d12358170135191f5fca5ad48479eb}
+      \strng{fullhash}{04b989cb6c1b61548c5b95a3d83b2b17}
+      \strng{bibnamehash}{04b989cb6c1b61548c5b95a3d83b2b17}
+      \strng{authorbibnamehash}{04b989cb6c1b61548c5b95a3d83b2b17}
+      \strng{authornamehash}{88d12358170135191f5fca5ad48479eb}
+      \strng{authorfullhash}{04b989cb6c1b61548c5b95a3d83b2b17}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{European Conference on Computer Vision (ECCV)}
+      \field{title}{Pixelwise View Selection for Unstructured Multi-View Stereo}
+      \field{year}{2016}
     \endentry
   \enddatalist
 \endrefsection

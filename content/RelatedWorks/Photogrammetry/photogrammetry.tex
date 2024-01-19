@@ -1,4 +1,4 @@
-\section{Photogrammetry}
+\chapter{Photogrammetry}
 \textit{Photogrammetry is the science and technology of 
 obtaining reliable information about physical objects and
 the environment through the process of recording,
@@ -59,14 +59,15 @@ where:
 where:
 \begin{itemize}
     \item $\textbf{R}_{3x3}$ is a rotation matrix
+    \textcolor{red}{(Aggiungi le tre combinazioni...)}
     \item $\textbf{t}_{3x1}$ is a translation vector
 \end{itemize}
 Extrinsic matrix is also known as the 4x4 transformation matrix 
 that converts points from the world coordinate system to the camera
 coordinate system.
 
-Exploting homogeneous coordinates we can rewrite the image capturing process as the 
-following combination of matrices:
+Exploting homogeneous coordinates we can rewrite the image capturing 
+process of a specific camera as the combination of its characteristic matrices:
 \begin{align*}
     \begin{bmatrix}
         u \\
@@ -88,6 +89,16 @@ following combination of matrices:
         1    
       \end{bmatrix}
   \end{align*}
+
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.7\linewidth]{images/relatedWorks/CameraReferences.png} % Replace "example-image" with your image file name
+    \caption{Reference systems}
+    \label{fig:reference_systems}
+  \end{figure}
+
+\input{content/RelatedWorks/Photogrammetry/sfm.tex}
 
 
 

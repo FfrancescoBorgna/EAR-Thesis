@@ -88,7 +88,26 @@
 	{€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
 	{»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
 }
-
+\definecolor{vscode-bkg}{RGB}{254,240,140}
+\lstdefinestyle{vscode}{
+    backgroundcolor=\color{vscode-bkg!50},
+    basicstyle=\ttfamily\color{black},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green},
+    stringstyle=\color{purple},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    framesep=5pt,
+    rulecolor=\color{black},
+    tabsize=4,
+    columns=flexible,
+    extendedchars=true,
+    xleftmargin=2em,
+    framexleftmargin=1.5em,
+}
 
 % biblatex setup
 % generally 9000 is ok, if higher than 10000 it's bad

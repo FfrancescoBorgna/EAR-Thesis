@@ -1,0 +1,97 @@
+\subsection{COLMAP}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/relatedWorks/sparse.png} % Replace "example-image" with your image file name
+    \caption{Building Rome in one day}
+    \label{fig:colmap_image}
+\end{figure}
+Abandoning theory and moving on to practice, let's see COLMAP.
+
+\textit{"COLMAP is a general-purpose, end-to-end image-based 
+3D reconstruction pipeline (i.e., Structure-from-Motion (SfM)
+ and Multi-View Stereo (MVS)\footnote{Even if they seem similar, these
+ two pipelines have different goals. In fact, \textit{SfM} The
+  primary goal of SfM is to estimate the 3D structure of 
+  a scene and camera poses (positions and orientations) 
+  simultaneously from a set of 2D images taken from different
+   viewpoints. \textit{MVS},on the other hand, is specifically focused on dense 3D reconstruction. It involves estimating the depth or 3D coordinates 
+   for every pixel in the images to create a detailed 3D model with
+   meshes and textures.
+}) with a graphical and command-line 
+ interface. It offers a wide range of features for 
+ reconstruction of ordered and unordered image collections. 
+ The software runs under Windows, Linux and Mac on regular
+  desktop computers or compute servers/clusters. COLMAP is
+   licensed under the BSD License"}\cite{colmap}.
+
+The concepts we explained in the theoretical part are not always applicable In
+real world, or their results are not quite satisfying. In literature a vastity of authors
+tried and succeded in obtaining refined algorithms for specific scenarios. 
+Anyway they still lacked a general-purpose method. With COLMAP they managed
+to compensate for the lack of generalization. The actual implementation and characteristics
+are explained from the authors in \cite{schoenberger2016sfm,schoenberger2016mvs}.
+
+\subsubsection{Usage}
+The usage of COLMAP is pretty straight forward. After the creation of a project
+folder with a \textit{images} directory containing the images we want to process we 
+can simply launch the script reported in Listing(\ref{lst:bash}).
+\begin{lstlisting}[style=vscode, caption={Automatic COLMAP Reconstruction}, label={lst:bash}]
+#!/bin/bash
+#The project folder contains a folder "images" with all images.
+
+DATASET_PATH=/path/to/project
+colmap automatic_reconstructor \
+    --workspace_path $DATASET_PATH \
+    --image_path $DATASET_PATH/images \
+    --single_camera 1
+    \end{lstlisting}
+
+Anyway the program offers ample freedom to the single usage of the various steps
+need for \textit{SfM} or \textit{MVS}. Here  I report the actual pipeline that
+I used for the extraction of the pointclouds for our experiments.
+\begin{lstlisting}[style=vscode, caption={COLMAP Single Commands}, label={lst:col}]
+    #!/bin/bash
+    DATASET_PATH="/scratch/fborgna/EPIC_Diff/"
+
+    colmap feature_extractor \
+        --database_path $DATASET_PATH/database.db \
+        --image_path $DATASET_PATH/images \
+        --ImageReader.single_camera 1 \
+    
+    colmap exhaustive_matcher \
+        --database_path $DATASET_PATH/database.db
+
+    mkdir $DATASET_PATH/sparse
+
+    colmap mapper \
+        --database_path $DATASET_PATH/database.db \
+        --image_path $DATASET_PATH/images \
+        --output_path $DATASET_PATH/sparse \
+        --camera_model SIMPLE_PINHOLE \
+
+    mkdir $DATASET_PATH/dense
+
+    colmap image_undistorter \
+        --image_path $DATASET_PATH/images \
+        --input_path $DATASET_PATH/sparse/0 \
+        --output_path $DATASET_PATH/dense \
+        --output_type COLMAP \
+        --max_image_size 2000
+    
+    colmap patch_match_stereo \
+        --workspace_path $DATASET_PATH/dense \
+        --workspace_format COLMAP \
+        --PatchMatchStereo.geom_consistency true
+    
+    colmap stereo_fusion \
+        --workspace_path $DATASET_PATH/dense \
+        --workspace_format COLMAP \
+        --input_type geometric \
+        --output_path $DATASET_PATH/dense/fused.ply
+    
+    colmap poisson_mesher \
+        --input_path $DATASET_PATH/dense/fused.ply \
+        --output_path $DATASET_PATH/dense/meshed-poisson.ply
+
+        \end{lstlisting}
+    
