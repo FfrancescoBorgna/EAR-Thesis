@@ -136,6 +136,84 @@
       \field{title}{Pixelwise View Selection for Unstructured Multi-View Stereo}
       \field{year}{2016}
     \endentry
+    \entry{Ranftl2021}{article}{}
+      \name{author}{3}{}{%
+        {{hash=f13b87ed1a6410067504966eac03e9a2}{%
+           family={Ranftl},
+           familyi={R\bibinitperiod},
+           given={René},
+           giveni={R\bibinitperiod}}}%
+        {{hash=c0b2fdc20c37a4bd8d817822d374f809}{%
+           family={Bochkovskiy},
+           familyi={B\bibinitperiod},
+           given={Alexey},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9025300f43a193cfed8e10e924f2a117}{%
+           family={Koltun},
+           familyi={K\bibinitperiod},
+           given={Vladlen},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a396274beaaf111452927a46e80f547}
+      \strng{fullhash}{2593b6dcce725925f90629afdcead815}
+      \strng{bibnamehash}{2593b6dcce725925f90629afdcead815}
+      \strng{authorbibnamehash}{2593b6dcce725925f90629afdcead815}
+      \strng{authornamehash}{9a396274beaaf111452927a46e80f547}
+      \strng{authorfullhash}{2593b6dcce725925f90629afdcead815}
+      \field{extraname}{1}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ICCV}
+      \field{title}{Vision Transformers for Dense Prediction}
+      \field{year}{2021}
+    \endentry
+    \entry{Ranftl2022}{article}{}
+      \name{author}{5}{}{%
+        {{hash=f13b87ed1a6410067504966eac03e9a2}{%
+           family={Ranftl},
+           familyi={R\bibinitperiod},
+           given={René},
+           giveni={R\bibinitperiod}}}%
+        {{hash=4ee0621ee5837a920708854b07fef7f7}{%
+           family={Lasinger},
+           familyi={L\bibinitperiod},
+           given={Katrin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=89d0278ff885d57b7708ae120200f573}{%
+           family={Hafner},
+           familyi={H\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=205714eb0cc6921c15493da21a574130}{%
+           family={Schindler},
+           familyi={S\bibinitperiod},
+           given={Konrad},
+           giveni={K\bibinitperiod}}}%
+        {{hash=9025300f43a193cfed8e10e924f2a117}{%
+           family={Koltun},
+           familyi={K\bibinitperiod},
+           given={Vladlen},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a396274beaaf111452927a46e80f547}
+      \strng{fullhash}{fa15ac494a832be56810827b8030d68a}
+      \strng{bibnamehash}{fa15ac494a832be56810827b8030d68a}
+      \strng{authorbibnamehash}{fa15ac494a832be56810827b8030d68a}
+      \strng{authornamehash}{9a396274beaaf111452927a46e80f547}
+      \strng{authorfullhash}{fa15ac494a832be56810827b8030d68a}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+      \field{number}{3}
+      \field{title}{Towards Robust Monocular Depth Estimation: Mixing Datasets for Zero-Shot Cross-Dataset Transfer}
+      \field{volume}{44}
+      \field{year}{2022}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

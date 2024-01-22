@@ -5,15 +5,17 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Pinhole Camera\relax }}{5}{figure.caption.4}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Reference systems\relax }}{7}{figure.caption.5}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Basic SfM Scenario\relax }}{7}{figure.caption.6}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Feature Detection Example \blx@tocontentsinit {0}\cite {open_cv}\relax }}{9}{figure.caption.7}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces SIFT features extracted\relax }}{10}{figure.caption.8}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Features correspondence computed using BruteForce Matcher.\relax }}{11}{figure.caption.9}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Point correspondence geometry. \relax }}{11}{figure.caption.10}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Pinhole Camera}}{5}{figure.caption.4}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Reference systems}}{7}{figure.caption.5}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Basic SfM Scenario}}{7}{figure.caption.6}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Feature Detection Example \blx@tocontentsinit {0}\cite {open_cv}}}{9}{figure.caption.7}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces SIFT features extracted}}{10}{figure.caption.8}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Features correspondence computed using BruteForce Matcher.}}{11}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Point correspondence geometry. }}{11}{figure.caption.10}%
 \contentsline {figure}{\numberline {3.8}{\ignorespaces \relax }}{12}{figure.caption.11}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Multiple View Scenario. \relax }}{14}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Building Rome in one day\relax }}{15}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Multiple View Scenario. }}{14}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Building Rome in one day}}{15}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Monocular datasets}}{18}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Top: input images. Middle: Inverse depth maps predicted by the presented approach. Bottom: corresponding point clouds rendered from a novel view-point.(Taken from \blx@tocontentsinit {0}\cite {Ranftl2022})}}{19}{figure.caption.16}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

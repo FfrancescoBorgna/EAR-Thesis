@@ -17,6 +17,6 @@
 \contentsline {subsection}{\numberline {3.1.5}COLMAP}{14}{subsection.3.1.5}%
 \contentsline {subsubsection}{Usage}{15}{section*.14}%
 \contentsline {subsection}{\numberline {3.1.6}Monocular Depth Estimation}{17}{subsection.3.1.6}%
-\contentsline {chapter}{\numberline {A}Galileo}{18}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Math Notation}{19}{appendix.B}%
-\contentsline {chapter}{Bibliography}{20}{appendix.B}%
+\contentsline {chapter}{\numberline {A}Galileo}{20}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Math Notation}{21}{appendix.B}%
+\contentsline {chapter}{Bibliography}{22}{appendix.B}%
