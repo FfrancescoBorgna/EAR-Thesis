@@ -2,9 +2,9 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{List of Tables}{vi}{section*.1}%
-\contentsline {chapter}{List of Figures}{vii}{section*.2}%
-\contentsline {chapter}{Acronyms}{ix}{section*.3}%
+\contentsline {chapter}{List of Tables}{vii}{section*.1}%
+\contentsline {chapter}{List of Figures}{viii}{section*.2}%
+\contentsline {chapter}{Acronyms}{x}{section*.3}%
 \contentsline {part}{I\hspace {1em}Related Works}{1}{part.1}%
 \contentsline {chapter}{\numberline {1}Datasets}{3}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Neural Rendering}{4}{chapter.2}%
@@ -17,6 +17,10 @@
 \contentsline {subsection}{\numberline {3.1.5}COLMAP}{14}{subsection.3.1.5}%
 \contentsline {subsubsection}{Usage}{15}{section*.14}%
 \contentsline {subsection}{\numberline {3.1.6}Monocular Depth Estimation}{17}{subsection.3.1.6}%
-\contentsline {chapter}{\numberline {A}Galileo}{20}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Math Notation}{21}{appendix.B}%
-\contentsline {chapter}{Bibliography}{22}{appendix.B}%
+\contentsline {part}{II\hspace {1em}Da Sistemare}{20}{part.2}%
+\contentsline {section}{\numberline {3.2}Metrics}{21}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}PSNR:Peak signal-to-noise ratio}{21}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}AP:Average Precision}{21}{subsection.3.2.2}%
+\contentsline {chapter}{\numberline {A}Galileo}{23}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Math Notation}{24}{appendix.B}%
+\contentsline {chapter}{Bibliography}{25}{appendix.B}%

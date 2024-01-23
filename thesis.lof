@@ -17,5 +17,6 @@
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Building Rome in one day}}{15}{figure.caption.13}%
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Monocular datasets}}{18}{figure.caption.15}%
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Top: input images. Middle: Inverse depth maps predicted by the presented approach. Bottom: corresponding point clouds rendered from a novel view-point.(Taken from \blx@tocontentsinit {0}\cite {Ranftl2022})}}{19}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Example of Precision-recall curve.We can see how the bottom line model represents the worst a model can perform, e.g. predict every sample as it is coming from the same class,if the dataset is balanced. A better model would \textit {tend} to the upper-right corner, which instead represents the best possible model, a model that have maximum precision and recall.}}{22}{figure.caption.19}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
