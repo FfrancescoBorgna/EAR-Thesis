@@ -76,39 +76,283 @@
   doi       = {10.1023/B:VISI.0000029664.99615.94},
   url       = {http://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf},
 }
+@article{BAY_SURF,
+title = {Speeded-Up Robust Features (SURF)},
+journal = {Computer Vision and Image Understanding},
+volume = {110},
+number = {3},
+pages = {346-359},
+year = {2008},
+note = {Similarity Matching in Computer Vision and Multimedia},
+issn = {1077-3142},
+doi = {https://doi.org/10.1016/j.cviu.2007.09.014},
+url = {https://www.sciencedirect.com/science/article/pii/S1077314207001555},
+author = {Herbert Bay and Andreas Ess and Tinne Tuytelaars and Luc {Van Gool}},
+keywords = {Interest points, Local features, Feature description, Camera calibration, Object recognition},
+abstract = {This article presents a novel scale- and rotation-invariant detector and descriptor, coined SURF (Speeded-Up Robust Features). SURF approximates or even outperforms previously proposed schemes with respect to repeatability, distinctiveness, and robustness, yet can be computed and compared much faster. This is achieved by relying on integral images for image convolutions; by building on the strengths of the leading existing detectors and descriptors (specifically, using a Hessian matrix-based measure for the detector, and a distribution-based descriptor); and by simplifying these methods to the essential. This leads to a combination of novel detection, description, and matching steps. The paper encompasses a detailed description of the detector and descriptor and then explores the effects of the most important parameters. We conclude the article with SURF’s application to two challenging, yet converse goals: camera calibration as a special case of image registration, and object recognition. Our experiments underline SURF’s usefulness in a broad range of topics in computer vision.}
+}
+@InProceedings{Brief,
+author="Calonder, Michael
+and Lepetit, Vincent
+and Strecha, Christoph
+and Fua, Pascal",
+editor="Daniilidis, Kostas
+and Maragos, Petros
+and Paragios, Nikos",
+title="BRIEF: Binary Robust Independent Elementary Features",
+booktitle="Computer Vision -- ECCV 2010",
+year="2010",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="778--792",
+abstract="We propose to use binary strings as an efficient feature point descriptor, which we call BRIEF.We show that it is highly discriminative even when using relatively few bits and can be computed using simple intensity difference tests. Furthermore, the descriptor similarity can be evaluated using the Hamming distance, which is very efficient to compute, instead of the L2 norm as is usually done.",
+isbn="978-3-642-15561-1"
+}
+@INPROCEEDINGS{ORB,
+  author={Rublee, Ethan and Rabaud, Vincent and Konolige, Kurt and Bradski, Gary},
+  booktitle={2011 International Conference on Computer Vision}, 
+  title={ORB: An efficient alternative to SIFT or SURF}, 
+  year={2011},
+  volume={},
+  number={},
+  pages={2564-2571},
+  doi={10.1109/ICCV.2011.6126544}}
 
-@article{einstein1905,
-  author    = {Albert Einstein},
-  title     = {On the Electrodynamics of Moving Bodies},
-  journal   = {Annalen der Physik},
-  volume    = {322},
-  number    = {10},
-  pages     = {891--921},
-  year      = {1905},
-  publisher = {Wiley-VCH},
-  doi       = {10.1002/andp.19053221004},
+@INPROCEEDINGS{EPICKITCHENS,
+   title={Scaling Egocentric Vision: The EPIC-KITCHENS Dataset},
+   author={Damen, Dima and Doughty, Hazel and Farinella, Giovanni Maria  and Fidler, Sanja and 
+           Furnari, Antonino and Kazakos, Evangelos and Moltisanti, Davide and Munro, Jonathan 
+           and Perrett, Toby and Price, Will and Wray, Michael},
+   booktitle={European Conference on Computer Vision (ECCV)},
+   year={2018}
+   }
+@article{residualImage,
+  author       = {Kaiming He and
+                  Xiangyu Zhang and
+                  Shaoqing Ren and
+                  Jian Sun},
+  title        = {Deep Residual Learning for Image Recognition},
+  journal      = {CoRR},
+  volume       = {abs/1512.03385},
+  year         = {2015},
+  url          = {http://arxiv.org/abs/1512.03385},
+  eprinttype    = {arXiv},
+  eprint       = {1512.03385},
+  timestamp    = {Wed, 25 Jan 2023 11:01:16 +0100},
+  biburl       = {https://dblp.org/rec/journals/corr/HeZRS15.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+@article{fasterRCNN,
+  author       = {Shaoqing Ren and
+                  Kaiming He and
+                  Ross B. Girshick and
+                  Jian Sun},
+  title        = {Faster {R-CNN:} Towards Real-Time Object Detection with Region Proposal
+                  Networks},
+  journal      = {CoRR},
+  volume       = {abs/1506.01497},
+  year         = {2015},
+  url          = {http://arxiv.org/abs/1506.01497},
+  eprinttype    = {arXiv},
+  eprint       = {1506.01497},
+  timestamp    = {Mon, 13 Aug 2018 16:46:02 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/RenHG015.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+@article{captioning,
+  author       = {Andrej Karpathy and
+                  Li Fei{-}Fei},
+  title        = {Deep Visual-Semantic Alignments for Generating Image Descriptions},
+  journal      = {CoRR},
+  volume       = {abs/1412.2306},
+  year         = {2014},
+  url          = {http://arxiv.org/abs/1412.2306},
+  eprinttype    = {arXiv},
+  eprint       = {1412.2306},
+  timestamp    = {Wed, 15 Sep 2021 14:13:01 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/KarpathyF14.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+@InProceedings{vqa,
+author = {Antol, Stanislaw and Agrawal, Aishwarya and Lu, Jiasen and Mitchell, Margaret and Batra, Dhruv and Zitnick, C. Lawrence and Parikh, Devi},
+title = {VQA: Visual Question Answering},
+booktitle = {Proceedings of the IEEE International Conference on Computer Vision (ICCV)},
+month = {December},
+year = {2015}
+}
+@article{pascalImage,
+  added-at = {2020-05-23T11:30:44.000+0200},
+  author = {Everingham, Mark and Gool, Luc Van and Williams, Christopher K. I. and Winn, John M. and Zisserman, Andrew},
+  biburl = {https://www.bibsonomy.org/bibtex/2cb5ac4f22faf09897fd86076931d682b/jan.hofmann1},
+  ee = {https://www.wikidata.org/entity/Q56594395},
+  interhash = {8d7846ab0aa897ffead1e7abf2dfba3e},
+  intrahash = {cb5ac4f22faf09897fd86076931d682b},
+  journal = {Int. J. Comput. Vis.},
+  keywords = {thema:pyramid_scene_parsing},
+  number = 2,
+  pages = {303-338},
+  timestamp = {2020-05-23T11:30:44.000+0200},
+  title = {The Pascal Visual Object Classes (VOC) Challenge.},
+  url = {http://dblp.uni-trier.de/db/journals/ijcv/ijcv88.html#EveringhamGWWZ10},
+  volume = 88,
+  year = 2010
+}
+@INPROCEEDINGS{imagenet,
+  author={Deng, Jia and Dong, Wei and Socher, Richard and Li, Li-Jia and Kai Li and Li Fei-Fei},
+  booktitle={2009 IEEE Conference on Computer Vision and Pattern Recognition}, 
+  title={ImageNet: A large-scale hierarchical image database}, 
+  year={2009},
+  volume={},
+  number={},
+  pages={248-255},
+  keywords={Large-scale systems;Image databases;Explosions;Internet;Robustness;Information retrieval;Image retrieval;Multimedia databases;Ontologies;Spine},
+  doi={10.1109/CVPR.2009.5206848}}
+
+  @article{COCO,
+  author       = {Tsung{-}Yi Lin and
+                  Michael Maire and
+                  Serge J. Belongie and
+                  Lubomir D. Bourdev and
+                  Ross B. Girshick and
+                  James Hays and
+                  Pietro Perona and
+                  Deva Ramanan and
+                  Piotr Doll{\'{a}}r and
+                  C. Lawrence Zitnick},
+  title        = {Microsoft {COCO:} Common Objects in Context},
+  journal      = {CoRR},
+  volume       = {abs/1405.0312},
+  year         = {2014},
+  url          = {http://arxiv.org/abs/1405.0312},
+  eprinttype    = {arXiv},
+  eprint       = {1405.0312},
+  timestamp    = {Mon, 13 Aug 2018 16:48:13 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/LinMBHPRDZ14.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+@INPROCEEDINGS{ADE20K,
+  author={Zhou, Bolei and Zhao, Hang and Puig, Xavier and Fidler, Sanja and Barriuso, Adela and Torralba, Antonio},
+  booktitle={2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+  title={Scene Parsing through ADE20K Dataset}, 
+  year={2017},
+  volume={},
+  number={},
+  pages={5122-5130},
+  keywords={Image segmentation;Semantics;Sun;Labeling;Visualization;Neural networks;Computer vision},
+  doi={10.1109/CVPR.2017.544}}
+
+@article{somethingSomething,
+  author       = {Raghav Goyal and
+                  Samira Ebrahimi Kahou and
+                  Vincent Michalski and
+                  Joanna Materzynska and
+                  Susanne Westphal and
+                  Heuna Kim and
+                  Valentin Haenel and
+                  Ingo Fr{\"{u}}nd and
+                  Peter Yianilos and
+                  Moritz Mueller{-}Freitag and
+                  Florian Hoppe and
+                  Christian Thurau and
+                  Ingo Bax and
+                  Roland Memisevic},
+  title        = {The "something something" video database for learning and evaluating
+                  visual common sense},
+  journal      = {CoRR},
+  volume       = {abs/1706.04261},
+  year         = {2017},
+  url          = {http://arxiv.org/abs/1706.04261},
+  eprinttype    = {arXiv},
+  eprint       = {1706.04261},
+  timestamp    = {Mon, 13 Aug 2018 16:48:38 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/GoyalKMMWKHFYMH17.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+@article{yt,
+  author       = {Sami Abu{-}El{-}Haija and
+                  Nisarg Kothari and
+                  Joonseok Lee and
+                  Paul Natsev and
+                  George Toderici and
+                  Balakrishnan Varadarajan and
+                  Sudheendra Vijayanarasimhan},
+  title        = {YouTube-8M: {A} Large-Scale Video Classification Benchmark},
+  journal      = {CoRR},
+  volume       = {abs/1609.08675},
+  year         = {2016},
+  url          = {http://arxiv.org/abs/1609.08675},
+  eprinttype    = {arXiv},
+  eprint       = {1609.08675},
+  timestamp    = {Sun, 02 Oct 2022 15:31:42 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/Abu-El-HaijaKLN16.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+@article{movieBench,
+  author       = {Anna Rohrbach and
+                  Marcus Rohrbach and
+                  Niket Tandon and
+                  Bernt Schiele},
+  title        = {A Dataset for Movie Description},
+  journal      = {CoRR},
+  volume       = {abs/1501.02530},
+  year         = {2015},
+  url          = {http://arxiv.org/abs/1501.02530},
+  eprinttype    = {arXiv},
+  eprint       = {1501.02530},
+  timestamp    = {Mon, 13 Aug 2018 16:47:07 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/RohrbachRTS15.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
 
-@book{knuth1984,
-  author    = {Donald E. Knuth},
-  title     = {The \TeX{}book},
-  year      = {1984},
-  publisher = {Addison-Wesley},
-  address   = {Reading, MA},
+@article{movieQA,
+  author       = {Makarand Tapaswi and
+                  Yukun Zhu and
+                  Rainer Stiefelhagen and
+                  Antonio Torralba and
+                  Raquel Urtasun and
+                  Sanja Fidler},
+  title        = {MovieQA: Understanding Stories in Movies through Question-Answering},
+  journal      = {CoRR},
+  volume       = {abs/1512.02902},
+  year         = {2015},
+  url          = {http://arxiv.org/abs/1512.02902},
+  eprinttype    = {arXiv},
+  eprint       = {1512.02902},
+  timestamp    = {Mon, 13 Aug 2018 16:45:57 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/TapaswiZSTUF15.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
-
-@inproceedings{lamport1986,
-  author    = {Leslie Lamport},
-  title     = {\LaTeX: A Document Preparation System},
-  booktitle = {Proceedings of the 1986 USENIX Conference},
-  year      = {1986},
-  month     = {June},
+@article{vlogs,
+  author       = {David F. Fouhey and
+                  Weicheng Kuo and
+                  Alexei A. Efros and
+                  Jitendra Malik},
+  title        = {From Lifestyle Vlogs to Everyday Interactions},
+  journal      = {CoRR},
+  volume       = {abs/1712.02310},
+  year         = {2017},
+  url          = {http://arxiv.org/abs/1712.02310},
+  eprinttype    = {arXiv},
+  eprint       = {1712.02310},
+  timestamp    = {Mon, 13 Aug 2018 16:48:20 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-1712-02310.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
-
-@online{latexproject,
-  title     = {The \LaTeX{} Project},
-  author    = {{The \LaTeX{} Project Team}},
-  year      = {2022},
-  url       = {https://www.latex-project.org/},
-  note      = {Accessed: 2022-01-14},
+@article{charades,
+  author       = {Gunnar A. Sigurdsson and
+                  G{\"{u}}l Varol and
+                  Xiaolong Wang and
+                  Ali Farhadi and
+                  Ivan Laptev and
+                  Abhinav Gupta},
+  title        = {Hollywood in Homes: Crowdsourcing Data Collection for Activity Understanding},
+  journal      = {CoRR},
+  volume       = {abs/1604.01753},
+  year         = {2016},
+  url          = {http://arxiv.org/abs/1604.01753},
+  eprinttype    = {arXiv},
+  eprint       = {1604.01753},
+  timestamp    = {Fri, 05 Apr 2019 07:29:46 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/SigurdssonVWFLG16.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
 }

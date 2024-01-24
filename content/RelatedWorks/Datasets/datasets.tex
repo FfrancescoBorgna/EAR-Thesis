@@ -1,1 +1,68 @@
 \chapter{Datasets}
+\textcolor{red}{Motivazioni per cui abbiamo usato questi datasets?
+The choice of the following datasets was dictated by the fact that up to our knowledge these are 
+currently the largest datasets available in the egocentric scenarios. Let us see these in details.}
+\section{EPIC-Kitchens}
+EPIC-Kitchens~\cite{EPICKITCHENS} is the largest and most varied dataset in egocentric vision up to our knowledge.
+It contains 55 hours of annotated video data recorded by a head-mounted camera of non scripted actions, 
+meaning that the actors were not following any \textit{scripted} actions(we will see this in more detail
+later).
+\subsection{Introduction/motivation}
+EPIC-Kitchens was born to fill the gap in the scarcity of annotated video datasets.
+As a leading comparison, at the time of writing significant progress have been seen in many domains
+such as image classification~\cite{residualImage},object detection~\cite{fasterRCNN},
+captioning~\cite{captioning} and visual question answering~\cite{vqa}; due to the advances in deep
+learning but mainly due to the availability of large-scale image benchmarks 
+such as PASCAL VOC~\cite{pascalImage},ImageNet~\cite{imagenet},Microsoft COCO~\cite{COCO},
+ADE20K~\cite{ADE20K}. In the same way the authors thought that by introducing
+a large scale video dataset could contribute to the development 
+of video domains.
+
+Some video datasets were already available for action classification~\cite{somethingSomething,yt,movieBench,movieQA,vlogs}
+but, a part from~\cite{movieQA}, these all contain very short videos, focusing on just
+a single action. A solution to this problem was given by Charades~\cite{charades} where 10k
+videos have been collected of humans performing daily tasks at home.
+The problem with this dataset is that the action recorded were scripted,
+meaning that the actor had a text in which he was asked to perform some steps.
+In this way the actions lose their naturalness, their inbred evolving 
+and multi-tasking properties.
+
+To solve these problems they decided to focus on first-person vision, such that
+the recording would not interfere with the actor actions, increasing the 
+possibilities of a succesful recording. Also, the viewpoint given by 
+first-person vision allows us to record multi-task actions and the many different
+ways to perform a variety of important everyday tasks. In Table \ref{tab:epic_comparison}
+we report a summary of the datasets compared by the authors.
+
+\input{content/RelatedWorks/Datasets/epic_table.tex}
+
+\subsection{Data Collection}
+To the data collection were involved 32 people in 4 cities in different
+countries(in North America and Europe): 15 in Bristol/UK, 8 in Toronto/Canada,
+8 in Catania/Italy and 1 in Seattle/USA between May and Nov 2017. Participants
+were asked to record each time they visit the kitchen for three consecutive days,
+starting filming just before entering the kitchen and stopping before leaving it.
+They participated to the process of their own free will without being paid in any way.
+
+
+Few requests were asked to them. The first was to be in the kitchen alone during
+the recording, such that no inter-person interaction could interfere.  The
+second one instead was to remove all items that could disclose their identity, for
+example portraits or mirrors. In this way they could remain anonymous.
+
+Each participant was equipped with a head-mounted camera with adjustable mounting
+such that it could be adapted to the participant's height and possibly different 
+environment. They had to check, before each recording, the battery life and the viewpoint,
+such that their stretched hand were approximately located at the middle of the 
+camera frame.
+The camera settings was set for most of videos to linear field of view, using 
+59.94fps as frame rate and Full HD resolution of 1920x1080, however some 
+subjects made minor changes like wide or ultra-wide FOV or resolution.
+In particular 1\% of the videos were recorded at 1280x720 and 0.5\% at 1920x1440.
+Also 1\% at 30fps, 1\% at 48fps and 0.2\% at 90fps.
+\subsection{Data Annotation pipeline}
+
+\section{(EPIC-Fields)}
+?
+\section{((Ego4D))}
+?

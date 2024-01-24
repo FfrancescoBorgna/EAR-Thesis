@@ -1,0 +1,49 @@
+\begin{table}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|c|r|r|r|r|r|r|c|c|}
+    \hline Dataset & Ego? & \begin{tabular}{c} 
+    Non- \\
+    Scripted?
+    \end{tabular} & \begin{tabular}{c} 
+    Native \\
+    Env?
+    \end{tabular} & Year & Frames & \begin{tabular}{r} 
+    Sequ- \\
+    ences
+    \end{tabular} & \begin{tabular}{r} 
+    Action \\
+    Segments
+    \end{tabular} & \begin{tabular}{c} 
+    Action \\
+    Classes
+    \end{tabular} & \begin{tabular}{r} 
+    Object \\
+    BBs
+    \end{tabular} & \begin{tabular}{c} 
+    Object \\
+    Classes
+    \end{tabular} & \begin{tabular}{c} 
+    Partici- \\
+    pants
+    \end{tabular} & \begin{tabular}{c} 
+    No. \\
+    Env.s
+    \end{tabular} \\
+    \hline EPIC-KITCHENS & $\checkmark$ & $\checkmark$ & $\checkmark$ & 2018 & $11.5 \mathrm{M}$ & 432 & 39,596 & $149^*$ & 454,255 & 323 & 32 & 32 \\
+    \hline EGTEA Gaze+ [16] & $\checkmark$ & $\times$ & $\times$ & 2018 & $2.4 \mathrm{M}$ & 86 & 10,325 & 106 & 0 & 0 & 32 & 1 \\
+    Charades-ego [41] & $70 \% \checkmark$ & $\times$ & $\checkmark$ & 2018 & $2.3 \mathrm{M}$ & 2,751 & 30,516 & 157 & 0 & 38 & 71 & N/A \\
+    BEOID [6] & $\checkmark$ & $\times$ & $\times$ & 2014 & $0.1 \mathrm{M}$ & 58 & 742 & 34 & 0 & 0 & 5 & 1 \\
+    GTEA Gaze+ [13] & $\checkmark$ & $\times$ & $\times$ & 2012 & $0.4 \mathrm{M}$ & 35 & 3,371 & 42 & 0 & 0 & 13 & 1 \\
+    ADL [36] & $\checkmark$ & $\times$ & $\checkmark$ & 2012 & $1.0 \mathrm{M}$ & 20 & 436 & 32 & 137,780 & 42 & 20 & 20 \\
+    CMU [8] & $\checkmark$ & $\times$ & $\times$ & 2009 & $0.2 \mathrm{M}$ & 16 & 516 & 31 & 0 & 0 & 16 & 1 \\
+    \hline YouCook2 [56] & $\times$ & $\checkmark$ & $\checkmark$ & 2018 & $@ 30 \mathrm{fps} 15.8 \mathrm{M}$ & 2,000 & 13,829 & 89 & 0 & 0 & $2 \mathrm{~K}$ & N/A \\
+    VLOG [14] & $\times$ & $\checkmark$ & $\checkmark$ & 2017 & $37.2 \mathrm{M}$ & $114 \mathrm{~K}$ & 0 & 0 & 0 & 0 & $10.7 \mathrm{~K}$ & N/A \\
+    Charades [42] & $\times$ & $\times$ & $\checkmark$ & 2016 & $7.4 \mathrm{M}$ & 9,848 & 67,000 & 157 & 0 & 0 & N/A & 267 \\
+    Breakfast [28] & $\times$ & $\checkmark$ & $\checkmark$ & 2014 & $3.0 \mathrm{M}$ & 433 & 3078 & 50 & 0 & 0 & 52 & 18 \\
+    50 Salads [44] & $\times$ & $\times$ & $\times$ & 2013 & $0.6 \mathrm{M}$ & 50 & 2967 & 52 & 0 & 0 & 25 & 1 \\
+    MPII Cooking 2 [39] & $\times$ & $\times$ & $\times$ & 2012 & $2.9 \mathrm{M}$ & 273 & 14,105 & 88 & 0 & 0 & 30 & 1 \\
+    \hline
+    \end{tabular}}
+    \caption{Comparative overview of relevant datasets(action classes with > 50 samples)}
+    \label{tab:epic_comparison}
+\end{table}

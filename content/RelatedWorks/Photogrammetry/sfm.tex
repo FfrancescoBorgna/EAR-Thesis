@@ -48,17 +48,17 @@ instead for patches A or B.
 In the same way feature extractor works for computers. Two of the first algorithms are infact based on corners detection: 
 \textbf{Harris Corner Detector} and \textbf{Shi-Tomasi Corner Detector}.
 Depending on the differences between the two images to be compared, different algorithms have been developed. Here I report 
-some of them as reported in \cite{open_cv}:
+some of them as reported in~\cite{open_cv}:
 \begin{itemize}
-    \item \textbf{SIFT}: Harris corner detector is not good enough when scale of image changes. Lowe developed a breakthrough 
+    \item \textbf{SIFT} ~\cite{Lowe04_SIFT}: Harris corner detector is not good enough when scale of image changes. Lowe developed a breakthrough 
     method to find scale-invariant features and it is called SIFT
-    \item \textbf{SURF} (Speeded-Up Robust Features): faster SIFT version
+    \item \textbf{SURF} (Speeded-Up Robust Features)~\cite{BAY_SURF}: faster SIFT version
     \item \textbf{FAST Algorithm for corner detection} All the above feature detection methods are good in some way. But they 
     are not fast enough to work in real-time applications like SLAM. There comes the FAST algorithm, which is really "FAST".
-    \item \textbf{BRIEF}(Binary Robust Independent Elementary Features)SIFT uses a feature descriptor with 128 floating point numbers.
+    \item \textbf{BRIEF}(Binary Robust Independent Elementary Features)~\cite{Brief}:SIFT uses a feature descriptor with 128 floating point numbers.
      Consider thousands of such features. It takes lots of memory and more time for matching. We can compress it to make it
     faster. But still we have to calculate it first. There comes BRIEF which gives the shortcut to find binary descriptors with less memory, faster matching, still higher recognition rate.
-    \item \textbf{ORB(Oriented FAST and Rotated BRIEF)} Open source alternative to SIFT and SURF released by OpenCV.
+    \item \textbf{ORB(Oriented FAST and Rotated BRIEF)}~\cite{ORB}: Open source alternative to SIFT and SURF released by OpenCV.
 \end{itemize}
 \begin{figure}
     \centerline{
@@ -84,7 +84,6 @@ as \textit{Feature Matching}. The most basics algorithms are:
 \end{figure}
 
 
-    \footnote{This is a footnote with additional information.}
  \subsection{Estimating Fundamental and Essential Matrices}
 The Fundamental (F) and the Essential (E) matrices allow to relate the projection of a point located in space from one image to the other.
 These matrices are based on the so called \textit{Epipolar Geometry}, which describes the relationship between two images.
