@@ -27,7 +27,14 @@
 \def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
 \makeatother
 
-\renewcommand\theadalign{bc}
 \renewcommand\theadfont{\bfseries}
 \renewcommand\theadgape{\Gape[4pt]}
 \renewcommand\cellgape{\Gape[4pt]}
+
+\newcommand{\cbthead}[1]{\thead[c]{\centering \textbf{#1}}}
+\newcommand{\rbthead}[1]{\thead[r]{\textbf{#1}}}
+\newcommand{\lbthead}[1]{\thead[l]{\textbf{#1}}}
+
+\newcommand{\cthead}[1]{\thead[c]{\centering #1}}
+\newcommand{\rthead}[1]{\thead[r]{#1}}
+\newcommand{\lthead}[1]{\thead[l]{#1}}

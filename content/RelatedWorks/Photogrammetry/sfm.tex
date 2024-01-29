@@ -1,12 +1,12 @@
 \section{Structure from Motion: SfM}
-\textit{Structure from motion (SfM) is the process of estimating the 3-D
-structure of a scene from a set of 2-D images. SfM is used in many
+\textit{Structure from motion (SfM) is the process of estimating the 3D
+structure of a scene from a set of 2D images. SfM is used in many
 applications, such as 3-D scanning, augmented reality, and visual
-simultaneous localization and mapping} \cite{sfm_matlab}.
+simultaneous localization and mapping}~\cite{sfm_matlab}.
 
 We can compute SfM in different ways depending on the data and tools at our disposal.
 Factors such as the \textbf{type} and the \textbf{number} of cameras can imply using different methods. Also 
-the \textbf{ordering} of the frames may be relevant for a succesful reconstruction.
+the \textbf{ordering} of the frames may be relevant for a successful reconstruction.
 
 The most basic scenario consists in two images captured from the same camera from two different point of view:
 \begin{figure}[H]
@@ -15,16 +15,16 @@ The most basic scenario consists in two images captured from the same camera fro
     \caption{Basic SfM Scenario}
     \label{fig:sfm_basic}
 \end{figure}
- In this case the 3-D structure can be recovered \textit{up to scale}, meaning that the relations between the obtained
+ In this case the 3D structure can be recovered \textit{up to scale}, meaning that the relations between the obtained
  points is faithful to the reality, but it can differ from the real size by a \textit{scale} factor. The scale factor
  could be retrieved if we know the size of an object in the scene or by having informations from other sensors.
 
  In the basic scenario the method consists in the following main steps:
  \begin{enumerate}
-    \item \textbf{Feature Detection} and \textbf{Matching}
-    \item Estimating \textbf{Fundamental matrix}
-    \item Estimating \textbf{Essential Matrix} from Fundamental matrix
-    \item Estimating \textbf{Camera Pose} from Essential Matrix
+    \item \textbf{Feature Detection} and \textbf{Matching}: consists in finding relevant points in each image and find the corresponding,if exist, in other images.
+    \item Estimating \textbf{Fundamental matrix}: which describes the geometric relationship between two images of a scene taken from different viewpoints. 
+    \item Estimating \textbf{Essential Matrix} from Fundamental matrix: which represents the intrinsic geometry of the scene, independent of the camera parameters.
+    \item Estimating \textbf{Camera Pose} from Essential Matrix: in this step the positions of the cameras in the world are extracted.
  \end{enumerate}
 
  \subsection{Feature Detection and Matching }
@@ -34,20 +34,21 @@ The most basic scenario consists in two images captured from the same camera fro
  appeareance of its surrounding pixels which is invariant under changes in illumination, translation, scale and in-plane rotation.
  Good features are \textit{unique}, \textit{can be easily tracked} and \textit{can be easily compared}.
 
- A practical example could be to imagine how us humans find correspondances in pictures, looking at image
- \ref{fig:sfm_opencv}. If we would be asked to find the exact position of the six patches in the underlying image,
+ A practical example could be to imagine how us humans find correspondances in pictures, looking at Figure
+~\ref{fig:sfm_opencv}. If we would be asked to find the exact position of the six patches in the underlying image,
 the job would be easier for patches E and F, being corners they have less possible misleading correspondances, as happens
 instead for patches A or B.
  \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{images/relatedWorks/feature_building.jpg} % Replace "example-image" with your image file name
-    \caption{Feature Detection Example \cite{open_cv}}
+    \includegraphics[width=0.8\linewidth]{images/relatedWorks/feature_building.jpg} 
+    \caption{Feature Detection Example~\cite{open_cv}}
     \label{fig:sfm_opencv}
 \end{figure}
 
-In the same way feature extractor works for computers. Two of the first algorithms are infact based on corners detection: 
+
+In a similar way computers extract features. Two of the first algorithms are in fact based on corners detection: 
 \textbf{Harris Corner Detector} and \textbf{Shi-Tomasi Corner Detector}.
-Depending on the differences between the two images to be compared, different algorithms have been developed. Here I report 
+Depending on the differences between the two images to be compared, different algorithms have been developed. Here I describe 
 some of them as reported in~\cite{open_cv}:
 \begin{itemize}
     \item \textbf{SIFT} ~\cite{Lowe04_SIFT}: Harris corner detector is not good enough when scale of image changes. Lowe developed a breakthrough 
@@ -70,10 +71,14 @@ some of them as reported in~\cite{open_cv}:
 After having found these points of interest, we need to match them from the different pictures. This step is also known
 as \textit{Feature Matching}. The most basics algorithms are:
 \begin{itemize}
-    \item \textbf{Brute-Force Matcher}: It takes the descriptor of one feature in first set and is matched with all 
-            other features in second set using some distance calculation. And the closest one is returned.
+    \item \textbf{Brute-Force Matcher}: Given a set of images, for each one the descriptor of one feature is compared with th one of every other image using a distance metric.
+            The matched feature is the one whose distance is the smallest. It is called Brute-Force because it involves nearly no optimization, taking all possible combinations
+            of images.
     \item \textbf{FLANN}: which stands for \textit{Fast Library for Approximate Nearest Neighbors}. It contains a collection of algorithms optimized
-     for fast nearest neighbor search in large datasets and for high dimensional features. It works faster than BFMatcher for large datasets.
+     for fast nearest neighbor search in large datasets and for high dimensional features, such as hierarchical k-means clustering. It works faster than BFMatcher for large datasets.
+     FLANN focuses on giving approximate nearest neighbor search rather than exact matches. Sacrificing some accuracy in favor of speed makes it suitable for large-scale datasets.
+     In this way the feature matching problem becomes a clustering problem.
+
 \end{itemize}
 
 \begin{figure}
@@ -93,10 +98,10 @@ These matrices are based on the so called \textit{Epipolar Geometry}, which desc
     \caption{Point correspondence geometry. }
     \label{fig:epipolar}
 \end{figure}
-As we can see from Figure(\ref{fig:epipolar}), given two cameras $C_l$ and $C_r$ the following definitions can be given:
+As we can see from Figure~\ref{fig:epipolar}, given two cameras $C_l$ and $C_r$ the following definitions can be given:
 \begin{itemize}
     \item The \textbf{Epipole}: which is the point of intersection of the \textbf{baseline}(the line that connects the two camera centers
-    $C_l$ and $C_r$) with the image plane. In Figure(\ref{fig:epipolar}) denoted by $e_i$.
+    $C_l$ and $C_r$) with the image plane. In Figure~\ref{fig:epipolar} denoted by $e_i$.
     \item An \textbf{Epipolar plane}, which is any plane containing the baseline.
     \item An \textbf{Epipolar line} which is the intersection of any epipolar plane with the image plane.
 
@@ -104,7 +109,7 @@ As we can see from Figure(\ref{fig:epipolar}), given two cameras $C_l$ and $C_r$
 Now that we have a clear understanding of the underlying geometry, let's proceed to see the actual derivation of the
 two matrices.
 
-Let's consider the following scenario,reported in Figure(\ref{fig:EstimateMatrices}): we have a point X and two cameras $C_l$ and $C_r$. 
+Let's consider the following scenario,reported in Figure~\ref{fig:EstimateMatrices}: we have a point X and two cameras $C_l$ and $C_r$. 
 The relative positions are respectively $x_l$ and $x_r$, while the pixel projections are $p_l$ and $p_r$.
 If we consider as reference the left camera, the position of the right one is shifted of a vector \textbf{t}.
 
@@ -124,7 +129,7 @@ but $x_l$ can be written as:
 \begin{equation}
     x_l = R x_r + t
 \end{equation}
-So Equation(\ref{eq:E1}) becomes:
+So Equation~\ref{eq:E1} becomes:
 \begin{equation}
     x_l \cdot (t \times (R x_r + t)) = x_l \cdot (t \times R x_r) \stackrel{a}{=}x_l^T  \left[ t\right]_{\times}  R x_r= 0
 \end{equation}
@@ -152,7 +157,7 @@ by:
 \begin{alignat}{2}
     &p_l = \frac{1}{z_l}K_l x_l  &\quad &p_r = \frac{1}{z_r}K_r x_r
 \end{alignat}
-where $z_i$ are the focal distances.We can substitute in Eq.(\ref{eq:EssentialMatrix}) and obtain:
+where $z_i$ are the focal distances.We can substitute in Eq.~\ref{eq:EssentialMatrix} and obtain:
 \begin{equation}
     p_l^T z_l K^{-1^T}_l E K_r^{-1} z_r p_r = 0 \quad z_l,z_r \neq 0
 \end{equation}
@@ -169,29 +174,36 @@ where F is the Fundamental Matrix. We can thus write the relation between the tw
 
 
  \subsection{Estimating Camera Pose from Essential Matrix}
- Since  $ \left[ t\right]_{\times} $ is skew symmetric and R is orthonormal(since 
+ Since  $ \left[ t\right]_{\times} $ is skew symmetric and R is orthonormal (since 
 it is a rotation matrix), if we know the Essential Matrix we can decompose it
-in its components\footnote{
-    \begin{align}
-        \left[ t\right]_{\times} &=  U W \Sigma U^T  \\
-        R &= U W^T V^T \\
-        W&=
-        \begin{bmatrix}
-          0 & -1& 0 \\
-          1 & 0 & 0 \\
-          0 & 0 & 1     \\
-        \end{bmatrix}
-    \end{align}
-}using singular value decomposition.
+in its components using singular value decomposition, as we can see from Equations~\ref{eq:t},~\ref{eq:tR},~\ref{eq:W}
+
+%\begin{equation}  \label{eq:t}
+%    \left[ t\right]_{\times} =  U W \Sigma U^T
+%\end{equation}
+%
+%\begin{equation} \label{eq:tR}
+%    R = U W^T V^T
+%\end{equation}
+\begin{align}
+    \left[ t\right]_{\times} &=  U W \Sigma U^T \label{eq:t}\\
+    R &= U W^T V^T  \label{eq:tR}\\
+    W&=
+    \begin{bmatrix}
+      0 & -1& 0 \\
+      1 & 0 & 0 \\
+      0 & 0 & 1     \\
+    \end{bmatrix}\label{eq:W}
+\end{align}
 
 
 \subsection{Multi-view Structure from Motion}
 Now that we have grasped the basics to find images correspondances, let's see how we can relate multiple image to recover the structure of a scene.
-The last stage is called \textit{bundel adjustment} and it is a iterative algorithm used to adjust structure and motion parameters by minimising a cost function.
-The possible methods for bundle adjustment are:
+The last stage is called \textit{bundle adjustment}~\cite{bundle} and it is a iterative algorithm used to adjust structure and motion parameters by minimising a cost function.
+The possible methods for bundle adjustment are: \textcolor{red}{Non ho trovato paper che introducono le due tipologie}
 \begin{itemize}
-    \item \textbf{Sequential}: which work by considering an additional images at each time, extending in this way the initial reconstruction.
-    \item \textbf{Factorization}: work by computing camera poses and scene geometry using every image measurement at the same time.
+    \item \textbf{Sequential}: it works by considering an additional images at each time, extending in this way the initial reconstruction.
+    \item \textbf{Factorization}: it works by computing camera poses and scene geometry using every image measurement at the same time.
 \end{itemize}
 
 Bundle Adjustment is needed since the image measurements are usually noisy. Minimising an appropriate cost function we can obtain a clean model as in a Linear Regression.

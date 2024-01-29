@@ -25,13 +25,56 @@
 \end{table}
 
 \begin{table}[h]
-\begin{center}
-    \begin{tabular}{ | c | c | c |}
-      \hline
-      \thead{A Head} & \thead{A Second \\ Head} & \thead{A Third \\ Head} \\
-      \hline
-      Some text &  \makecell{Some really \\ longer text}  & Text text text  \\
-      \hline
-    \end{tabular}
-  \end{center}
+  \resizebox{\textwidth}{!}{
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \thead{Scene} & \thead{P01-01} & \thead{P03-04} & \thead{P04-01} & \thead{P05-01} & \thead{P06-03} & \thead{P08-01}& \thead{P09-02}& \thead{P13-03}& \thead{P16-01}& \thead{P21-01} \\
+        & & & & & & & & & & \\
+        \hline
+        \lthead{Succesful \\ Reconstruction}&\checkmark &\checkmark &\checkmark & \texttimes& \texttimes& \texttimes&\checkmark &\texttimes &\checkmark&\checkmark \\
+        \hline
+        \lthead{Feature \\ Extractor} & 00:00:02 & & & & & & & &\\
+        \hline
+        \lthead{Exhaustive\\Matcher} &00:00:23  & & & & &  & & &\\
+        \hline
+        \lthead{Mapper} &00:46:37& & & & & & & & \\
+        \hline
+        \lthead{Image\\Undistorter} & & & & & &  & & &\\
+        \hline
+        \lthead{Patch\\Match Stereo}  & & & & & &  & & &\\
+        \hline
+        \lthead{Stereo \\Fusion} & & & & & &  & & &\\
+        \hline
+        \lthead{Total\\Time} & & & & & & & & & \\
+        \hline
+    \end{tabular}}
+    \caption{Your Table Caption Here}
+    \label{tab:mytable}
+\end{table}
+\begin{table}[h]
+  \centering
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|X|X|X|}
+        \hline
+        \thead{Scene} & \thead{P01-01} & \thead{P03-04} & \thead{P04-01} & \thead{P05-01} & \thead{P06-03} & \thead{P08-01}& \thead{P09-02}& \thead{P13-03}& \thead{P16-01}& \thead{P21-01} \\
+        & & & & & & & & & & \\
+        \hline
+        \lthead{Succesful \\ Reconstruction}&\checkmark &\checkmark &\checkmark & & & & & & \\
+        \hline
+        \lthead{Feature \\ Extractor} & & & & & & & & &\\
+        \hline
+        \lthead{Exhaustive\\Matcher} & & & & & &  & & &\\
+        \hline
+        \lthead{Mapper} & & & & & & & & & \\
+        \hline
+        \lthead{Image\\Undistorter} & & & & & &  & & &\\
+        \hline
+        \lthead{Patch\\Match Stereo}  & & & & & &  & & &\\
+        \hline
+        \lthead{Stereo \\Fusion} & & & & & &  & & &\\
+        \hline
+        \lthead{Total\\Time} & & & & & & & & & \\
+        \hline
+    \end{tabularx}
+    \caption{Your Table Caption Here}
+    \label{tab:mytable}
 \end{table}

@@ -4,9 +4,15 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {1.1}{\ignorespaces Comparative overview of relevant datasets(action classes with > 50 samples)}}{4}{table.caption.4}%
+\contentsline {table}{\numberline {1.2}{\ignorespaces \textbf {Dynamic New View Synthesis.}Comparison of different neural rendering methods on varying difficult frames. The values reported corresponds to PSNR considering all pixels in each test frame.}}{18}{table.caption.30}%
+\contentsline {table}{\numberline {1.3}{\ignorespaces \textbf {UDOS.} Here I reported the author results for UDOS. The values visible corresponds to the mAP on segmenting semi-static(SS) and dynamic(Dyn) components of the scene.}}{20}{table.caption.34}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Your Table Caption Here}}{20}{table.caption.18}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Your Table Caption Here}}{25}{table.caption.21}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Your Table Caption Here}}{36}{table.caption.50}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Your Table Caption Here}}{37}{table.caption.51}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Your Table Caption Here}}{38}{table.caption.52}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Your Table Caption Here}}{42}{table.caption.54}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Your Table Caption Here}}{42}{table.caption.55}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Your Table Caption Here}}{43}{table.caption.56}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -29,10 +29,10 @@ captured through a pinhole and then projected into the \textit{focal plane}.
   
 A Pinhole camera is characterized by two collection of parameters:
 \begin{itemize}
-    \item  \textbf{Extrinsic} parameters: gives us information on location
+    \item  \textbf{Extrinsic} parameters: they give information on location
                                         and rotation in the world.
-    \item  \textbf{Intrinscic} parameters: gives us internal property such as:
-                                    focal length, field of view, resolution...
+    \item  \textbf{Intrinsic} parameters: gives us internal property such as:
+                                    focal length, field of view, resolution etc.
 \end{itemize}  
 These parameters can be rewritten in their corresponding matrices:
 \[
@@ -42,13 +42,10 @@ These parameters can be rewritten in their corresponding matrices:
     0 & 0     & 1     \\
   \end{bmatrix}
 \]
-where:
-\begin{itemize}
-    \item $f_{x},f_{y}$ are are the \textit{focal lengths} of the camera in the x and y directions, 
-    they are needed to keep the image aspect ratio.
-    \item $c_{x},c_{y}$ are the coordinates of the \textit{principal point}
-    (the point where the optical axis intersects the image plane).
-\end{itemize}
+where $f_{x},f_{y}$ are are the \textit{focal lengths} of the camera in the x and y directions, 
+  they are needed to keep the image aspect ratio;
+  $c_{x},c_{y}$ are the coordinates of the \textit{principal point}
+  (the point where the optical axis intersects the image plane).
 
 \[
   Extrinsic= \begin{bmatrix}
@@ -56,12 +53,28 @@ where:
     0_{1x3} & \textbf{1}_{1x1}  \\
   \end{bmatrix}
 \]
-where:
-\begin{itemize}
-    \item $\textbf{R}_{3x3}$ is a rotation matrix
-    \textcolor{red}{(Aggiungi le tre combinazioni...)}
-    \item $\textbf{t}_{3x1}$ is a translation vector
-\end{itemize}
+where:$\textbf{R}_{3x3}$ is a rotation matrix;
+    $\textbf{t}_{3x1}$ is a translation vector.
+
+with \textbf{R} that can be decomposed in its components:
+\begin{align*}
+  \resizebox{\textwidth}{!}{
+    $R_x= \begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & cos(\theta) & -sin(\theta) \\
+      0 & sin(\theta) & cos(\theta)     \\
+    \end{bmatrix} \hspace{1cm}
+    R_y= \begin{bmatrix}
+      cos(\theta) & 0 & sin(\theta) \\
+      0 & 1 & 0 \\
+      -sin(\theta)& 0 & cos(\theta)     \\
+    \end{bmatrix} \hspace{1cm}
+    R_z= \begin{bmatrix}
+      cos(\theta) & -sin(\theta) & 0 \\
+      sin(\theta) & cos(\theta) & 0 \\
+      0 & 0  &  1    \\
+    \end{bmatrix}$}
+\end{align*}
 Extrinsic matrix is also known as the 4x4 transformation matrix 
 that converts points from the world coordinate system to the camera
 coordinate system.
