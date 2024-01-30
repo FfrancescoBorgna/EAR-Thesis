@@ -11,8 +11,8 @@ the \textbf{ordering} of the frames may be relevant for a successful reconstruct
 The most basic scenario consists in two images captured from the same camera from two different point of view:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{images/relatedWorks/camera_Sfm.png} % Replace "example-image" with your image file name
-    \caption{Basic SfM Scenario}
+    \includegraphics[width=0.8\linewidth]{images/relatedWorks/camera_Sfm.png} 
+    \caption{\textbf{Basic SfM Scenario.} Two cameras capturing the same object from different viewpoints.}
     \label{fig:sfm_basic}
 \end{figure}
  In this case the 3D structure can be recovered \textit{up to scale}, meaning that the relations between the obtained
@@ -41,7 +41,7 @@ instead for patches A or B.
  \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{images/relatedWorks/feature_building.jpg} 
-    \caption{Feature Detection Example~\cite{open_cv}}
+    \caption{\textbf{Feature Detection Example}~\cite{open_cv}. The easier patches to match to the background are the ones with sharp corners.}
     \label{fig:sfm_opencv}
 \end{figure}
 
@@ -52,8 +52,9 @@ Depending on the differences between the two images to be compared, different al
 some of them as reported in~\cite{open_cv}:
 \begin{itemize}
     \item \textbf{SIFT} ~\cite{Lowe04_SIFT}: Harris corner detector is not good enough when scale of image changes. Lowe developed a breakthrough 
-    method to find scale-invariant features and it is called SIFT
-    \item \textbf{SURF} (Speeded-Up Robust Features)~\cite{BAY_SURF}: faster SIFT version
+    method to find scale-invariant features and it is called SIFT. An example of SIFT features is reported in Figure~\ref{fig:sift}.
+    \item \textbf{SURF} (Speeded-Up Robust Features)~\cite{BAY_SURF}: faster SIFT version achieved by using a box filter approximation for the computation of image derivatives
+    instead of Gaussian Filters like in SIFT.
     \item \textbf{FAST Algorithm for corner detection} All the above feature detection methods are good in some way. But they 
     are not fast enough to work in real-time applications like SLAM. There comes the FAST algorithm, which is really "FAST".
     \item \textbf{BRIEF}(Binary Robust Independent Elementary Features)~\cite{Brief}:SIFT uses a feature descriptor with 128 floating point numbers.
@@ -64,7 +65,7 @@ some of them as reported in~\cite{open_cv}:
 \begin{figure}
     \centerline{
     \includegraphics[width=1.2\linewidth]{images/relatedWorks/Sift_out.png}} % Replace "example-image" with your image file name
-    \caption{SIFT features extracted}
+    \caption{\textbf{SIFT features position.}Example of interest points, we can see that most of them are placed around corners or edges.}
     \label{fig:sift}
 \end{figure}
 
@@ -73,7 +74,7 @@ as \textit{Feature Matching}. The most basics algorithms are:
 \begin{itemize}
     \item \textbf{Brute-Force Matcher}: Given a set of images, for each one the descriptor of one feature is compared with th one of every other image using a distance metric.
             The matched feature is the one whose distance is the smallest. It is called Brute-Force because it involves nearly no optimization, taking all possible combinations
-            of images.
+            of images. In Figure~\ref{fig:politoCorresponance} is reported the output of a Brute-Force Matcher.
     \item \textbf{FLANN}: which stands for \textit{Fast Library for Approximate Nearest Neighbors}. It contains a collection of algorithms optimized
      for fast nearest neighbor search in large datasets and for high dimensional features, such as hierarchical k-means clustering. It works faster than BFMatcher for large datasets.
      FLANN focuses on giving approximate nearest neighbor search rather than exact matches. Sacrificing some accuracy in favor of speed makes it suitable for large-scale datasets.
@@ -84,7 +85,7 @@ as \textit{Feature Matching}. The most basics algorithms are:
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/correspondance.png} % Replace "example-image" with your image file name
-    \caption{Features correspondence computed using BruteForce Matcher.}
+    \caption{\textbf{Features correspondence} computed using BruteForce Matcher.}
     \label{fig:politoCorresponance}
 \end{figure}
 
@@ -95,7 +96,9 @@ These matrices are based on the so called \textit{Epipolar Geometry}, which desc
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/epipolar.png} % Replace "example-image" with your image file name
-    \caption{Point correspondence geometry. }
+    \caption{\textbf{Point correspondence geometry.} In particular are reported: the \textit{epipoles} e, e';the \textit{epipolar plane}, which
+    is any plane containing the line that connects the two camera centers, also known as \textit{baseline}; the \textit{Epipolar line} which 
+    is the intersection of any epipolar plane with the image plane.}
     \label{fig:epipolar}
 \end{figure}
 As we can see from Figure~\ref{fig:epipolar}, given two cameras $C_l$ and $C_r$ the following definitions can be given:
@@ -116,7 +119,8 @@ If we consider as reference the left camera, the position of the right one is sh
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/Essential.png} % Replace "example-image" with your image file name
-    \caption{}
+    \caption{A point X viewed from two cameras with $x_l$ being the distance of X from $C_l$ and $x_r$ being the distance of X from $C_r$.
+    $p_r$ and $p_l$ are instead the projection of X on the respective camera's focal plane.}
     \label{fig:EstimateMatrices}
 \end{figure}
 
@@ -199,18 +203,21 @@ in its components using singular value decomposition, as we can see from Equatio
 
 \subsection{Multi-view Structure from Motion}
 Now that we have grasped the basics to find images correspondances, let's see how we can relate multiple image to recover the structure of a scene.
-The last stage is called \textit{bundle adjustment}~\cite{bundle} and it is a iterative algorithm used to adjust structure and motion parameters by minimising a cost function.
-The possible methods for bundle adjustment are: \textcolor{red}{Non ho trovato paper che introducono le due tipologie}
+The last stage is called \textit{bundle adjustment} and it is a iterative algorithm used to adjust structure and motion parameters by minimising a cost function.
+The possible methods for bundle adjustment are described in~\cite{bundle}: 
 \begin{itemize}
     \item \textbf{Sequential}: it works by considering an additional images at each time, extending in this way the initial reconstruction.
     \item \textbf{Factorization}: it works by computing camera poses and scene geometry using every image measurement at the same time.
 \end{itemize}
 
-Bundle Adjustment is needed since the image measurements are usually noisy. Minimising an appropriate cost function we can obtain a clean model as in a Linear Regression.
+Bundle Adjustment is needed since the image measurements are usually noisy. It adjusts the positions and orientations of cameras, as well as the 3D coordinates of
+points in the scene, to minimize the difference between the observed image features and their predicted locations in the reconstructed 3D model. In simpler terms,
+it's like fine-tuning a puzzle to make sure all the pieces fit together perfectly, optimizing the alignment of the cameras and the 3D points to improve the accuracy 
+of the reconstruction.
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{images/relatedWorks/MultiViews.png} % Replace "example-image" with your image file name
-    \caption{Multiple View Scenario. }
+    \caption{\textbf{Multiple View Scenario.} In multiple view scenario multiple cameras are present, each one recording the scene from a different point of view.}
     \label{fig:multiview}
 \end{figure}
 \input{content/RelatedWorks/Photogrammetry/colmap.tex}

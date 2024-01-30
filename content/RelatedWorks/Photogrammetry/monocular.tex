@@ -10,28 +10,28 @@ solve those equations.
 Possible solutions include the usage of neural architectures. As a matter of fact, these methods try to learn relations
 between the possible objects or elements of the image, thus extracting a higher semantic knowledge from the picture.
 This task is known to be solved particularly good from neural networks, in particular convolutional or transformer based 
-networks (See Section (\ref{sec:Neural})), trained on large amount of data, which are nowadays growing in number and quality.
+networks (See Section~\ref{sec:Neural}), trained on large amount of data, which are nowadays growing in number and quality.
 
 In particular the advent of transformers has marked a new state of the art, not only in natural language processing, but also in dense prediction.
-As shown and stated in \cite{Ranftl2021}, they "\textit{introduce dense vision transformers, an architecture that leverages vision transformers 
+As shown and stated in~\cite{Ranftl2021}, they "\textit{introduce dense vision transformers, an architecture that leverages vision transformers 
 in place of convolutional networks as a backbone for dense prediction tasks.$[...]$this architecture yieds substantial improvements
 on dense prediction tasks.$[...]$we observe an improvement of up to 28\% in relative performance when compared to a state-of-the-art 
 fully-convolutional network}". \textcolor{red}{The motivation is due to the different functioning of the two networks. Infact, both methods
-implies an encoder-decoder structure but the nature of convolutional layer limits its performance. As explained in Sec.\ref{seq:nNeural}
+implies an encoder-decoder structure but the nature of convolutional layer limits its performance. As explained in Sec.~\ref{seq:nNeural}
 convolutional networks progressively downsample the input image to extract features at multiple scales. Unfortunately in 
 dense prediction tasks, keeping feature resolution and granularity showed to be essential, since the decoder can't recover
 the initial informations from the compressed ones. "\textit{Unlike fully-convolutionals networks, the vision transformer
 backbone foregoes explicit downsampling operations after an initial image embedding has been computed
-and mantains a representation with constant dimensionality throughout all processing stages}"\cite{Ranftl2021}.
+and mantains a representation with constant dimensionality throughout all processing stages}"~\cite{Ranftl2021}.
 }
 
 The second motivation that made us choose for the transformer-based architecture is its versatibility and generalizability.
-In \cite{Ranftl2022} the authors introduce a method that enable mixing multiple datasets during training. In this way the model will be 
+In~\cite{Ranftl2022} the authors introduce a method that enable mixing multiple datasets during training. In this way the model will be 
 effective across a variety of scenarios since each dataset is equally varied and captures the diversity of the visual world.
 In particular they experimented with eleven datsets which consists of RGB images with corresponding depth annotation of some form:
 \begin{itemize}
-    \item Training: DIML Indoor,MegaDepth,ReDWeb,WSVD, 3D Movies
-    \item Testing:DIW,ETH3D,Sintel,KITTI,NYUDv2,TUM-RGBD
+    \item Training: DIML Indoor~\cite{DIML},MegaDepth~\cite{megadepth},ReDWeb~\cite{redweb},WSVD~\cite{wsvd}, 3D Movies~\cite{DIML}
+    \item Testing:DIW~\cite{diw},ETH3D~\cite{eth3d},Sintel~\cite{sintel},KITTI~\cite{kitti},NYUDv2~\cite{nyudv2},TUM-RGBD~\cite{tum_rgbd}
 \end{itemize}
 Each single dataset has its own characteristic and has its own biases and problems. Mixing them during the train phase allows to mitigate
 those problems and obtain a good generalization. To evaluate the generalization they used the \textit{Zero-Shot Cross-dataset Transfer} which
@@ -47,5 +47,5 @@ consists in evaluating on datasets that were not seen during training. This prov
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/monocular.png} 
     \caption{Top: input images. Middle: Inverse depth maps predicted by the presented approach. Bottom: corresponding point clouds
-        rendered from a novel view-point.(Taken from \cite{Ranftl2022})}\label{fig:mono}
+        rendered from a novel view-point.(Taken from~\cite{Ranftl2022})}\label{fig:mono}
 \end{figure}

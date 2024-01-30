@@ -19,11 +19,13 @@ As first assumption we have the modellization of the camera as a simplified
 version of itself: the \textit{Pinhole Camera}. As in the first designed
 cameras(\textit{camera obscura}), in the Pinhole Camera world's light is 
 captured through a pinhole and then projected into the \textit{focal plane}.
+The main idea is reported in Figure~\ref{fig:pinhole}.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.3\linewidth]{images/relatedWorks/Pinhole.png} % Replace "example-image" with your image file name
-    \caption{Pinhole Camera}
+    \caption{\textbf{Pinhole Camera.} A world's object is captured by the camera making light passing through 
+    the pinhole and is then projected on the focal plane upside-down.}
     \label{fig:pinhole}
   \end{figure}
   
@@ -103,11 +105,12 @@ process of a specific camera as the combination of its characteristic matrices:
       \end{bmatrix}
   \end{align*}
 
-
+In Figure~\ref{fig:reference_systems} we can see an example of the different reference systems involved in a photogrammetry problem.
   \begin{figure}
     \centering
     \includegraphics[width=0.7\linewidth]{images/relatedWorks/CameraReferences.png} % Replace "example-image" with your image file name
-    \caption{Reference systems}
+    \caption{\textbf{Reference systems.} An example of the different refernce systems involved in a photogrammetry problem.In red is reported
+    the world system while in black the camera one. The yellow plane corresponds to the camera focal plane.}
     \label{fig:reference_systems}
   \end{figure}
 

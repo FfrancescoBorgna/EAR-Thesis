@@ -1525,9 +1525,53 @@
       \verb 10.1109/ICCV.2011.6126544
       \endverb
     \endentry
-    \entry{colmap}{online}{}
+    \entry{bundle}{incollection}{}
+      \name{author}{4}{}{%
+        {{hash=b9b0b6a06cb9118c726836399bc0e277}{%
+           family={Fitzgibbon},
+           familyi={F\bibinitperiod},
+           given={Andrew\bibnamedelima W.},
+           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=a9506657665174b3e20fd0b83151d86b}{%
+           family={Bowman},
+           familyi={B\bibinitperiod},
+           given={Simon\bibnamedelima W.},
+           giveni={S\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=c72fc39e94030f67717052309266a44d}{%
+           family={Zisserman},
+           familyi={Z\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=09247f07517d2d319afe8e106c816dc5}{%
+           family={Fischler},
+           familyi={F\bibinitperiod},
+           given={Mark\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{fd5a46205a3d34a3bbbeeb791b0cd37b}
+      \strng{fullhash}{eb3e50e088728385b152e0534a79a0eb}
+      \strng{bibnamehash}{eb3e50e088728385b152e0534a79a0eb}
+      \strng{authorbibnamehash}{eb3e50e088728385b152e0534a79a0eb}
+      \strng{authornamehash}{fd5a46205a3d34a3bbbeeb791b0cd37b}
+      \strng{authorfullhash}{eb3e50e088728385b152e0534a79a0eb}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Vision Algorithms: Theory and Practice}
+      \field{series}{LNCS}
+      \field{title}{Bundle Adjustment – A Modern Synthesis}
+      \field{volume}{1883}
+      \field{year}{2000}
+      \field{pages}{298\bibrangedash 372}
+      \range{pages}{75}
+    \endentry
+    \entry{colmap}{online}{}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{note}{Colmap 2024}
       \verb{urlraw}
       \verb https://colmap.github.io/index.html
@@ -1677,6 +1721,520 @@
       \field{title}{Towards Robust Monocular Depth Estimation: Mixing Datasets for Zero-Shot Cross-Dataset Transfer}
       \field{volume}{44}
       \field{year}{2022}
+    \endentry
+    \entry{DIML}{article}{}
+      \name{author}{4}{}{%
+        {{hash=d11ff9e3df92fac5ace5af682223f99b}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Youngjung},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=d0a6714e5c5805e35cb516311f7ce5d8}{%
+           family={Jung},
+           familyi={J\bibinitperiod},
+           given={Hyungjoo},
+           giveni={H\bibinitperiod}}}%
+        {{hash=3087c3041ba9a495323617358162fbe3}{%
+           family={Min},
+           familyi={M\bibinitperiod},
+           given={Dongbo},
+           giveni={D\bibinitperiod}}}%
+        {{hash=acb7a59548ea9042abd358c98009d6f6}{%
+           family={Sohn},
+           familyi={S\bibinitperiod},
+           given={Kwanghoon},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{36b49ae75e2b34797fa9134a201628f4}
+      \strng{fullhash}{0b55cf952bf1daa3a3accb54a4d1fcc4}
+      \strng{bibnamehash}{0b55cf952bf1daa3a3accb54a4d1fcc4}
+      \strng{authorbibnamehash}{0b55cf952bf1daa3a3accb54a4d1fcc4}
+      \strng{authornamehash}{36b49ae75e2b34797fa9134a201628f4}
+      \strng{authorfullhash}{0b55cf952bf1daa3a3accb54a4d1fcc4}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Image Processing}
+      \field{number}{8}
+      \field{title}{Deep Monocular Depth Estimation via Integration of Global and Local Predictions}
+      \field{volume}{27}
+      \field{year}{2018}
+      \field{pages}{4131\bibrangedash 4144}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/TIP.2018.2836318
+      \endverb
+      \keyw{Estimation;Predictive models;Databases;Training;Optimization;Measurement;Computational modeling;Depth estimation;2D-to-3D conversion;non-parametric sampling;convolutional neural networks;RGB-D database}
+    \endentry
+    \entry{megadepth}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=d5f4d85d627668125f25a2ea9fdbb7b0}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Zhengqi},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=691a70527bf15623328097c061ad1940}{%
+           family={Snavely},
+           familyi={S\bibinitperiod},
+           given={Noah},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{3f8bcda36e5e8cf3e4b6f005a75f0b17}
+      \strng{fullhash}{3f8bcda36e5e8cf3e4b6f005a75f0b17}
+      \strng{bibnamehash}{3f8bcda36e5e8cf3e4b6f005a75f0b17}
+      \strng{authorbibnamehash}{3f8bcda36e5e8cf3e4b6f005a75f0b17}
+      \strng{authornamehash}{3f8bcda36e5e8cf3e4b6f005a75f0b17}
+      \strng{authorfullhash}{3f8bcda36e5e8cf3e4b6f005a75f0b17}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CV}
+      \field{eprinttype}{arXiv}
+      \field{title}{MegaDepth: Learning Single-View Depth Prediction from Internet Photos}
+      \field{year}{2018}
+      \verb{eprint}
+      \verb 1804.00607
+      \endverb
+    \endentry
+    \entry{redweb}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{hash=d34252df77136e3e43830c451bc16f4c}{%
+           family={Xian},
+           familyi={X\bibinitperiod},
+           given={Ke},
+           giveni={K\bibinitperiod}}}%
+        {{hash=9e49384c78f6861746fe787b12339aed}{%
+           family={Shen},
+           familyi={S\bibinitperiod},
+           given={Chunhua},
+           giveni={C\bibinitperiod}}}%
+        {{hash=5dd651375bfd096c12f9efedcbb23b26}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Zhiguo},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=b61c7b6eeaa58572d109f9c87e5a61b0}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod}}}%
+        {{hash=1f6352fb541fa4d76fa406a7a227e942}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Yang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=7daa4ae161a7b30243906f8d8614d031}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Ruibo},
+           giveni={R\bibinitperiod}}}%
+        {{hash=944b1099464311888b5869719fe97207}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Zhenbo},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{d8bb47053eee030e5ea0df7c00d70552}
+      \strng{fullhash}{a8598030e163b0fcd7ad5a9a1d0e2305}
+      \strng{bibnamehash}{a8598030e163b0fcd7ad5a9a1d0e2305}
+      \strng{authorbibnamehash}{a8598030e163b0fcd7ad5a9a1d0e2305}
+      \strng{authornamehash}{d8bb47053eee030e5ea0df7c00d70552}
+      \strng{authorfullhash}{a8598030e163b0fcd7ad5a9a1d0e2305}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition}
+      \field{title}{Monocular Relative Depth Perception with Web Stereo Data Supervision}
+      \field{year}{2018}
+      \field{pages}{311\bibrangedash 320}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/CVPR.2018.00040
+      \endverb
+      \keyw{Training;Measurement;Task analysis;Semantics;Estimation;Image segmentation;Network architecture}
+    \endentry
+    \entry{wsvd}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=e49ed018aec5a87191f4d44b232aea34}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Chaoyang},
+           giveni={C\bibinitperiod}}}%
+        {{hash=061075e8245a617dab62fc875f316a39}{%
+           family={Lucey},
+           familyi={L\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e41e312ba8b27df034902fddbc1bb527}{%
+           family={Perazzi},
+           familyi={P\bibinitperiod},
+           given={Federico},
+           giveni={F\bibinitperiod}}}%
+        {{hash=4954ab8be479c4a3f1496ddfbc21a605}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{be96deac729bb11c1d34fb99ed1661e9}
+      \strng{fullhash}{2f9a26cdd629edf33d74ed3c747913ea}
+      \strng{bibnamehash}{2f9a26cdd629edf33d74ed3c747913ea}
+      \strng{authorbibnamehash}{2f9a26cdd629edf33d74ed3c747913ea}
+      \strng{authornamehash}{be96deac729bb11c1d34fb99ed1661e9}
+      \strng{authorfullhash}{2f9a26cdd629edf33d74ed3c747913ea}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CV}
+      \field{eprinttype}{arXiv}
+      \field{title}{Web Stereo Video Supervision for Depth Prediction from Dynamic Scenes}
+      \field{year}{2019}
+      \verb{eprint}
+      \verb 1904.11112
+      \endverb
+    \endentry
+    \entry{diw}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=8d1791ec1e5255f89e41ba613caa8f4c}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Weifeng},
+           giveni={W\bibinitperiod}}}%
+        {{hash=fdf7ac6c09bf582b75b7853ed62759a9}{%
+           family={Fu},
+           familyi={F\bibinitperiod},
+           given={Zhao},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=045ad1062024c32122b6e3207ef62a61}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Dawei},
+           giveni={D\bibinitperiod}}}%
+        {{hash=0ae7fdc13773f928525f673b05f37149}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Jia},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a8313e488813405f7085f245bfc3410}
+      \strng{fullhash}{03067ca2b5699f0f7ce066b926ed09a2}
+      \strng{bibnamehash}{03067ca2b5699f0f7ce066b926ed09a2}
+      \strng{authorbibnamehash}{03067ca2b5699f0f7ce066b926ed09a2}
+      \strng{authornamehash}{9a8313e488813405f7085f245bfc3410}
+      \strng{authorfullhash}{03067ca2b5699f0f7ce066b926ed09a2}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CV}
+      \field{eprinttype}{arXiv}
+      \field{title}{Single-Image Depth Perception in the Wild}
+      \field{year}{2017}
+      \verb{eprint}
+      \verb 1604.03901
+      \endverb
+    \endentry
+    \entry{eth3d}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{hash=9677a907b0c21f4e1067da14098acd2e}{%
+           family={Schöps},
+           familyi={S\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=85c10679ad8f08c2b0ea65e5de627728}{%
+           family={Schönberger},
+           familyi={S\bibinitperiod},
+           given={Johannes\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=e17fd4cc557b77e384abb1a700da2873}{%
+           family={Galliani},
+           familyi={G\bibinitperiod},
+           given={Silvano},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a5137e6d768f19138ed8c6cfdd862a1d}{%
+           family={Sattler},
+           familyi={S\bibinitperiod},
+           given={Torsten},
+           giveni={T\bibinitperiod}}}%
+        {{hash=205714eb0cc6921c15493da21a574130}{%
+           family={Schindler},
+           familyi={S\bibinitperiod},
+           given={Konrad},
+           giveni={K\bibinitperiod}}}%
+        {{hash=501629493a5ead2d23ee597103478ce8}{%
+           family={Pollefeys},
+           familyi={P\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod}}}%
+        {{hash=06133052ac3c14a188601b82783cd4f7}{%
+           family={Geiger},
+           familyi={G\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{d249dbe92082a87672512fe8233ceee5}
+      \strng{fullhash}{e2443dd9b40c192ae300d62d99e1bc60}
+      \strng{bibnamehash}{e2443dd9b40c192ae300d62d99e1bc60}
+      \strng{authorbibnamehash}{e2443dd9b40c192ae300d62d99e1bc60}
+      \strng{authornamehash}{d249dbe92082a87672512fe8233ceee5}
+      \strng{authorfullhash}{e2443dd9b40c192ae300d62d99e1bc60}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{title}{A Multi-view Stereo Benchmark with High-Resolution Images and Multi-camera Videos}
+      \field{year}{2017}
+      \field{pages}{2538\bibrangedash 2547}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/CVPR.2017.272
+      \endverb
+      \keyw{Benchmark testing;Cameras;Three-dimensional displays;Lasers;Image resolution;Videos;Robot vision systems}
+    \endentry
+    \entry{sintel}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=555c60668ffae20be9dfb6d006da414b}{%
+           family={Butler},
+           familyi={B\bibinitperiod},
+           given={Daniel\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=fe84e0e394e91d5c0f401178ef219c12}{%
+           family={Wulff},
+           familyi={W\bibinitperiod},
+           given={Jonas},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7387d5b060cab66d50ca05259172beee}{%
+           family={Stanley},
+           familyi={S\bibinitperiod},
+           given={Garrett\bibnamedelima B.},
+           giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=54960bfd1d66de256b111681241131bb}{%
+           family={Black},
+           familyi={B\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \name{editor}{5}{}{%
+        {{hash=8eb0347090bee0e3077a241bdad85387}{%
+           family={Fitzgibbon},
+           familyi={F\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ed3e473df095b5791b5a5d837557bff7}{%
+           family={Lazebnik},
+           familyi={L\bibinitperiod},
+           given={Svetlana},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e52876f830a8a20786ff3e4d7dd6f083}{%
+           family={Perona},
+           familyi={P\bibinitperiod},
+           given={Pietro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e292ab2afea048f7ad6399d6b3301f67}{%
+           family={Sato},
+           familyi={S\bibinitperiod},
+           given={Yoichi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=58e4a9845eac42a4b0e5205cf0970fc0}{%
+           family={Schmid},
+           familyi={S\bibinitperiod},
+           given={Cordelia},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{196d2fc7315acd67d8ac097a23bb909a}
+      \strng{fullhash}{38e3d7d304283c9634d4f1bd5d0cc7ec}
+      \strng{bibnamehash}{38e3d7d304283c9634d4f1bd5d0cc7ec}
+      \strng{authorbibnamehash}{38e3d7d304283c9634d4f1bd5d0cc7ec}
+      \strng{authornamehash}{196d2fc7315acd67d8ac097a23bb909a}
+      \strng{authorfullhash}{38e3d7d304283c9634d4f1bd5d0cc7ec}
+      \strng{editorbibnamehash}{e51d8adfa31c91e050ae1106e625556b}
+      \strng{editornamehash}{030f19bc7a52b401ad3aad5d214083fa}
+      \strng{editorfullhash}{e51d8adfa31c91e050ae1106e625556b}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Ground truth optical flow is difficult to measure in real scenes with natural motion. As a result, optical flow data sets are restricted in terms of size, complexity, and diversity, making optical flow algorithms difficult to train and test on realistic data. We introduce a new optical flow data set derived from the open source 3D animated short film Sintel. This data set has important features not present in the popular Middlebury flow evaluation: long sequences, large motions, specular reflections, motion blur, defocus blur, and atmospheric effects. Because the graphics data that generated the movie is open source, we are able to render scenes under conditions of varying complexity to evaluate where existing flow algorithms fail. We evaluate several recent optical flow algorithms and find that current highly-ranked methods on the Middlebury evaluation have difficulty with this more complex data set suggesting further research on optical flow estimation is needed. To validate the use of synthetic data, we compare the image- and flow-statistics of Sintel to those of real films and videos and show that they are similar. The data set, metrics, and evaluation website are publicly available.}
+      \field{booktitle}{Computer Vision -- ECCV 2012}
+      \field{isbn}{978-3-642-33783-3}
+      \field{title}{A Naturalistic Open Source Movie for Optical Flow Evaluation}
+      \field{year}{2012}
+      \field{pages}{611\bibrangedash 625}
+      \range{pages}{15}
+    \endentry
+    \entry{kitti}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=06133052ac3c14a188601b82783cd4f7}{%
+           family={Geiger},
+           familyi={G\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f594289a77a4b801a7156edc29235ad8}{%
+           family={Lenz},
+           familyi={L\bibinitperiod},
+           given={Philip},
+           giveni={P\bibinitperiod}}}%
+        {{hash=bc58c1e920023b071a4d0695299cf804}{%
+           family={Urtasun},
+           familyi={U\bibinitperiod},
+           given={Raquel},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{0ed1132e2b009ef637750997288e3249}
+      \strng{fullhash}{627edf12ee4004074265a942326edc30}
+      \strng{bibnamehash}{627edf12ee4004074265a942326edc30}
+      \strng{authorbibnamehash}{627edf12ee4004074265a942326edc30}
+      \strng{authornamehash}{0ed1132e2b009ef637750997288e3249}
+      \strng{authorfullhash}{627edf12ee4004074265a942326edc30}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2012 IEEE Conference on Computer Vision and Pattern Recognition}
+      \field{title}{Are we ready for autonomous driving? The KITTI vision benchmark suite}
+      \field{year}{2012}
+      \field{pages}{3354\bibrangedash 3361}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/CVPR.2012.6248074
+      \endverb
+      \keyw{Benchmark testing;Cameras;Optical imaging;Visualization;Optical sensors;Measurement}
+    \endentry
+    \entry{nyudv2}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=94f4bc4a582c08c7f6831cafecd54553}{%
+           family={Silberman},
+           familyi={S\bibinitperiod},
+           given={Nathan},
+           giveni={N\bibinitperiod}}}%
+        {{hash=5dc4a38021d9a3a2f33342dab9f7e3dd}{%
+           family={Hoiem},
+           familyi={H\bibinitperiod},
+           given={Derek},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d0d21ff02dda6c0a7d09ef7436bd329b}{%
+           family={Kohli},
+           familyi={K\bibinitperiod},
+           given={Pushmeet},
+           giveni={P\bibinitperiod}}}%
+        {{hash=a6784304d1cc890b2cb6c6c7f2f3fd76}{%
+           family={Fergus},
+           familyi={F\bibinitperiod},
+           given={Rob},
+           giveni={R\bibinitperiod}}}%
+      }
+      \name{editor}{5}{}{%
+        {{hash=8eb0347090bee0e3077a241bdad85387}{%
+           family={Fitzgibbon},
+           familyi={F\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ed3e473df095b5791b5a5d837557bff7}{%
+           family={Lazebnik},
+           familyi={L\bibinitperiod},
+           given={Svetlana},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e52876f830a8a20786ff3e4d7dd6f083}{%
+           family={Perona},
+           familyi={P\bibinitperiod},
+           given={Pietro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e292ab2afea048f7ad6399d6b3301f67}{%
+           family={Sato},
+           familyi={S\bibinitperiod},
+           given={Yoichi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=58e4a9845eac42a4b0e5205cf0970fc0}{%
+           family={Schmid},
+           familyi={S\bibinitperiod},
+           given={Cordelia},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{57e30e7778d83154d3a6017256dd10a3}
+      \strng{fullhash}{d3ec317ccc8f5690d6ed9f580b911858}
+      \strng{bibnamehash}{d3ec317ccc8f5690d6ed9f580b911858}
+      \strng{authorbibnamehash}{d3ec317ccc8f5690d6ed9f580b911858}
+      \strng{authornamehash}{57e30e7778d83154d3a6017256dd10a3}
+      \strng{authorfullhash}{d3ec317ccc8f5690d6ed9f580b911858}
+      \strng{editorbibnamehash}{e51d8adfa31c91e050ae1106e625556b}
+      \strng{editornamehash}{030f19bc7a52b401ad3aad5d214083fa}
+      \strng{editorfullhash}{e51d8adfa31c91e050ae1106e625556b}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We present an approach to interpret the major surfaces, objects, and support relations of an indoor scene from an RGBD image. Most existing work ignores physical interactions or is applied only to tidy rooms and hallways. Our goal is to parse typical, often messy, indoor scenes into floor, walls, supporting surfaces, and object regions, and to recover support relationships. One of our main interests is to better understand how 3D cues can best inform a structured 3D interpretation. We also contribute a novel integer programming formulation to infer physical support relations. We offer a new dataset of 1449 RGBD images, capturing 464 diverse indoor scenes, with detailed annotations. Our experiments demonstrate our ability to infer support relations in complex scenes and verify that our 3D scene cues and inferred support lead to better object segmentation.}
+      \field{booktitle}{Computer Vision -- ECCV 2012}
+      \field{isbn}{978-3-642-33715-4}
+      \field{title}{Indoor Segmentation and Support Inference from RGBD Images}
+      \field{year}{2012}
+      \field{pages}{746\bibrangedash 760}
+      \range{pages}{15}
+    \endentry
+    \entry{tum_rgbd}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=9e291584a3b29b27c88ecfe0a566274c}{%
+           family={Sturm},
+           familyi={S\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9d6110950a50d69179aefe99b3abc81a}{%
+           family={Engelhard},
+           familyi={E\bibinitperiod},
+           given={Nikolas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=4858aa954321596e8c1c81daac0271dd}{%
+           family={Endres},
+           familyi={E\bibinitperiod},
+           given={Felix},
+           giveni={F\bibinitperiod}}}%
+        {{hash=98f4ab1bc2ac191d8f8a0651315ce9c0}{%
+           family={Burgard},
+           familyi={B\bibinitperiod},
+           given={Wolfram},
+           giveni={W\bibinitperiod}}}%
+        {{hash=1bd2b6b6ca2fc15a90f164070b626131}{%
+           family={Cremers},
+           familyi={C\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{f2452d6a1e4ac6399e084b1a065ee7da}
+      \strng{fullhash}{fda811f69253ca27ebab9abbbf7b757f}
+      \strng{bibnamehash}{fda811f69253ca27ebab9abbbf7b757f}
+      \strng{authorbibnamehash}{fda811f69253ca27ebab9abbbf7b757f}
+      \strng{authornamehash}{f2452d6a1e4ac6399e084b1a065ee7da}
+      \strng{authorfullhash}{fda811f69253ca27ebab9abbbf7b757f}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2012 IEEE/RSJ International Conference on Intelligent Robots and Systems}
+      \field{title}{A benchmark for the evaluation of RGB-D SLAM systems}
+      \field{year}{2012}
+      \field{pages}{573\bibrangedash 580}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/IROS.2012.6385773
+      \endverb
+      \keyw{Cameras;Simultaneous localization and mapping;Calibration;Trajectory;Visualization}
     \endentry
   \enddatalist
 \endrefsection

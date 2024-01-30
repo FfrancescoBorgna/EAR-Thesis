@@ -20,18 +20,18 @@
 \contentsline {figure}{\numberline {1.15}{\ignorespaces \textbf {VOS.} Here is reported the comparison of the two different methods. The 3D method is clearly beter having as output something really close to the groundtruth. The 2D method instead is performing poorly.}}{21}{figure.caption.36}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Pinhole Camera}}{23}{figure.caption.37}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Reference systems}}{25}{figure.caption.38}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Basic SfM Scenario}}{25}{figure.caption.39}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Feature Detection Example~\blx@tocontentsinit {0}\cite {open_cv}}}{27}{figure.caption.40}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces SIFT features extracted}}{28}{figure.caption.41}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Features correspondence computed using BruteForce Matcher.}}{29}{figure.caption.42}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Point correspondence geometry. }}{29}{figure.caption.43}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces \relax }}{30}{figure.caption.44}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Multiple View Scenario. }}{32}{figure.caption.45}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Building Rome in one day}}{33}{figure.caption.46}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Monocular datasets}}{36}{figure.caption.48}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Top: input images. Middle: Inverse depth maps predicted by the presented approach. Bottom: corresponding point clouds rendered from a novel view-point.(Taken from \blx@tocontentsinit {0}\cite {Ranftl2022})}}{37}{figure.caption.49}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Example of Precision-recall curve.We can see how the bottom line model represents the worst a model can perform, e.g. predict every sample as it is coming from the same class,if the dataset is balanced. A better model would \textit {tend} to the upper-right corner, which instead represents the best possible model, a model that have maximum precision and recall.}}{41}{figure.caption.53}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \textbf {Pinhole Camera.} A world's object is captured by the camera making light passing through the pinhole and is then projected on the focal plane upside-down.}}{23}{figure.caption.37}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \textbf {Reference systems.} An example of the different refernce systems involved in a photogrammetry problem.In red is reported the world system while in black the camera one. The yellow plane corresponds to the camera focal plane.}}{25}{figure.caption.38}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \textbf {Basic SfM Scenario.} Two cameras capturing the same object from different viewpoints.}}{25}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces \textbf {Feature Detection Example}~\blx@tocontentsinit {0}\cite {open_cv}. The easier patches to match to the background are the ones with sharp corners.}}{27}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces \textbf {SIFT features position.}Example of interest points, we can see that most of them are placed around corners or edges.}}{28}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces \textbf {Features correspondence} computed using BruteForce Matcher.}}{29}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces \textbf {Point correspondence geometry.} In particular are reported: the \textit {epipoles} e, e';the \textit {epipolar plane}, which is any plane containing the line that connects the two camera centers, also known as \textit {baseline}; the \textit {Epipolar line} which is the intersection of any epipolar plane with the image plane.}}{30}{figure.caption.43}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces A point X viewed from two cameras with $x_l$ being the distance of X from $C_l$ and $x_r$ being the distance of X from $C_r$. $p_r$ and $p_l$ are instead the projection of X on the respective camera's focal plane.}}{31}{figure.caption.44}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces \textbf {Multiple View Scenario.} In multiple view scenario multiple cameras are present, each one recording the scene from a different point of view.}}{33}{figure.caption.45}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces \textbf {Building Rome in one day.} Result of Rome with 21K registered out of 75K images.}}{33}{figure.caption.46}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Monocular datasets}}{37}{figure.caption.48}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Top: input images. Middle: Inverse depth maps predicted by the presented approach. Bottom: corresponding point clouds rendered from a novel view-point.(Taken from~\blx@tocontentsinit {0}\cite {Ranftl2022})}}{37}{figure.caption.49}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Example of Precision-recall curve.We can see how the bottom line model represents the worst a model can perform, e.g. predict every sample as it is coming from the same class,if the dataset is balanced. A better model would \textit {tend} to the upper-right corner, which instead represents the best possible model, a model that have maximum precision and recall.}}{42}{figure.caption.53}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
