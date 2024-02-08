@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2024.1.21)  30 JAN 2024 13:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2024.1.21)  8 FEB 2024 16:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1160,6 +1160,8 @@ Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks58
 \verbatim@line=\toks59
 \verbatim@in@stream=\read6
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/gensymb/gensymb.sty
+Package: gensymb 2022/10/17 v1.0.2 (KJH)
 )) (common/package_config.tex
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 26.
 Package hyperref Info: Option `colorlinks' set `true' on input line 26.
@@ -1194,23 +1196,7 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 LaTeX Warning: Unused global option(s):
     [corpo=12pt,stile=standard,tipotesi=magistrale,cucitura=7mm].
 
-(thesis.aux
-
-LaTeX Warning: Label `tab:mytable' multiply defined.
-
-
-LaTeX Warning: Label `tab:mytable' multiply defined.
-
-
-LaTeX Warning: Label `tab:mytable' multiply defined.
-
-
-LaTeX Warning: Label `tab:mytable' multiply defined.
-
-
-LaTeX Warning: Label `tab:mytable' multiply defined.
-
-)
+(thesis.aux)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
@@ -1284,7 +1270,15 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis.bbl' found.
- (thesis.bbl)
+ (thesis.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                lambertian
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 35.
 Package biblatex Info: Reference segment=0 on input line 35.
 Package caption Info: Begin \AtBeginDocument code.
@@ -1356,8 +1350,19 @@ Package translations Info: no dictionary file `translations-basic-dictionary-ita
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 35.
+\symgns@font=\mathgroup9
+LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
+(Font)                  TS1/lmr/m/n --> TS1/lmr/b/n on input line 35.
+Package gensymb Info: Math companion symbols declared on input line 35.
+LaTeX Info: Redefining \degree on input line 35.
+LaTeX Info: Redefining \celsius on input line 35.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 35.
+LaTeX Info: Redefining \ohm on input line 35.
+Package gensymb Info: Using \textohm for \ohm on input line 35.
+LaTeX Info: Redefining \micro on input line 35.
+Package gensymb Info: Using \textmu for \micro on input line 35.
  (common/config.tex) (common/toptesi_config.tex
-<images/logo/Logo_PoliTo_new.png, id=157, 334.1283pt x 310.0383pt>
+<images/logo/Logo_PoliTo_new.png, id=81, 334.1283pt x 310.0383pt>
 File: images/logo/Logo_PoliTo_new.png Graphic file (type png)
 <use images/logo/Logo_PoliTo_new.png>
 Package pdftex.def Info: images/logo/Logo_PoliTo_new.png  used on input line 2.
@@ -1443,6 +1448,10 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 45.
+ (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
 
 
@@ -1476,34 +1485,39 @@ Package microtype Info: Character `029' is missing
 
 ] [4
 
-] (thesis.toc [5
-
-
-])
+] (thesis.toc)
 \tf@toc=\write10
 \openout10 = `thesis.toc'.
 
- [6] (thesis.lot)
+ [5
+
+
+] (thesis.lot)
 \tf@lot=\write11
 \openout11 = `thesis.lot'.
+
+ [6
+
+
+] (thesis.lof
+Overfull \hbox (8.89247pt too wide) in paragraph at lines 12--12
+ \T1/lmr/m/n/12 (-20) per-form-ing pretty well be-ing pro-jected for this spe-cific use case(forward- |
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7
 
 
-] (thesis.lof
-Underfull \vbox (badness 4673) has occurred while \output is active []
-
- [8
-
-
-] [9])
+])
 \tf@lof=\write12
 \openout12 = `thesis.lof'.
 
- [10] [11
+ [8] [9
 
 
-] (common/post_summary_config.tex) [12
+] (common/post_summary_config.tex) [10
 
 
 
@@ -1512,50 +1526,132 @@ Underfull \vbox (badness 4673) has occurred while \output is active []
 
 ] (content/RelatedWorks/Datasets/datasets.tex [2]
 Chapter 1.
+
+LaTeX Warning: Citation 'EPICKITCHENS' on page 3 undefined on input line 6.
+
+
+LaTeX Warning: Citation 'residualImage' on page 3 undefined on input line 13.
+
+
+LaTeX Warning: Citation 'fasterRCNN' on page 3 undefined on input line 13.
+
+
+LaTeX Warning: Citation 'captioning' on page 3 undefined on input line 14.
+
+
+LaTeX Warning: Citation 'vqa' on page 3 undefined on input line 14.
+
+
+LaTeX Warning: Citation 'pascalImage' on page 3 undefined on input line 16.
+
+
+LaTeX Warning: Citation 'imagenet' on page 3 undefined on input line 16.
+
+
+LaTeX Warning: Citation 'COCO' on page 3 undefined on input line 16.
+
+
+LaTeX Warning: Citation 'ADE20K' on page 3 undefined on input line 17.
+
+
+Overfull \hbox (33.07855pt too wide) in paragraph at lines 11--20
+\T1/lmr/m/n/12 (-20) im-age bench-marks such as PAS-CAL VOC [[]],ImageNet [[]],Microsoft|
+ []
+
+
+LaTeX Warning: Citation 'somethingSomething' on page 3 undefined on input line 21.
+
+
+LaTeX Warning: Citation 'yt' on page 3 undefined on input line 21.
+
+
+LaTeX Warning: Citation 'movieBench' on page 3 undefined on input line 21.
+
+
+LaTeX Warning: Citation 'movieQA' on page 3 undefined on input line 21.
+
+
+LaTeX Warning: Citation 'vlogs' on page 3 undefined on input line 21.
+
+
+LaTeX Warning: Citation 'movieQA' on page 3 undefined on input line 22.
+
+
+LaTeX Warning: Citation 'charades' on page 3 undefined on input line 23.
+
+
+Overfull \hbox (53.032pt too wide) in paragraph at lines 21--29
+[]\T1/lmr/m/n/12 (-20) Some video datasets were al-ready avail-able for ac-tion clas-si-fi-ca-tion [[],|
+ []
+
 [3
 
-] (content/RelatedWorks/Datasets/epic_table.tex) [4]
-<images/relatedWorks/epic_stat.png, id=455, 1039.885pt x 441.65pt>
+]
+
+LaTeX Warning: Reference `tab:epic_comparison' on page 4 undefined on input line 34.
+
+(content/RelatedWorks/Datasets/epic_table.tex) [4]
+
+LaTeX Warning: Reference `fig:epic_stat' on page 5 undefined on input line 66.
+
+<images/relatedWorks/epic_stat.png, id=248, 1039.885pt x 441.65pt>
 File: images/relatedWorks/epic_stat.png Graphic file (type png)
 <use images/relatedWorks/epic_stat.png>
 Package pdftex.def Info: images/relatedWorks/epic_stat.png  used on input line 71.
 (pdftex.def)             Requested size: 418.25368pt x 177.63402pt.
-<images/relatedWorks/epic_guidelines.png, id=457, 1050.92625pt x 238.8925pt>
+
+LaTeX Warning: Reference `fig:epic_guidelines' on page 5 undefined on input line 81.
+
+<images/relatedWorks/epic_guidelines.png, id=249, 1050.92625pt x 238.8925pt>
 File: images/relatedWorks/epic_guidelines.png Graphic file (type png)
 <use images/relatedWorks/epic_guidelines.png>
 Package pdftex.def Info: images/relatedWorks/epic_guidelines.png  used on input line 85.
 (pdftex.def)             Requested size: 418.25368pt x 95.07413pt.
- [5 <./images/relatedWorks/epic_stat.png> <./images/relatedWorks/epic_guidelines.png>]
-<images/relatedWorks/epic_trans.png, id=465, 1026.83624pt x 226.8475pt>
+
+LaTeX Warning: Reference `fig:epic_trans' on page 5 undefined on input line 100.
+
+<images/relatedWorks/epic_trans.png, id=250, 1026.83624pt x 226.8475pt>
 File: images/relatedWorks/epic_trans.png Graphic file (type png)
 <use images/relatedWorks/epic_trans.png>
 Package pdftex.def Info: images/relatedWorks/epic_trans.png  used on input line 103.
 (pdftex.def)             Requested size: 418.25368pt x 92.39886pt.
-<images/relatedWorks/epic_anno.png, id=467, 1054.94125pt x 263.98625pt>
+
+LaTeX Warning: Reference `fig:epic_anno' on page 5 undefined on input line 110.
+
+<images/relatedWorks/epic_anno.png, id=251, 1054.94125pt x 263.98625pt>
 File: images/relatedWorks/epic_anno.png Graphic file (type png)
 <use images/relatedWorks/epic_anno.png>
 Package pdftex.def Info: images/relatedWorks/epic_anno.png  used on input line 113.
 (pdftex.def)             Requested size: 418.25368pt x 104.66212pt.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 123.
- (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [6 <./images/relatedWorks/epic_trans.png>]
-<images/relatedWorks/epic_cluster.png, id=477, 951.555pt x 236.885pt>
+[5 <./images/relatedWorks/epic_stat.png>] [6 <./images/relatedWorks/epic_guidelines.png> <./images/relatedWorks/epic_trans.png>]
+
+LaTeX Warning: Reference `fig:epic_table' on page 7 undefined on input line 136.
+
+
+LaTeX Warning: Reference `fig:epic_freq' on page 7 undefined on input line 137.
+
+<images/relatedWorks/epic_cluster.png, id=265, 951.555pt x 236.885pt>
 File: images/relatedWorks/epic_cluster.png Graphic file (type png)
 <use images/relatedWorks/epic_cluster.png>
 Package pdftex.def Info: images/relatedWorks/epic_cluster.png  used on input line 143.
 (pdftex.def)             Requested size: 418.25368pt x 104.12128pt.
-<images/relatedWorks/Epic_words.png, id=478, 584.9052pt x 550.6974pt>
+<images/relatedWorks/Epic_words.png, id=266, 584.9052pt x 550.6974pt>
 File: images/relatedWorks/Epic_words.png Graphic file (type png)
 <use images/relatedWorks/Epic_words.png>
 Package pdftex.def Info: images/relatedWorks/Epic_words.png  used on input line 148.
 (pdftex.def)             Requested size: 418.25368pt x 393.80447pt.
-<images/relatedWorks/epic_bb.png, id=480, 1221.56375pt x 597.23125pt>
+
+LaTeX Warning: Reference `fig:epic_bb' on page 7 undefined on input line 160.
+
+<images/relatedWorks/epic_bb.png, id=267, 1221.56375pt x 597.23125pt>
 File: images/relatedWorks/epic_bb.png Graphic file (type png)
 <use images/relatedWorks/epic_bb.png>
 Package pdftex.def Info: images/relatedWorks/epic_bb.png  used on input line 163.
 (pdftex.def)             Requested size: 418.25368pt x 204.48668pt.
- [7 <./images/relatedWorks/epic_anno.png> <./images/relatedWorks/epic_cluster.png>] [8 <./images/relatedWorks/Epic_words.png>]
+[7 <./images/relatedWorks/epic_anno.png> <./images/relatedWorks/epic_cluster.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./images/relatedWorks/Epic_words.png>]
 LaTeX Font Info:    Calculating math sizes for size <10.00012> on input line 187.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.00012> on input line 187.
@@ -1563,318 +1659,165 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7.00005> on input line 187.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5.00006> on input line 187.
-<images/relatedWorks/AR_chall.png, id=494, 1121.18875pt x 190.7125pt>
+
+
+LaTeX Warning: Reference `fig:epic_ar_chall' on page 9 undefined on input line 188.
+
+<images/relatedWorks/AR_chall.png, id=282, 1121.18875pt x 190.7125pt>
 File: images/relatedWorks/AR_chall.png Graphic file (type png)
 <use images/relatedWorks/AR_chall.png>
 Package pdftex.def Info: images/relatedWorks/AR_chall.png  used on input line 192.
 (pdftex.def)             Requested size: 418.25368pt x 71.14452pt.
-<images/relatedWorks/AA_ch.png, id=496, 1121.18875pt x 314.17375pt>
+
+LaTeX Warning: Reference `fig:epic_aa_chall' on page 9 undefined on input line 202.
+
+<images/relatedWorks/AA_ch.png, id=283, 1121.18875pt x 314.17375pt>
 File: images/relatedWorks/AA_ch.png Graphic file (type png)
 <use images/relatedWorks/AA_ch.png>
 Package pdftex.def Info: images/relatedWorks/AA_ch.png  used on input line 206.
 (pdftex.def)             Requested size: 418.25368pt x 117.20123pt.
- [9 <./images/relatedWorks/epic_bb.png>]
-<images/relatedWorks/obj_ch.png, id=512, 1121.18875pt x 478.78876pt>
+[9 <./images/relatedWorks/epic_bb.png>]
+
+LaTeX Warning: Reference `fig:epic_od_chall' on page 10 undefined on input line 214.
+
+<images/relatedWorks/obj_ch.png, id=298, 1121.18875pt x 478.78876pt>
 File: images/relatedWorks/obj_ch.png Graphic file (type png)
 <use images/relatedWorks/obj_ch.png>
 Package pdftex.def Info: images/relatedWorks/obj_ch.png  used on input line 219.
 (pdftex.def)             Requested size: 418.25368pt x 178.6102pt.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 227.
- (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/t1lmtt.fd
+(/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [10 <./images/relatedWorks/AR_chall.png> <./images/relatedWorks/AA_ch.png>] [11 <./images/relatedWorks/obj_ch.png>]
-<images/relatedWorks/AnnotationPipeline.png, id=535, 675.52374pt x 569.12625pt>
+ [10 <./images/relatedWorks/AR_chall.png> <./images/relatedWorks/AA_ch.png>]
+
+LaTeX Warning: Citation 'EK100' on page 11 undefined on input line 233.
+
+[11 <./images/relatedWorks/obj_ch.png>]
+
+LaTeX Warning: Reference `fig:e100_ann' on page 12 undefined on input line 259.
+
+<images/relatedWorks/AnnotationPipeline.png, id=323, 675.52374pt x 569.12625pt>
 File: images/relatedWorks/AnnotationPipeline.png Graphic file (type png)
 <use images/relatedWorks/AnnotationPipeline.png>
 Package pdftex.def Info: images/relatedWorks/AnnotationPipeline.png  used on input line 262.
 (pdftex.def)             Requested size: 418.25368pt x 352.38568pt.
 
+LaTeX Warning: Reference `fig:e100_ann' on page 12 undefined on input line 274.
+
 
 LaTeX Warning: Reference `Word2Vec' on page 12 undefined on input line 285.
 
 [12]
-<images/relatedWorks/Epic_comp.png, id=548, 1253.68375pt x 424.58624pt>
+
+LaTeX Warning: Reference `fig:e100_ann' on page 13 undefined on input line 292.
+
+
+LaTeX Warning: Reference `fig:ep100_comp' on page 13 undefined on input line 298.
+
+
+Underfull \vbox (badness 1817) has occurred while \output is active []
+
+ [13 <./images/relatedWorks/AnnotationPipeline.png>]
+<images/relatedWorks/Epic_comp.png, id=341, 1253.68375pt x 424.58624pt>
 File: images/relatedWorks/Epic_comp.png Graphic file (type png)
 <use images/relatedWorks/Epic_comp.png>
 Package pdftex.def Info: images/relatedWorks/Epic_comp.png  used on input line 302.
 (pdftex.def)             Requested size: 418.25368pt x 141.64932pt.
- [13 <./images/relatedWorks/AnnotationPipeline.png>]
-Overfull \hbox (9.59695pt too wide) in paragraph at lines 312--312
-[]\T1/lmr/bx/n/17.28003 (-20) EPIC-Fields:[]Lo metto?Anche se non l'abbiamo|
- []
+ [14 <./images/relatedWorks/Epic_comp.png>]
 
-[14 <./images/relatedWorks/Epic_comp.png>] [15] [16]
+LaTeX Warning: Citation 'visor35' on page 15 undefined on input line 337.
+
+
+LaTeX Warning: Citation 'visor5' on page 15 undefined on input line 337.
+
+
+LaTeX Warning: Reference `sec:EK100' on page 15 undefined on input line 340.
+
+[15]
+
+LaTeX Warning: Reference `sec:col' on page 16 undefined on input line 373.
+
+[16]
+
+LaTeX Warning: Citation 'nerfw' on page 17 undefined on input line 408.
+
+
+LaTeX Warning: Citation 'Tnerf' on page 17 undefined on input line 410.
+
+
+LaTeX Warning: Reference `tab:NVS_comp' on page 17 undefined on input line 413.
+
 
 LaTeX Warning: Reference `NVS' on page 17 undefined on input line 413.
 
-<images/relatedWorks/NVS.png, id=589, 744.7825pt x 663.47874pt>
+
+LaTeX Warning: Citation 'nerfw' on page 17 undefined on input line 419.
+
+
+LaTeX Warning: Citation 'Tnerf' on page 17 undefined on input line 420.
+
+<images/relatedWorks/NVS.png, id=369, 744.7825pt x 663.47874pt>
 File: images/relatedWorks/NVS.png Graphic file (type png)
 <use images/relatedWorks/NVS.png>
 Package pdftex.def Info: images/relatedWorks/NVS.png  used on input line 431.
 (pdftex.def)             Requested size: 418.25368pt x 372.60857pt.
 [17]
-<images/relatedWorks/UDOS.png, id=603, 1007.765pt x 369.38pt>
+
+LaTeX Warning: Citation 'MG' on page 18 undefined on input line 453.
+
+
+LaTeX Warning: Reference `fig:UDOS' on page 18 undefined on input line 453.
+
+
+LaTeX Warning: Reference `tab:UDOS' on page 18 undefined on input line 453.
+
+<images/relatedWorks/UDOS.png, id=378, 1007.765pt x 369.38pt>
 File: images/relatedWorks/UDOS.png Graphic file (type png)
 <use images/relatedWorks/UDOS.png>
-Package pdftex.def Info: images/relatedWorks/UDOS.png  used on input line 458.
+Package pdftex.def Info: images/relatedWorks/UDOS.png  used on input line 457.
 (pdftex.def)             Requested size: 418.25368pt x 153.3011pt.
- [18]
-<images/relatedWorks/VOS.png, id=616, 1207.51125pt x 146.5475pt>
+
+LaTeX Warning: Citation 'MG' on page 18 undefined on input line 464.
+
+
+LaTeX Warning: Citation 'nerfw' on page 18 undefined on input line 465.
+
+
+LaTeX Warning: Citation 'Tnerf' on page 18 undefined on input line 466.
+
+[18]
+
+LaTeX Warning: Reference `fig:VOS' on page 19 undefined on input line 480.
+
+<images/relatedWorks/VOS.png, id=386, 1207.51125pt x 146.5475pt>
 File: images/relatedWorks/VOS.png Graphic file (type png)
 <use images/relatedWorks/VOS.png>
-Package pdftex.def Info: images/relatedWorks/VOS.png  used on input line 484.
+Package pdftex.def Info: images/relatedWorks/VOS.png  used on input line 483.
 (pdftex.def)             Requested size: 418.25368pt x 50.76018pt.
- [19 <./images/relatedWorks/NVS.png>]) (content/RelatedWorks/NeuralRendering/neural.tex [20 <./images/relatedWorks/UDOS.png>] [21 <./images/relatedWorks/VOS.png>]
-Chapter 2.
-) (content/RelatedWorks/Photogrammetry/photogrammetry.tex [22
+[19 <./images/relatedWorks/NVS.png>]
 
-]
-Chapter 3.
-<images/relatedWorks/Pinhole.png, id=639, 254.8722pt x 183.084pt>
-File: images/relatedWorks/Pinhole.png Graphic file (type png)
-<use images/relatedWorks/Pinhole.png>
-Package pdftex.def Info: images/relatedWorks/Pinhole.png  used on input line 26.
-(pdftex.def)             Requested size: 125.47737pt x 90.13377pt.
-[23
+LaTeX Warning: Citation 'visor' on page 20 undefined on input line 491.
 
- <./images/relatedWorks/Pinhole.png>]
-<images/relatedWorks/CameraReferences.png, id=647, 345.4506pt x 173.9298pt>
-File: images/relatedWorks/CameraReferences.png Graphic file (type png)
-<use images/relatedWorks/CameraReferences.png>
-Package pdftex.def Info: images/relatedWorks/CameraReferences.png  used on input line 111.
-(pdftex.def)             Requested size: 292.77629pt x 147.41373pt.
- (content/RelatedWorks/Photogrammetry/sfm.tex
-<images/relatedWorks/camera_Sfm.png, id=649, 433.62pt x 289.08pt>
-File: images/relatedWorks/camera_Sfm.png Graphic file (type png)
-<use images/relatedWorks/camera_Sfm.png>
-Package pdftex.def Info: images/relatedWorks/camera_Sfm.png  used on input line 14.
-(pdftex.def)             Requested size: 334.60422pt x 223.0819pt.
- [24] [25 <./images/relatedWorks/CameraReferences.png> <./images/relatedWorks/camera_Sfm.png>]
-<images/relatedWorks/feature_building.jpg, id=665, 451.6875pt x 401.5pt>
-File: images/relatedWorks/feature_building.jpg Graphic file (type jpg)
-<use images/relatedWorks/feature_building.jpg>
-Package pdftex.def Info: images/relatedWorks/feature_building.jpg  used on input line 43.
-(pdftex.def)             Requested size: 334.60422pt x 297.44229pt.
 
+LaTeX Warning: Reference `fig:visor' on page 20 undefined on input line 497.
+
+<images/relatedWorks/visor.png, id=394, 894.34125pt x 545.03625pt>
+File: images/relatedWorks/visor.png Graphic file (type png)
+<use images/relatedWorks/visor.png>
+Package pdftex.def Info: images/relatedWorks/visor.png  used on input line 501.
+(pdftex.def)             Requested size: 418.25368pt x 254.89464pt.
+
+LaTeX Warning: Reference `fig:visor' on page 20 undefined on input line 512.
+
+[20 <./images/relatedWorks/UDOS.png>])) (content/Sistemare/sistemare.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26] [27 <./images/relatedWorks/feature_building.jpg>]
-<images/relatedWorks/Sift_out.png, id=688, 1133.9163pt x 369.2997pt>
-File: images/relatedWorks/Sift_out.png Graphic file (type png)
-<use images/relatedWorks/Sift_out.png>
-Package pdftex.def Info: images/relatedWorks/Sift_out.png  used on input line 67.
-(pdftex.def)             Requested size: 501.90312pt x 163.4616pt.
- [28 <./images/relatedWorks/Sift_out.png>]
-<images/relatedWorks/correspondance.png, id=697, 398.9304pt x 241.3818pt>
-File: images/relatedWorks/correspondance.png Graphic file (type png)
-<use images/relatedWorks/correspondance.png>
-Package pdftex.def Info: images/relatedWorks/correspondance.png  used on input line 87.
-(pdftex.def)             Requested size: 418.25368pt x 253.08636pt.
-<images/relatedWorks/epipolar.png, id=698, 1215.54124pt x 476.78125pt>
-File: images/relatedWorks/epipolar.png Graphic file (type png)
-<use images/relatedWorks/epipolar.png>
-Package pdftex.def Info: images/relatedWorks/epipolar.png  used on input line 98.
-(pdftex.def)             Requested size: 418.25368pt x 164.05319pt.
- [29 <./images/relatedWorks/correspondance.png>]
-<images/relatedWorks/Essential.png, id=707, 458.4327pt x 214.6419pt>
-File: images/relatedWorks/Essential.png Graphic file (type png)
-<use images/relatedWorks/Essential.png>
-Package pdftex.def Info: images/relatedWorks/Essential.png  used on input line 121.
-(pdftex.def)             Requested size: 418.25368pt x 195.83862pt.
- [30 <./images/relatedWorks/epipolar.png>] [31 <./images/relatedWorks/Essential.png>]
-<images/relatedWorks/MultiViews.png, id=741, 698.1282pt x 353.6412pt>
-File: images/relatedWorks/MultiViews.png Graphic file (type png)
-<use images/relatedWorks/MultiViews.png>
-Package pdftex.def Info: images/relatedWorks/MultiViews.png  used on input line 219.
-(pdftex.def)             Requested size: 334.60422pt x 169.49222pt.
- (content/RelatedWorks/Photogrammetry/colmap.tex
-<images/relatedWorks/sparse.png, id=742, 1888.05376pt x 567.11874pt>
-File: images/relatedWorks/sparse.png Graphic file (type png)
-<use images/relatedWorks/sparse.png>
-Package pdftex.def Info: images/relatedWorks/sparse.png  used on input line 4.
-(pdftex.def)             Requested size: 418.25368pt x 125.63185pt.
- [32] [33 <./images/relatedWorks/MultiViews.png> <./images/relatedWorks/sparse.png>]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 37.
- [34]) (content/RelatedWorks/Photogrammetry/monocular.tex [35]
-
-LaTeX Warning: Reference `seq:nNeural' on page 36 undefined on input line 26.
-
-<images/relatedWorks/datasets_monocular.png, id=849, 1275.8064pt x 409.53pt>
-File: images/relatedWorks/datasets_monocular.png Graphic file (type png)
-<use images/relatedWorks/datasets_monocular.png>
-Package pdftex.def Info: images/relatedWorks/datasets_monocular.png  used on input line 43.
-(pdftex.def)             Requested size: 418.25368pt x 134.25797pt.
-<images/relatedWorks/monocular.png, id=850, 1127.21124pt x 664.4825pt>
-File: images/relatedWorks/monocular.png Graphic file (type png)
-<use images/relatedWorks/monocular.png>
-Package pdftex.def Info: images/relatedWorks/monocular.png  used on input line 48.
-(pdftex.def)             Requested size: 418.25368pt x 246.55428pt.
-))) (content/Experiments/colmap_times.tex
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (7.73328pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Overfull \hbox (63.73227pt too wide) in paragraph at lines 77--77
-|[][]|
- []
-
-
-Overfull \hbox (31.23976pt too wide) in paragraph at lines 77--77
-|[][]|
- []
-
-
-Overfull \hbox (39.19675pt too wide) in paragraph at lines 77--77
-|[][]|
- []
-
-
-Overfull \hbox (20.83076pt too wide) in paragraph at lines 77--77
-|[][]|
- []
-
-
-Overfull \hbox (43.30124pt too wide) in paragraph at lines 77--77
-|[][]|
- []
-
-
-Overfull \hbox (53.99075pt too wide) in paragraph at lines 77--77
-|[][]|
- []
-
-
-Overfull \hbox (12.59926pt too wide) in paragraph at lines 77--77
-|[][]|
- []
-
-
-Overfull \hbox (4.9898pt too wide) in paragraph at lines 77--77
-|[][]|
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-)) (content/Sistemare/sistemare.tex [36] [37 <./images/relatedWorks/datasets_monocular.png> <./images/relatedWorks/monocular.png>] [38] [39] [40
+ [21 <./images/relatedWorks/VOS.png> <./images/relatedWorks/visor.png>] [22] [23
 
 ] (content/Sistemare/metrics.tex
 
@@ -1885,191 +1828,31 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 16.
 
-[41]
-<images/metrics/auc.png, id=893, 387.4475pt x 262.9825pt>
+[24]
+<images/metrics/auc.png, id=431, 387.4475pt x 262.9825pt>
 File: images/metrics/auc.png Graphic file (type png)
 <use images/metrics/auc.png>
 Package pdftex.def Info: images/metrics/auc.png  used on input line 66.
 (pdftex.def)             Requested size: 209.12683pt x 141.94823pt.
-) (content/Experiments/colmap_times.tex
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (7.73328pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-|[]
- []
-
-
-Overfull \hbox (15.1353pt too wide) in paragraph at lines 77--77
-[]|
- []
-
-
-Overfull \hbox (63.73227pt too wide) in paragraph at lines 77--77
-|[][]|
- []
-
-
-Overfull \hbox (31.23976pt too wide) in paragraph at lines 77--77
-|[][]|
- []
-
-
-Overfull \hbox (39.19675pt too wide) in paragraph at lines 77--77
-|[][]|
- []
-
-
-Overfull \hbox (20.83076pt too wide) in paragraph at lines 77--77
-|[][]|
- []
-
-
-Overfull \hbox (43.30124pt too wide) in paragraph at lines 77--77
-|[][]|
- []
-
-
-Overfull \hbox (53.99075pt too wide) in paragraph at lines 77--77
-|[][]|
- []
-
-
-Overfull \hbox (12.59926pt too wide) in paragraph at lines 77--77
-|[][]|
- []
-
-
-Overfull \hbox (4.9898pt too wide) in paragraph at lines 77--77
-|[][]|
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-))) (content/appendix.tex [42 <./images/metrics/auc.png>] [43] [44]
+) (content/Sistemare/sampling.tex [25 <./images/metrics/auc.png>]) (content/Experiments/colmap_times.tex))) (content/appendix.tex [26]
 Appendix A.
 (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
-) [45
+) [27
 
 ]
 Appendix B.
-) [46
+) [28
 
-] [47
+]
+
+Package biblatex Warning: No driver for 'url'.
+(biblatex)                Using fallback driver on input line 119.
+
+[29
 
 
-] [48]
-Overfull \hbox (5.11739pt too wide) in paragraph at lines 119--119
-[]\T1/lmr/m/n/12 (-20) Hang Gao, Rui-long Li, Shub-ham Tul-siani, Bryan Rus-sell, and Angjoo Kanazawa.|
- []
-
-[49] [50] [51] (thesis.aux)
+] [30] [31] (thesis.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -2082,26 +1865,55 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 831A63D26A30A3D063DDE575DABEC37E;6005.
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: 7399E248434B7E467405A8E64C4B75DD;2850
+(rerunfilecheck)             After:  27530F6DA207B4C0C1CCDC002A782363;4163.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                thesis
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46171 strings out of 476395
- 916498 string characters out of 5792522
- 2149539 words of memory out of 5000000
- 66781 multiletter control sequences out of 15000+600000
- 735978 words of font info for 323 fonts, out of 8000000 for 9000
+ 45855 strings out of 476395
+ 906356 string characters out of 5792522
+ 1959539 words of memory out of 5000000
+ 66653 multiletter control sequences out of 15000+600000
+ 720424 words of font info for 302 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 138i,19n,135p,2508b,3124s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ts1.enc}</Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmcsc10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmex10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi6.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr6.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr7.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri7.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy7.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on thesis.pdf (64 pages, 29239669 bytes).
+ 138i,17n,135p,2508b,2794s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{figure.caption.16} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.14} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.4} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.17} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.15} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.12} has been referenced but does not exist, replaced by a fixed one
+
+{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ts1.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}</Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmcsc10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmex10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr6.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr7.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on thesis.pdf (42 pages, 23556491 bytes).
 PDF statistics:
- 1240 PDF objects out of 1440 (max. 8388607)
- 292 named destinations out of 1000 (max. 500000)
- 101326 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 693 PDF objects out of 1000 (max. 8388607)
+ 162 named destinations out of 1000 (max. 500000)
+ 103167 words of extra memory for PDF output out of 106986 (max. 10000000)
 

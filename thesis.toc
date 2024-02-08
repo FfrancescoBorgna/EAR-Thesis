@@ -2,18 +2,18 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{List of Tables}{vii}{section*.1}%
-\contentsline {chapter}{List of Figures}{viii}{section*.2}%
-\contentsline {chapter}{Acronyms}{xii}{section*.3}%
+\contentsline {chapter}{List of Tables}{vi}{section*.1}%
+\contentsline {chapter}{List of Figures}{vii}{section*.2}%
+\contentsline {chapter}{Acronyms}{x}{section*.3}%
 \contentsline {part}{I\hspace {1em}Related Works}{1}{part.1}%
 \contentsline {chapter}{\numberline {1}Datasets}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}EPIC-Kitchens}{3}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Introduction/motivation}{3}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Data Collection}{4}{subsection.1.1.2}%
 \contentsline {subsection}{\numberline {1.1.3}Data Annotation pipeline}{5}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4}Benchmarks and Baseline Results}{8}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.4}Benchmarks and Baseline Results}{9}{subsection.1.1.4}%
 \contentsline {subsubsection}{Action Recognition Challenge}{9}{section*.12}%
-\contentsline {subsubsection}{Action Anticipation Challenge}{9}{section*.14}%
+\contentsline {subsubsection}{Action Anticipation Challenge}{10}{section*.14}%
 \contentsline {subsubsection}{Object Detection Challenge}{10}{section*.16}%
 \contentsline {subsection}{\numberline {1.1.5}Dataset Release}{10}{subsection.1.1.5}%
 \contentsline {section}{\numberline {1.2}EPIC-Kitchens 100}{11}{section.1.2}%
@@ -22,11 +22,11 @@
 \contentsline {subsection}{\numberline {1.2.3}Annotation}{12}{subsection.1.2.3}%
 \contentsline {subsubsection}{Narrator}{12}{section*.19}%
 \contentsline {subsubsection}{Transcriber}{12}{section*.20}%
-\contentsline {subsubsection}{Parser}{12}{section*.21}%
+\contentsline {subsubsection}{Parser}{13}{section*.21}%
 \contentsline {subsubsection}{Temporal Annotator}{13}{section*.22}%
-\contentsline {subsection}{\numberline {1.2.4}Quality Improvements}{13}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.4}Quality Improvements}{14}{subsection.1.2.4}%
 \contentsline {subsection}{\numberline {1.2.5}Challenges and Baselines}{14}{subsection.1.2.5}%
-\contentsline {section}{\numberline {1.3}EPIC-Fields:\textcolor {red}{Lo metto?Anche se non l'abbiamo usato?}}{14}{section.1.3}%
+\contentsline {section}{\numberline {1.3}EPIC-Fields}{14}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}Data}{15}{subsection.1.3.1}%
 \contentsline {subsubsection}{Motivation.}{15}{section*.24}%
 \contentsline {subsubsection}{Collection}{15}{section*.25}%
@@ -37,22 +37,14 @@
 \contentsline {subsubsection}{New-View Synthesis(NVS)}{17}{section*.29}%
 \contentsline {subsubsection}{Unsupervised Dynamic Object Segmentation(UDOS)}{18}{section*.32}%
 \contentsline {subsubsection}{Semi-Supervised Video Object Segmentation(VOS)}{19}{section*.35}%
-\contentsline {section}{\numberline {1.4}VISOR \textcolor {red}{Lo metto?non usato}}{20}{section.1.4}%
-\contentsline {section}{\numberline {1.5}((Ego4D))}{20}{section.1.5}%
-\contentsline {chapter}{\numberline {2}Neural Rendering}{22}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Photogrammetry}{23}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Structure from Motion: SfM}{24}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Feature Detection and Matching }{26}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Estimating Fundamental and Essential Matrices}{29}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Estimating Camera Pose from Essential Matrix}{32}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Multi-view Structure from Motion}{32}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}COLMAP}{32}{subsection.3.1.5}%
-\contentsline {subsubsection}{Usage}{34}{section*.47}%
-\contentsline {subsection}{\numberline {3.1.6}Monocular Depth Estimation}{35}{subsection.3.1.6}%
-\contentsline {part}{II\hspace {1em}Da Sistemare}{40}{part.2}%
-\contentsline {section}{\numberline {3.2}Metrics}{41}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}PSNR:Peak signal-to-noise ratio}{41}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}AP:Average Precision}{41}{subsection.3.2.2}%
-\contentsline {chapter}{\numberline {A}Galileo}{45}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Math Notation}{46}{appendix.B}%
-\contentsline {chapter}{Bibliography}{47}{appendix.B}%
+\contentsline {section}{\numberline {1.4}VISOR}{20}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Other Egocentric Datasets}{22}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Ego4D}{22}{subsection.1.5.1}%
+\contentsline {part}{II\hspace {1em}Da Sistemare}{23}{part.2}%
+\contentsline {section}{\numberline {1.6}Metrics}{24}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}PSNR:Peak signal-to-noise ratio}{24}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}AP:Average Precision}{24}{subsection.1.6.2}%
+\contentsline {section}{\numberline {1.7}Sampling}{25}{section.1.7}%
+\contentsline {chapter}{\numberline {A}Galileo}{27}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Math Notation}{28}{appendix.B}%
+\contentsline {chapter}{Bibliography}{29}{appendix.B}%

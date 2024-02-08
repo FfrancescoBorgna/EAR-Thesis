@@ -309,7 +309,7 @@ two different pipelines in Figure~\ref{fig:ep100_comp}.
 \textcolor{red}{With respect to EPIC-Kitchens, 4 new challenges have 
 been added.Magari non lo metto? }
 
-\section{EPIC-Fields:\textcolor{red}{Lo metto?Anche se non l'abbiamo usato?}}
+\section{EPIC-Fields}
 The necessity of suitable datasets and benchmarks in the unified problem of 3D geometry and video understanding, which has been
 pushed by Neural Rendering (See Section~\ref{sec:Neural}), led to the rise of EPIC Fields. EPIC Fields is a expanded version of 
 EPIC-KITCHENS comprehending 3D camera information. 96\% of EPIC-KITCHENS videos were reconstructed, registering 19M frames in 
@@ -438,8 +438,7 @@ reported corresponds to PSNR considering all pixels in each test frame.} \label{
 \subsubsection{Unsupervised Dynamic Object Segmentation(UDOS)}
 In Unsupervised Dynamic Object Segmentation(UDOS) the objective is to find those regions in each frames that correspond to dynamic objects. The lack
 of a 3D ground-truth make 2D segmentation accuracy the only way to assess the model. In particular mean average precision (mAP) was used, as proposed in~\cite{neuraldiff}.
-
-\textcolor{red}{DEVO CONTROLLARE CHE EFFETTIVAMENTE VISOR NON ABBIA QUELLO CHE CI SERVE. forse qui in epic fields li hanno messi a posto in qualche modo...    
+   
 \textbf{Video and Frame selection.} The used videos were the same of NVS, with the difference that only In-Action frames where considered,
  with VISOR annotations as ground-truth. Actually VISOR annotations were processed in the following way: the original masks were converted into 
  foreground-background masks in three different ways, depending on the type of objects present.
@@ -450,7 +449,7 @@ of a 3D ground-truth make 2D segmentation accuracy the only way to assess the mo
     as dynamic objects, ignoring other moving objects.
  \end{itemize}
  As Baseline methods the authors used 4 methods: three based on 3D neural rendering techniques(NeRF-W,T-NeRF,NeuralDiff) and one based on 2D optical flow(Motion
- }
+ 
  Grouping(MG)~\cite{MG}. The results are shown in Figure~\ref{fig:UDOS} and Table~\ref{tab:UDOS}.It is worth noting how 3D methods are better discovering semi-static objects.
  However none of the 3D methods explicitly consider motion. and this can be seen as MG performs better on purely dynamic motion, due to the input being the optical flow.
 \begin{figure}
@@ -486,9 +485,31 @@ Two baselines were provided, a 2D and a 3D one. In Figure~\ref{fig:VOS} we can s
     The 3D method is clearly beter having as output something really close to the groundtruth. The 2D method instead is performing poorly.}\label{fig:VOS}
 \end{figure}
 
-\section{VISOR \textcolor{red}{Lo metto?non usato}}
+\section{VISOR}
+
+
+VISOR~\cite{visor} is an extension of the EPIC-KITCHEN dataset introducing pixel annotations and a benchmark
+suite for segmenting hands and active objects. In particular segmentation annotations are provided in a \textit{sparse} way, meaning
+that not every frame is segmented at pixel level.
+
+The authors proposed a pipeline to obtain the annotations. Namely it consists of: $(i)$ identifying \textit{active} objects that are of relevance
+to the current action;$(ii)$annotating pixel-level segments via an AI-powered interface;$(iii)$ relating objects spatially and temporally for short-term consistency.
+Some examples of annotations are reported in Figure~\ref{fig:visor}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/relatedWorks/visor.png} 
+    \caption{\textbf{VISOR Annotations and Benchmarks.}Sparse annotations of the P06-03 scene, where flour becomes dough in the end.Each color represents a different object.
+    In the bottom part the three proposed challenges are reported for the current scene. Namely: Semi-Supervised Video Object Semgentation(VOS),
+     Hand Object Segmentation(HOS) and Where Did This Come From(WDTCF).}\label{fig:visor}
+\end{figure}
+
+\textcolor{red}{
+ACTIVE OBJECT: each object that is involved in the current action. It does not mean it is dynamic, since as shown in Figure~\ref{fig:visor} the table top
+is usually segmented as active.
 Non va bene perchè gli oggeti che vengono segmentati sono solo quelli rilevanti all azione descritta, quindi se sposto un bicchiere mentre sto pelando 
 le carote non viene segmentato il bicchiere -> non va bene per noi. Oppure oggetti attivi possono essere il lavandino, il tosta pane che sono
-però statici.
-\section{((Ego4D))}
-\textcolor{red}{Lo metto? Non lo ho usato per niente...}?
+però statici. LOC SCIVO QUA O DA QUALCHE ALTRA PARTE?}
+\section{Other Egocentric Datasets}
+\subsection{Ego4D}
+

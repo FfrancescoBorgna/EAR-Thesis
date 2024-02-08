@@ -1,0 +1,18 @@
+\begin{table}
+
+    \resizebox{\textwidth}{!}{%
+\begin{tabular}{l|cccc|ccc} 
+    & Input & \#Im. & $L$ & $\left(N_c, N_f\right)$ & PSNR $\uparrow$ & SSIM $\uparrow$ & LPIPS $\downarrow$ \\
+    \hline 1) No PE, VD, H & $x y z$ & 100 & - & $(256,-)$ & 26.67 & 0.906 & 0.136 \\
+    2) No Pos. Encoding & $x y z \theta \phi$ & 100 & - & $(64,128)$ & 28.77 & 0.924 & 0.108 \\
+    3) No View Dependence & $x y z$ & 100 & 10 & $(64,128)$ & 27.66 & 0.925 & 0.117 \\
+    4) No Hierarchical & $x y z \theta \phi$ & 100 & 10 & $(256,-)$ & 30.06 & 0.938 & 0.109 \\
+    \hline 5) Far Fewer Images & $x y z \theta \phi$ & 25 & 10 & $(64,128)$ & 27.78 & 0.925 & 0.107 \\
+    6) Fewer Images & $x y z \theta \phi$ & 50 & 10 & $(64,128)$ & 29.79 & 0.940 & 0.096 \\
+    \hline 7) Fewer Frequencies & $x y z \theta \phi$ & 100 & 5 & $(64,128)$ & 30.59 & 0.944 & 0.088 \\
+    8) More Frequencies & $x y z \theta \phi$ & 100 & 15 & $(64,128)$ & 30.81 & 0.946 & 0.096 \\
+    \hline 9) Complete Model & $x y z \theta \phi$ & 100 & 10 & $(64,128)$ & $\mathbf{3 1 . 0 1}$ & $\mathbf{0 . 9 4 7}$ & $\mathbf{0 . 0 8 1}$
+    \end{tabular}}
+    \caption{\textbf{Quantitative results} In all datasets, for all metrics,except for the LPIPS,
+the NeRF method outperforms old methods. }\label{tab:nerf_ablation}
+\end{table}

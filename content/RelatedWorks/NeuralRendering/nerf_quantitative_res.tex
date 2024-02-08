@@ -1,0 +1,14 @@
+\begin{table}
+
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l|ccc|ccc|ccc} 
+    & \multicolumn{3}{|c|}{ Diffuse Synthetic $360^{\circ}$} & \multicolumn{3}{c|}{ Realistic Synthetic 360 } & \multicolumn{3}{c}{ Real Forward-Facing  } \\
+    Method & PSNR $\uparrow$ & SSIM $\uparrow$ & LPIPS $\downarrow$ & PSNR $\uparrow$ & SSIM $\uparrow$ & LPIPS $\downarrow$ & PSNR $\uparrow$ & SSIM $\uparrow$ & LPIPS $\downarrow$ \\
+    \hline SRN & 33.20 & 0.963 & 0.073 & 22.26 & 0.846 & 0.170 & 22.84 & 0.668 & 0.378 \\
+    NV  & 29.62 & 0.929 & 0.099 & 26.05 & 0.893 & 0.160 & - & - & - \\
+    LLFF  & 34.38 & 0.985 & 0.048 & 24.88 & 0.911 & 0.114 & 24.13 & 0.798 & $\mathbf{0 . 2 1 2}$ \\
+    NeRF & $\mathbf{4 0 . 1 5}$ & $\mathbf{0 . 9 9 1}$ & $\mathbf{0 . 0 2 3}$ & $\mathbf{3 1 . 0 1}$ & $\mathbf{0 . 9 4 7}$ & $\mathbf{0 . 0 8 1}$ & $\mathbf{2 6 . 5 0}$ & $\mathbf{0 . 8 1 1}$ & 0.250
+\end{tabular}}
+\caption{\textbf{Quantitative results} In all datasets, for all metrics,except for the LPIPS,
+the NeRF method outperforms old methods. }\label{tab:nerf_res}
+\end{table}

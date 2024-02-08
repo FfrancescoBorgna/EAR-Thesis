@@ -4,7 +4,7 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces \textbf {Top} (left to right): time of day of the recording, pie chart of high-level goals, histogram of sequence durations and dataset logo; \textbf {Bottom}:Wordles of narrations in native languages(English, Italian, Spanish, Greek and Chinese).}}{5}{figure.caption.5}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Narration Guidelines given to each participant to be followed after the completion of a recording.}}{5}{figure.caption.6}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Narration Guidelines given to each participant to be followed after the completion of a recording.}}{6}{figure.caption.6}%
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Extracts from 6 transcription files in .sbv format}}{6}{figure.caption.7}%
 \contentsline {figure}{\numberline {1.4}{\ignorespaces Example of annotated action segments for 2 consecutive actions}}{7}{figure.caption.8}%
 \contentsline {figure}{\numberline {1.5}{\ignorespaces Sample Verb and Noun Classes}}{7}{figure.caption.9}%
@@ -18,20 +18,7 @@
 \contentsline {figure}{\numberline {1.13}{\ignorespaces \textbf {Dynamic New View Synthesis}. I report an example of the output for the three different methods used: NeRF-W, T-NeRF+ and NeuralDiff. We can see how the initial labelling of difficulty for frames was actually accurate as the reconstructions struggle with Hard frames.}}{19}{figure.caption.31}%
 \contentsline {figure}{\numberline {1.14}{\ignorespaces \textbf {UDOS.} Here is reported the comparison of the different methods' output. The 2D based perform very good on dynamic objects, while 3D methods struggle a bit but can detect even semi-static objects.}}{20}{figure.caption.33}%
 \contentsline {figure}{\numberline {1.15}{\ignorespaces \textbf {VOS.} Here is reported the comparison of the two different methods. The 3D method is clearly beter having as output something really close to the groundtruth. The 2D method instead is performing poorly.}}{21}{figure.caption.36}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces \textbf {Pinhole Camera.} A world's object is captured by the camera making light passing through the pinhole and is then projected on the focal plane upside-down.}}{23}{figure.caption.37}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces \textbf {Reference systems.} An example of the different refernce systems involved in a photogrammetry problem.In red is reported the world system while in black the camera one. The yellow plane corresponds to the camera focal plane.}}{25}{figure.caption.38}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces \textbf {Basic SfM Scenario.} Two cameras capturing the same object from different viewpoints.}}{25}{figure.caption.39}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces \textbf {Feature Detection Example}~\blx@tocontentsinit {0}\cite {open_cv}. The easier patches to match to the background are the ones with sharp corners.}}{27}{figure.caption.40}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces \textbf {SIFT features position.}Example of interest points, we can see that most of them are placed around corners or edges.}}{28}{figure.caption.41}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces \textbf {Features correspondence} computed using BruteForce Matcher.}}{29}{figure.caption.42}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces \textbf {Point correspondence geometry.} In particular are reported: the \textit {epipoles} e, e';the \textit {epipolar plane}, which is any plane containing the line that connects the two camera centers, also known as \textit {baseline}; the \textit {Epipolar line} which is the intersection of any epipolar plane with the image plane.}}{30}{figure.caption.43}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces A point X viewed from two cameras with $x_l$ being the distance of X from $C_l$ and $x_r$ being the distance of X from $C_r$. $p_r$ and $p_l$ are instead the projection of X on the respective camera's focal plane.}}{31}{figure.caption.44}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces \textbf {Multiple View Scenario.} In multiple view scenario multiple cameras are present, each one recording the scene from a different point of view.}}{33}{figure.caption.45}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces \textbf {Building Rome in one day.} Result of Rome with 21K registered out of 75K images.}}{33}{figure.caption.46}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Monocular datasets}}{37}{figure.caption.48}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Top: input images. Middle: Inverse depth maps predicted by the presented approach. Bottom: corresponding point clouds rendered from a novel view-point.(Taken from~\blx@tocontentsinit {0}\cite {Ranftl2022})}}{37}{figure.caption.49}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Example of Precision-recall curve.We can see how the bottom line model represents the worst a model can perform, e.g. predict every sample as it is coming from the same class,if the dataset is balanced. A better model would \textit {tend} to the upper-right corner, which instead represents the best possible model, a model that have maximum precision and recall.}}{42}{figure.caption.53}%
+\contentsline {figure}{\numberline {1.16}{\ignorespaces \textbf {VISOR Annotations and Benchmarks.}Sparse annotations of the P06-03 scene, where flour becomes dough in the end.Each color represents a different object. In the bottom part the three proposed challenges are reported for the current scene. Namely: Semi-Supervised Video Object Semgentation(VOS), Hand Object Segmentation(HOS) and Where Did This Come From(WDTCF).}}{21}{figure.caption.37}%
+\contentsline {figure}{\numberline {1.17}{\ignorespaces Example of Precision-recall curve.We can see how the bottom line model represents the worst a model can perform, e.g. predict every sample as it is coming from the same class,if the dataset is balanced. A better model would \textit {tend} to the upper-right corner, which instead represents the best possible model, a model that have maximum precision and recall.}}{25}{figure.caption.38}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
