@@ -12,11 +12,12 @@ between the possible objects or elements of the image, thus extracting a higher 
 This task is known to be solved particularly good from neural networks, in particular convolutional or transformer based 
 networks (See Section~\ref{sec:Neural}), trained on large amount of data, which are nowadays growing in number and quality.
 
-In particular the advent of transformers has marked a new state of the art, not only in natural language processing, but also in dense prediction.
+In particular the advent of transformers\textcolor{red}{DOVREI SPIEGARLO DA QUALCHE PARTE? ANCHE 
+LE RETI CONVOLUZIONALI PIù avanti, dove potrei metterli? Nella sezione Neural Rendering?} has marked a new state of the art, not only in natural language processing, but also in dense prediction.
 As shown and stated in~\cite{Ranftl2021}, they "\textit{introduce dense vision transformers, an architecture that leverages vision transformers 
 in place of convolutional networks as a backbone for dense prediction tasks.$[...]$this architecture yieds substantial improvements
 on dense prediction tasks.$[...]$we observe an improvement of up to 28\% in relative performance when compared to a state-of-the-art 
-fully-convolutional network}". \textcolor{red}{The motivation is due to the different functioning of the two networks. Infact, both methods
+fully-convolutional network}". \textcolor{blue}{The motivation is due to the different functioning of the two networks. Infact, both methods
 implies an encoder-decoder structure but the nature of convolutional layer limits its performance. As explained in Sec.~\ref{seq:nNeural}
 convolutional networks progressively downsample the input image to extract features at multiple scales. Unfortunately in 
 dense prediction tasks, keeping feature resolution and granularity showed to be essential, since the decoder can't recover

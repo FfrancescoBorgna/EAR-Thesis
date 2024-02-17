@@ -1,0 +1,305 @@
+\section{NeuralDiff: Segmenting 3D objects that move in egocentric videos}
+NeuralDiff is a neural radiance field adapted to distinguish three different parts of
+egocentric videos:$1)$ \textit{static}, that is everything that does not move,$2)$
+\textit{foreground}, which is everything that at some point of the video moves, and $3)$ actor,
+which comprehends the body parts of the person who is wearing the camera. 
+
+Anyway this is not an easy task. Infact motion in egocentric vision is a 
+complex attribute to identify. We need to distinguish what is 
+independent of the camera motion while dealing with the camera large 
+viewpoint change and parallax that generate a large apparent motion.
+
+In a static camera scenario the problem of separating the foreground from
+the static background would be easily solved by recurring to 
+background subtraction techniques, but the parallax effect of a moving camera makes 
+this technique useless. As an example provided in the paper we can think of a egocentric
+video of a person cooking: the actor behave in the scene by moving (and trasforming) objects.
+However, egomotion is the dominant effect since objects move only sporadically,
+and in a way that is hardly distinguishable from the much larger apparent motion induced 
+by the viewpoint change, making it very difficult to segment dynamic objects automatically.
+
+Even motion segmentation techniques struggles to separate  a scene in different motion components,
+since they require correspondences, they reason locally, across a handful frames and usually
+avoid explicit 3D reasoning, making it difficult to treat egocentric videos with many small
+objects that move only occasionally throughout a long sequence.
+
+With this work the authors take inspiration from neural rendering techniques~\cite{nerf}
+to create a motion analysis tool to obtain their goal. In particular they leverage the
+ability of reconstructing accurately 3D scenes for recovering the background and then build
+on top of it the dynamic parts. In fact 3D objects that are manipulated in the video also
+present a significant structure. They usally move in "bursts", changing their state
+when they are involved in an interaction, otherwise staying rigidly attached to the 
+background. Exploiting this property  they extend the neural render to reconstruct
+the omoving object appearance using a slowly-varying time encoding. The last part that 
+show unique properties in the scene is the actor due to its continuous movement
+while occluding the scene and with a motion linked to the camera.
+
+Summing up they ended up with a three-stream neural rendering architecture, where each stream
+models respectively: \textit{static background},\textit{dynamic foreground} and
+the \textit{actor}. These are then combined to explain the video as a whole. In Figure~\ref{fig:ndiff_1}
+is reported a general overview of NeuralDiff capabilities.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/relatedWorks/Neural/ndiff_1.png} 
+    \caption{Given an egocentric video with camera reconstruction, NeuralDiff, a neural
+    architecture, learns how to decompose each frame into a static background
+    and a a dynamic foreground, which includes every object that sooner or later will move
+    and the actor's body parts. Each of these streams is learned exploiting the characteristics
+    of the scene that is going to be captured. Being a neural radiance field, NeuralDiff is 
+    also capable to render images from novel viewpoints as can be seen in the bottom right part
+    of the scene.}\label{fig:ndiff_1}
+\end{figure}
+
+Each stream is designed differently, in order to include inductive biases that match the statistics
+of each layer(background,foreground,actor). The resulting analysis-via-synthesis method
+shows that neural rendering techniques are also useful for analysis, and not just synthesis.
+In particular NeuralDiff was the first to demonstrate the effectiveness of these techniques
+in interpreting challenging egocentric videos, providing indications for the extraction of moving
+objects in scenes with a complex 3D structure and dynamics.
+
+For evaluating their results, they augmented the EPIC-KITCHENS dataset~\cite{EPICKITCHENS} by 
+manually segmenting all objects that move at some point. In this way they are able to 
+assess the quality of the decompositino of the different components. In addition they defined
+a new benchmark for measuring progress in the challenging task of dynamic object segmentation
+in complex videos, aiming to promote research in the area.
+
+\subsection{Related Work}
+\subsubsection{Background Subtraction}
+Background subtraction techniques have been used to detect moving objects 
+in videos(see~\cite{ndiff_2}). The simplest way to obtain the background would be to capture
+a background image that does not contain any foreground object. Unfortunately in some scenes
+it is not possible and it could be changed under critical situations like illumination
+changes, objects appeearing and disappearing from the scene. Some expedients have been
+introduced that try to predict the background via a background initialization step, which base
+its guess on the first few frames of the video. Anyway egocentric videos still contains too much
+challenging problems(light change,multiple different objects,moving camera ,etc.) that do not allow background subtraction to be a viable solution.
+
+\subsubsection{Motion segmentation}
+Motion segmentation consists in decomposing a video into individually moving 
+objects~\cite{ndiff_18}. Amongst others, it has applications in 
+robotics, traffic monitoring, sports analysis, inspection, video surveillance and compression.
+Anyway these techniques usually relies on optical flow, which can be subject to some ambiguities
+like, in our case,motion parallax. Even occlusion plays an important role. Motion segmentation
+struggles for example when an object moves in front of or behind other objects in the 
+scene, leading to ambiguity in the flow field. Also, many methods fails when a dynamic 
+object temporarilly remain static.
+
+All these problems prevent to apply motion segmentation algorithms to egocentric videos.
+
+\subsubsection{Discovering and segmenting objects in videos}
+Discovering and segmenting objects in videos is related to background subtraction and 
+motion segmentation.
+As instance moving objects can be segmented from the background by using a probabilistic model
+that acts on optical flow~\cite{ndiff_1}. In~\cite{ndiff_3}, pixel trajectories and
+spectral clustering are combined to produce motion segments. Some recent works revisits classical motion segmentation
+techniques from a data-driven perspective~\cite{ndiff_38}, \textit{e.g.} using 
+physical motion cues to learn 3D representations or learning a scene representation
+using neural rendering~\ref{sec:nerf}. 
+
+With NeuralDiff they obtain a holistic representation capable of handling occlusions
+and detachable objects.
+
+\subsubsection{Neural rendering}
+This technique allows to synthesize novel views using a neural architecture and volume rendering.
+It was introduced with NeRF (see~\cite{nerf} or Section~\ref{sec:nerf}). It was designed for static
+scenes and it poorly handles dynamic scenes and occlusions, so research was performed to
+apply it to dynamic scenes(see NeRF-W~\cite{ndiff_17}). Other research direction
+to model 3D geometry of one or more objects is studied in~\cite{ndiff_30}.
+Another direction tried focusing on modeling dynamic scenes mostly with monocular 
+videos as input~\cite{ndiff_15,ndiff_34}. Most  of this approaches use a 
+canonical model in conjunction with a deformation network, or warp space~\cite{ndiff_34},
+starting from a canonical volume. Closer to the work presented is~\cite{ndiff_15},
+where a static NeRF model is combined with a dynamic one.
+
+Anyway none of the previous managed to segment 3D objects in such long and challenging videos.
+
+\subsection{Implementation}
+The goal of this method is to extract a mask from an input video sequence that discern foreground
+objects from background objects. It is worth noting that in this paper \textit{background} is 
+the part of the scene that remain static throughout the entire video; while \textit{foreground}
+is defined as any object that moves independently of the camera in at least one frame.
+
+The basic block upon which NeuralDiff is built upon is NeRF(see Section~\ref{sec:nerf}) that can predict
+the appearance of a static object,\textit{i.e.} the background, from different viewpoints. 
+The authors also suggest a modification of the basic NeRF which is capable of 
+distinguish foreground objects and it will be described in the following sections.
+
+\subsubsection{Neural rendering}
+As reported in Section~\ref{sec:nerf}, a video x is a collection $(x_t)_{t\in[0,...,T-1]}$
+of T RGB frames $x_t \in \mathbb{R}^{3xHxW}$. Each of these frames can be seen as 
+a function $x_t = h(B,F_t,g_t)$, where: B is the static background, $F_t$ is the variable
+Foreground and $g_t$ is the moving camera. The motion and parameters of the camera are assumed
+to be known, usually being extracted via a SfM algorithm such as COLMAP~\cite{colmap} which is 
+explained in detail in Section~\ref{sec:col}. The background and foreground layers include the shape 
+and reflectance of the 3D surfaces in the scene as well as the illumination.
+
+Instead of trying to invert the function h to get B and $F_t$, which is known as \textit{inverse rendering},
+neural rendering directly learns h using a neural network f, $h(B,F_t,g_t)=f(g_t,t)$, provided
+the time and the camera viewpoint for the frame $x_t$. Viewpoint g and time t can be 
+factorized by a careful desing of the function f, thus f can be used to generalize new unobserved
+viewpoints. In the basic NeRF implementation the main assumption is that the scene is static,
+meaning that $F_t$ is empty and f can be rewritten as $f(g_t)$. The color of each frame is then 
+obtained by a volumetric sampling process that simulates ray casting. More in detail
+the pixel color $x_{ut}\in \mathbb{R}^3$ of pixel $u \in \Omega = \{0,...,H-1\}\times\{0,...,W-1\}$ is obtained
+by averaging the color of the 3D points along the ray $g_t r_k$ weighted by the probability
+that a photon emanates from the point and reaches the camera.
+
+A neural network, $(\sigma_k^b,c_k^b) = MLP^b(g_t r_k,d_t)$ retrieve the density 
+$\sigma_k^b \in\mathbb{R}_{+}$ and the color $c_k^b \in \mathbb{R}^{3}$ of each point $g_t r_k$,
+where the superscript $b$ refers to the fact that we are dealing with the static background and
+$d_t$ is the unit-norm viewing direction.
+
+A photon while travelling along the segment $(r_k,r_{k+1})$ is transmitted with probability
+$T_k^b = e^{-\delta_k \sigma_k^b}$ where the quantity $\delta_k = |r_{k+1} - r_k|$ is the length of 
+the segment. This definition allows to calculate the probability of transmission across several segments
+as the product of the individual transmission probabilities. The color of pixel u can thus be written as:
+\begin{equation}
+    x_{ut} = f_u(g_t) = \sum_{k=0}^{M} v_k (1-T_k^b)c_k^b, \quad v_k = \prod_{q=0}^{k-1} T_q^b
+\end{equation}
+The model is trained by minimizing the reconstruction error $\Vert x - f(g_t)\Vert $.
+
+\subsubsection{Dynamic Components}
+To econstruct egocentric videos anyway we will deal with moving objects, so we can
+not neglect the foreground $F_t$. To capture this layer they propose to build on top 
+of the background $MLP^b$ a foreground-specific 
+$MLP^f$,$(\sigma_k^f,c_k^f,\beta_k^f) = MLP^f(g_t r_k, z_t^f)$. Its outputs are a 'foreground'
+occupancy $\sigma^f$ and color $c^f$. It also predict an uncertainty score $\beta_k^f$
+whose role is discussed in the next paragraphs. The variable $z_t^f$ is introduced 
+to capture the properties of the foreground that change over time.
+
+The color $x_{ut}$ of a pixel u is obtained by the composition of both background and
+foreground, so $\mathcal{S} = {b,f}$:
+\begin{equation}\label{eq:2}
+    x_{ut} = f_{u}(g_t,z_t) = \sum_{k=0}^{M} v_k(\sum_{p \in \mathcal{S}} w^p(T_k)c_k^p)
+    \quad where \quad v_k = \prod_{q=0}^{k-1}\prod_{p \in \mathcal{S}} T_q^p
+\end{equation}
+The factor $v_k$ reqquires a photon to be transmitted from the camera to point $r_k$
+through different materials. The weights $w^p(T_k)$ mix the colors based on points densities.
+As done in NeRF-W~\cite{nerfw}:
+\begin{equation}\label{eq:weights}
+    w^p(T_k) = 1 - T_k^p \in [0,1]
+\end{equation}
+
+\textbf{Smooth Dynamics} The model can now be optimized by minimizing the loss across
+all input frames:
+\begin{equation}\label{eq:timeNdiff}
+    \min_{f,z_1,...z_T} \frac{1}{T |\Omega|} \sum_{t=1}^{T} \sum_{u\in\Omega}\Vert x_t-f(g_t,z_t)\Vert^2 
+\end{equation}
+
+However there is a problem with the characteristics of foreground, because, even if 
+dynamic, it does not change at every frame in fact most of objects spend most of 
+their time rigidly attached to the background. This make the dependecy on independent
+frame-specific codes $z_t$ almost useless. They came up with the idea of 
+replacing it with a low-rank expansion of the trajectory of sates, taking 
+$z_t = B(t) \Gamma$ where $B(t) \in \mathbb{R}^p$ is a fixed basis and the motion
+$\Gamma \in \mathbb{R}^{P \times D}$ are coefficients such that $P << T$.
+In particular $B(t)=[1,t,sin 2 \pi t, cos 2 1pi t, sin 4 \pi t, cos 4 \pi t,...]$
+
+\textbf{Improved Geometry: capturing the actor}
+The foreground layer can be divided again in objects manipulated by the actor,
+ that can move sporadically, and the actor, which instead moves continually.
+ To detect the actor a third MLP is integrated to the previous model.
+ The actor's MLP is similar to the foreground MLP: $(\sigma_k^a,c_k^a.\beta_k^a) = MLP^a(r_k,z_t^a)$.
+ The main difference is that this time the 3D point $r_k$ is expressed with respect 
+ to the camera, and not to the world ($g_t r_k$). This follows the physical properties
+ of the recording stage, the camera is in fact attached to the actor head, making his
+ body parts almost always present in front of the camera therefore it shows a reduced
+ variability in the reference frame of the camera. On the contrary, the background and 
+ foreground is invariant with respect to the world reference system.
+
+ \textbf{Improved Color Mixing}
+A principled mixing model is proposed to replace Equation~\ref{eq:weights}. It is obtained
+by dividing the segment $\delta_k$ in Pn sub-segments, alternating between the P different
+materials($P = \vert \mathcal{S}\vert$, $e.g. P = 3$ if all three layers are considered).
+They show that the probability that a photon is absorbed in a subsegment of material p
+is given by:
+\begin{equation}
+    w^p(T_k) = \frac{\sigma_k^p}{\sum_{q=1}^P \sigma_k^q} (1-\prod_{q=1}^{P} T_k^q)
+\end{equation}
+where the first term represent the probability that a given material p is responsible
+for the absorption. The latter one instead is the probability that the photon is absorbed by all 
+the materials involved.
+
+\subsubsection{Uncertainty and regularization}
+\textbf{Uncertainty.} Here we clarify the role of the previously announced $\beta_k^p$ variable.
+It is predicted from each MLPs ($\beta_k^b = 0$ for the background) and represent the uncertainty
+of the color associated to each 3D point along the ray $r_k$ for each layer p as pseudo-standard
+deviations(StDs). As reported in~\cite{ndiff_17}, the StD of a rendered color $x_{ut}$ is given
+as the sum of all the StDs for each material: $\beta_{ut} = \sum_{p} \beta_{u t}^p$ where 
+$\beta_{u t}^p$ is obtained from Equation~\ref{eq:2} by replacing $c_k^p$ with $\beta_k^p$.
+Now we can introduce a probabilistic loss:
+\begin{equation}
+    \mathcal{L}_{prob}(f,z_t \vert x_t, g_t,u) = \frac{\Vert x_{ut} - f_u(g_t,z_t)\Vert^2}{2 \beta_{ut}^2}
+\end{equation}
+\textbf{Sparsity.} The occupancy of the foreground and actor components is further penalized
+by using:
+
+\begin{equation}
+    \mathcal{L}_{sparse}(f,z_t \vert x_t, g_t,u) = \sum_{p=1}^{P}\sum_{k=0}^{M} \sigma_k^p
+\end{equation}
+\textbf{Training Loss.} Finally, the loss used for training the model is:
+\begin{equation}
+    \mathcal{L} = \mathcal{L}_{prob}+\lambda \mathcal{L}_{sparse}
+\end{equation}
+where $\lambda>0$ is a weight set to 0.01.
+
+\subsection{EPIC-Diff benchmark}
+The goa of this paper was to identify any 'detachable' object, namely a onject that moves independently
+from the camera. An extension of EPIC-KITCHENS~\cite{EPICKITCHENS} was introduced to give an evaluation to their method.
+
+\textbf{Data Selection.}10 videos sequences,or also called \textit{scene}, were selected from EPIC-Kitchen, each lasting 14 minutes
+on average. Then 1000 frames where sampled from each and fed to COLMAP~\cite{colmap} to obtain
+camera reconstructions. The scenes followed these constraints. $1)$The videos
+should contain different viewpoints and multiple manipulated objects.$2)$ COLMAP should reconstruct
+the sequence with at least 600 frames. In the end the obtain 10 sequence with an average of 900 frames.
+
+\textbf{Data annotation}
+Being an unsupervised algorithm, the only data annotations that collected were for testing and 
+validation. They uniformly hold out 56 frames on average for validation(for setting parameters)
+and for testing. The latter were manually annotated with segmentation pixelwise binary masks to assess static/dynamic components.
+The test frames are not used for training such that they can be used also to also evaluate 
+novel-view synthesis. In total they obtained 560 manual image-level segmentation masks. An example can
+be see in Figure~\ref{fig:exMasks}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/relatedWorks/Neural/ExampleMasks.png} 
+    \caption{Examples of frames with their corresponding manually binary pixelwise mask}\label{fig:exMasks}
+\end{figure}
+
+\textbf{Evaluation.}The task evaluated is background subtraction. To accomplish this they
+used standard segmentation metrics: each frames is demposed in its pixels and a mask is 
+extracted from the predicted frame. Then it is compared with its ground-truth calculating 
+average precision(AP). Each AP is then averaged eith eevery frame and scene to obtain mean 
+average precision (mAP).
+
+For novel view synthesis instead PSNR is used. Specifically they provided,using the 
+ground-truth masks, the PSNR of the static and of the moving parts.
+
+\textbf{Results.} The experimentts are based on a PyTTorch implementation of the model
+that has been published on \url{https://github.com/dichotomies/NeuralDiff}, more details 
+can be found in the paper. 
+
+The Baselines compared are:
+
+$(1)$\textbf{NeRF}~\cite{nerf} which uses a single stream to predict static scenes.
+
+$(2)$\textbf{NeRF-BF} trains two NeRF models in parallel, one for the Background (B) and the
+other for the foreground (F). The latter stream is conditioned on time by passing a
+positional-encoded version of the time variable, that in this case corresponds with 
+the frame number. This differ from NeuralDiff time encoding for Equation~\ref{eq:timeNdiff}.
+
+$(3)$\textbf{NeRF-W}~\cite{ndiff_17} also contains two interlinked background and foreground
+streams. Anyway it was designed to deal with image collection, so it struggles to 
+adapt to videos. Some adjustments were done to adapt it to this task, more details
+are reported in the paper.
+
+In Table~\ref{tab:ndiff_res} are reported the results for the various model previously
+presented for the evaluation of their capacity to discover and segment 3D objects
+but also reconstruct dynamic scenes. It is worth noting that NeuralDiff largely improve
+the results with respect to other methods. Also the temporal information confirms to 
+be fundamental for improving the performance over NeRF and NeRF-W. As a third observation
+each update proposed upon the vanilla NeuralDiff proveed to be succesful. Hoewever
+we have to remind that these metrics do not reflect the ability of the full model to 
+separate foreground into objects and actor, since they are merged together in 
+the annotated masks. This ability can be seen in Figure~\ref{fig:ndiff_1}.
+\input{content/RelatedWorks/NeuralRendering/resultsNdiff.tex}

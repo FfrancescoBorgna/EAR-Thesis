@@ -1,0 +1,41 @@
+\part{Tabelle}\label{sec:Tabelle}
+\section{Tabelle}
+Sezione fatta solo per renderci conto di cosa abbiamo
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/tabelle/ColmapP01.png} 
+    \caption{Tabella che fa vedere come cambiano i tempi di ricostruzione ma
+    anche il numero di frame ricostruiti e quanti punti ottengo alla fine. Questo poi
+    viene fatto vedere visualizzando le pointcloud}\label{fig:blender1}
+\end{figure}
+\input{content/Experiments/colmap_times.tex}
+
+Poi abbiamo un po di NeuralDiff solo su P01-01 a 228x128 cambiando abbassando soglia di sampling
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/tabelle/NeuralDiff228.png} 
+    \caption{NeuralDiff solo su P01-01 a 228x128 cambiando abbassando soglia di sampling}\label{fig:blender1}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/tabelle/Ndiff114.png} 
+    \caption{NeuralDiff confronto dei 3 sampling a 114x64. Se rifacessi un po di calcoli potrei valutare anche NeuralCleaner(Actor+foreground uniti)}\label{fig:blender1}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/tabelle/NeuralCleaner.png} 
+    \caption{Qui avevo fatto NDiff con sampling ma prima del Bug quindi risultati non esatti, però c'era confronto con NeuralCleaner(Actor+foreground uniti) per vedere almeno tempi su stessi split}\label{fig:blender1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/tabelle/sampling.png} 
+    \caption{Questa potrebbe esseere tabella in cui faccio vedere i frame iniziali, e i vari
+    sampling che faccio durante la pipeline per arrivare ad avere 1000 frames o 700 per NeuralDiff}\label{fig:blender1}
+\end{figure}
+Poi altre tabelle che mancano che devo fare:
+\begin{itemize}
+    \item Tabella in cui faccio i risultati per tutte le Scene(P01-01 P03-04 P04-01 etc...)
+    \item Tabella in cui mostro i risultati di metriche che troverò per confrontare le distribuzioni dei sampling
+    \item ?
+\end{itemize}

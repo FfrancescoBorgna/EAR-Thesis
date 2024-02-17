@@ -104,15 +104,15 @@ In this way they selected just HIT which had a correspondance. An example of tra
     \caption{Extracts from 6 transcription files in .sbv format}\label{fig:epic_trans}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\textcolor{red}{Qua potrei aggiungere ancora qualcosa a pag 7 del paper in cui 
-descrivono come ogni HIT  è composta da 10 consecutive narrated phrases... in più
-4 annotators per ogni HIT -> Overlap regions come in Figure \ref{fig:epic_anno} o
-magari modificare immagin senza fare veedere $\alpha(\dot)$}
-\begin{figure}
-    \centering
-    \includegraphics[width=1\linewidth]{images/relatedWorks/epic_anno.png} % Replace "example-image" with your image file name
-    \caption{Example of annotated action segments for 2 consecutive actions}\label{fig:epic_anno}
-\end{figure}
+%\textcolor{red}{Qua potrei aggiungere ancora qualcosa a pag 7 del paper in cui 
+%descrivono come ogni HIT  è composta da 10 consecutive narrated phrases... in più
+%4 annotators per ogni HIT -> Overlap regions come in Figure \ref{fig:epic_anno} o
+%magari modificare immagin senza fare veedere $\alpha(\dot)$}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=1\linewidth]{images/relatedWorks/epic_anno.png} % Replace "example-image" with your image file name
+%    \caption{Example of annotated action segments for 2 consecutive actions}\label{fig:epic_anno}
+%\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In the end they collected 39,596 action narrations, corresponding to a narration
@@ -365,7 +365,7 @@ The solutions to these problems were given by:
 
 \subsubsection{Filtering}
 The aim of this step is to reduce the number of frames while keeping enough overlapping viewpoints for accurate reconstruction while diminishing the viewpoint skew.
-Overlap is measured \textcolor{red}{by estimating homographies  on matched SIFT features. Given a homography H, we define visual overlap r as the fraction of image 
+Overlap is measured \textcolor{blue}{by estimating homographies  on matched SIFT features. Given a homography H, we define visual overlap r as the fraction of image 
 area covered by the quadrilateral formed by warping the image corners by H. Windows are formed greedily, finding runs of frames 
 (i+1,...,i+k) with overlap $r\geq0.9$ to the first frame i. Filtering discards about 81.8 \% of frames}
 
@@ -511,5 +511,22 @@ Non va bene perchè gli oggeti che vengono segmentati sono solo quelli rilevanti
 le carote non viene segmentato il bicchiere -> non va bene per noi. Oppure oggetti attivi possono essere il lavandino, il tosta pane che sono
 però statici. LOC SCIVO QUA O DA QUALCHE ALTRA PARTE?}
 \section{Other Egocentric Datasets}
-\subsection{Ego4D}
+\subsection{Ego4D: Around the World in 3,000 Hours of Egocentric Video~\cite{ego4d}}
+Ego4D is a massive-scale egocentric video dataset and 
+benchmark suite. It captures 3670 hours of daily-life
+activity located in a multitude of places(outdoor, workplace,leisure,etc.).
+The videos are captured by 931 different persons from 74 worldwide
+locations and 9 different countries. In addition to video frames, some
+scenes are accompanied with audio, 3D meshes of the environment,
+eye gaze, stereo and/or synchronized videos from multiple egocentric
+cameras at the same event.
 
+Furthermore they presented new benchmark challenges centered
+around understanding the first-person visual experience in the past
+(querying an episodic memory), present(analyzing hand-object manipulation,
+audio-visual conversation, and social interactions), and future(forecasting activities).
+
+
+With this work the authors aimed at pushing the research in first-person perception.
+All the data and other informations can be found at 
+\url{https://ego4d-data.org/}.
