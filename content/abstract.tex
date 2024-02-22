@@ -1,1 +1,31 @@
 % abstract, choose between abstract and summary
+With the increasing availability of egocentric wearable devices, 
+there has been a surge in first-person videos, leading to numerous studies
+aiming to leverage this data. Among these efforts, 3D scene
+reconstruction stands out as a key area of interest. This process allows for
+the recreation of the scene where the video was captured, providing
+ invaluable support for the growing field of augmented reality applications.
+Some egocentric datasets include static 3D scans of recording locations,
+usually requiring costly hardware or dedicated scans.
+An alternative approach involves reconstructing the scene
+directly from video frames using Structure from Motion (SfM)
+techniques. This method not only captures the motion of the actor
+and the objects they interact with, including transformations 
+(e.g., slicing a carrot) but also enables the use of any egocentric 
+footage for scene reconstruction, even without physical access to the 
+environment in real life. However, the task of decomposing dynamic 
+scenes into objects has received limited attention. For example, SfM 
+finds it challenging to distinguish between moving and static parts, 
+resulting in cluttered point cloud reconstructions where the same
+object may appear superimposed or in multiple places within the scene.
+
+In this thesis, we combine SfM with egocentric methods to segment moving
+objects in 3D. This is achieved by creating a scene with COLMAP,
+a SfM algorithm, and then modifying a recent algorithm called 
+NeuralDiff, originally designed for producing 2D segmentations of
+static objects, foreground, and actors, to extract 3D geometry. 
+Additionally, we explored ways to reduce the overall computational 
+demands, such as by simplifying the NeuralDiff architecture to better
+meet our goals by merging the foreground and actor streams,
+and by developing an intelligent video frame sampling technique that
+captures the essence of the scene using fewer frames.

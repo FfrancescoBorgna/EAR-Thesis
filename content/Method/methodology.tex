@@ -1,0 +1,165 @@
+\part{Our Contribution}
+\chapter{Methodology}
+Now that the reader has grasped the basics and some nuances of 
+photogrammetry and neural rendering, let us see how we exploited 
+the presented topics and used them to reach our goal, that is segmenting
+Dynamic Objects in 3D from egocentric videos and intelligently filter
+samples to remove redundant informations.  
+\section{Goals}
+\paragraph*{Main Goal}The main goal of this thesis is to Segment Dynamic Objects in 
+3D from egocentric videos. Up to now SfM algorithms finds it 
+challenging to reconstruct dynamic scenes, resulting in messy
+pointclouds, where the same object can appears multiple times 
+within the scene. An explicative example is reported in 
+Figure~\ref{fig:pizza}. A scene where a pizza is prepared from dough
+is reconstructed. It is clearly visible from the frames that on the 
+induction cooker is slowly proceeding the making of the pizza but in the
+reconstruction it is reported in its integrity. This is due to a lack
+of temporal reasoning of structure from motion procedures. Also, above the
+pizzas there seem to be multiple pans intersected one with each other.
+Obviosuly this is not corresponding to the reality, but moving of few 
+centimeters at some time intervals, the process register it as a new 
+object each time it is in a new position. Other examples are visible like the 
+chopping board and some object on the inductor stove. In this example 
+our goal would be to reconstruct the kitchen cleaned of all the object that 
+moved during the video recording. This would be of immense potential since any 
+environment could be reconstructed from just a video of it and the presence 
+of dynamic objects/person would not interfere with it.
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=1\linewidth]{images/method/pizza.png} 
+    \caption{Reconstruction of a pizza preparation video. The top and bottom frames give
+    us a glance of the action performed during the video while the central
+    pointcloud highlighht the problems of SfM in dynamic environments like the 
+    superimposition of the same object on itself or the reconstruction of objects
+    that are not always present in the scene, e.g. the two pizzas.}\label{fig:pizza}
+\end{figure}
+
+
+\paragraph{Second Goal}The second goal of this thesis is to reduce the computational times of the 
+overall pipeline. Being based on the heavy neural network of NeuralDiff, our pipeline
+tries to speed it up by finding a filtering method that could reduce the 
+number of frames while keeping the same important information of \textit{larger}
+samplings. This will be presented in Section~\ref{sec:sampl}. Also, we took a 
+simplified version of NeuralDiff, in which the actor,the person who is 
+wearing the camera, and the foreground,the dynamic objects, are fused together,
+since for our scopes the distinction was not needed and thus we could remove 
+one of the three neural radiance fields by accelerating the computations.
+
+
+\section{Pipelines}
+In this section we will present the actual methods that we considered and implemented 
+for actually achieve our goals. As we have seen from Related Works, 3D dynamic object 
+segmentation is still an evolving field. We took inspiration from various works
+to actually come up with some different ideas for actually segmenting 3D dynamic objects.
+All the methods revolve around a COLMAP reconstruction and a NeuralDiff renderer. The 
+basic block would in fact be NeuralDiff but a reconstruction of the scene with camera intrinsic and 
+extrinsic parameters is required to make it work.
+
+\paragraph{Colmap Pipeline}
+The first and most trivial idea is to reconstruct the scene with the SfM algorithm,COLMAP,
+and then separate the static and dynamics objects using NeuralDiff~\cite{neuraldiff}. Once 
+the cleaning has been done we could reconstruct from the cleaned frames the static scene. 
+In Figure~\ref{fig:dumb} is reported the pipeline of this first approach.
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=1\linewidth]{images/method/DumbPipeline.pdf} 
+    \caption{\textbf{Basic Pipeline.} In the Basic Pipeline a video(represented by the image of a person cooking)
+    is subsampled through EF-Sampling, reconstructed 
+    via COLMAP, re-sampled on the reconstructed frames and then fed to NeuralDiff. At this stage the frames are
+    decomposed in actor,foreground and background(as can be seen in the frames reported below NeuralDiff).
+    The Clean reconstruction is obtained by running
+    another COLMAP step on the extracted background frames.}\label{fig:dumb}
+\end{figure}
+
+\paragraph{Monocular Pipeline}
+Anyway this way the previous method is not optimal because we have two COLMAP steps and one of NeuralDiff. We wanted 
+to do better. So we tried with a second pipeline that we will call \textit{Monocular-Pipeline}.
+This pipeline remove the last COLMAP step by using a pre-trained neural monocular depth estimator.
+This last block allows to project any frame from 2D to 3D knowing the camera extrinsic and intrinsic
+parameters. So we could train NeuralDiff(reconstruction of the scene included) and the 
+project the processed frames into the space. Then to segment dynamic objects we can project
+all dynamic frames,actor or foreground or both, in 3D and take all the points of the COLMAP pointcloud
+that are at a distance less than a predefined value from the projected ones and classify them as dynamic.
+The same could be done with static points. This second pipeline is reported in Figure~\ref{fig:monoPipe}.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=1\linewidth]{images/method/MonocularPipeline.pdf} 
+    \caption{\textbf{Monocular Pipeline.} The Monocular pipeline share the first part with the Basic Pipeline. A
+    video is subsampled,reconstructed via COLMAP, subsampled again and fed to Neuraldiff. The difference is that here
+    the dynamic layers are projected in 3D and points closer than a distance th are segmented as dynamic.}\label{fig:monoPipe}
+\end{figure}
+
+\paragraph{NeuralDiff Pipeline}
+The last pipeline instead take advantage of the intrinsic knowledge of the neural renderer, removing the necessity of the 
+last step, being that SfM or a Depth extractor. For the definition of a nural renderer we know that it is a neural 
+network that take as input a point spatial coordinate with the direction from which it is observed and returns back the 
+color and density of that point. This implies that when we are training we are already grasping the 3D structure of the scene,
+and any additional step would be unnecessary. The overall pipeline can thus be simplified as in Figure~\ref{fig:ndiffPipe}, and it 
+will be referred as \textit{NeuralDiff-Pipeline}. A point is segmented as moving if its corresponding point in the static
+scene has a density$<$threshold.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=1\linewidth]{images/method/NeuralDiffPipeline.pdf} 
+    \caption{\textbf{NeuralDiff Pipeline.}In this pipeline we obtain the three motion layers as in the other methods
+    but actually the segmentation is performed querying the static neural renderer with the positions
+    of the points belonging to the COLMAP reconstruction. Each point is segmented as dynamic 
+    if its density is less than a predefined value.}\label{fig:ndiffPipe}
+\end{figure}
+
+\paragraph{NeuralCleaner}The last modification that we made was to remove the distinction of the actor and the foreground, combining them into a single stream.
+Since it was out of our scope to distinguish between these two layers, we hope to reduce the computational times by removing one of the
+three neural streams of NeuralDiff. This pipeline has been named \textit{Neural Cleaner}.
+
+
+\section{Filtering }\label{sec:sampl}
+The filtering method consists 
+in seeking temporal windows where frames are overlapped and keeping just
+a frame per window. The overlap is computed by estimating homographies
+\footnote{A homography is a transformation that maps points from one
+ image to corresponding points in another image.
+} on matched SIFT~\ref{sec:sfm} features. In Figure~\ref{fig:overlap}some examples 
+of overlaps are visualized. 
+
+This technique was proposed in EPIC-Fields~\cite{epic_fields} to obtain accurate 3D reconstructions
+from egocentric videos, which present the challenging problems of: dynamic objects,long duration video(\~9min on avg) and
+the skewed distributiton of viewpoints, namely the fact that in videos there are phases of slow motion around 
+hot-spots (e.g. around the gas stove) alternating to high motion in transition actions(e.g. taking something from the pantry).
+The main idea was to remove redundant frames while maintaining enough overlap and temporal coverage to allow an accurate reconstruction.
+We will refer to this method as \textit{EF-Sampling}.
+
+We took inspiration from this technique for our sampling method that we called \textit{Intelligent Sampling}. This sampling was 
+used to keep only important frame, trying to remove any redundant information for the neural rendering step. The idea to maintain 
+important frame is different from the SfM step. Here we thought that a better set of images would have less overlap between itself,
+such that all the areas of the scene are covered, or at least the frames are equispaced in the scene if they are too few. In this way there should not
+be any blind spot and the environment is captured in its entirety. And this is actually the contrary of the idea of EF-Sampling.
+Its position in our pipeline is reported in Figure~\ref{fig:samplPipe}. The COLMAP reconstructed frames are \textit{Intelligently} sampled and fed to NeuralDiff.
+\begin{figure}[t]
+    \centering
+    \includegraphics[scale=0.5]{images/method/samplingPipe.pdf} 
+    \caption{Sampling Steps in our pipelines. The initial video is subsampled by
+    EF-Sampling and the resulting frames are fed to COLMAP. Onve COLMAP reconstructed the scene 
+    these frames are again subsampled via Intelligent Sampling and fed to NeuralDiff.}\label{fig:samplPipe}
+\end{figure}
+
+The actual implementation is strictly based on EF-Sampling and since its goal is the contrary of the latter, they share part of the method.
+Intelligent sampling in fact given a set of N frames perform a EF-sampling with a overlap threshold such that it gives $ N-N_{desired}$ frames.
+These frames are then discarded and the remaining $N_{desired}$ frames are kept.
+
+We also tried a less rigid approach with the \textit{AU-Sampling}. This other method is an hybrid of Intelligent-Sampling and a Uniform sampling(which
+is the baseline we tried to improve). In AU-Sampling we perform a Intelligent-Sampling relaxing the $N_{desired}$frames. The $N_{desired}$ frames are then 
+uniformly extracted from the 'relaxed' samples. In this way we hoped to keep some overlapping frames by relaxing the threshold and then obtain
+equitemporal spaced samples from all the duration of the video. 
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=1\linewidth]{images/method/overlap.png} 
+    \caption{Example of overlapping frames(X and Y). The left and central
+    examples present the same level of overlap even though the image frames 
+    are closer together in the central example, because the 
+    number of features shared are the same. The right examples instead
+    present a higher level of overlapping due to the bigger number of 
+    features.}\label{fig:overlap}
+\end{figure}

@@ -1,0 +1,86 @@
+
+\begin{table}[h]
+  \resizebox{\textwidth}{!}{
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \thead{Scene}                       & \thead{P01-01} & \thead{P03-04} & \thead{P04-01} & \thead{P05-01} & \thead{P06-03} & \thead{P08-01}& \thead{P09-02}& \thead{P13-03}& \thead{P16-01}& \thead{P21-01} & Avg.Time \\
+        & & & & & & & & & & & \\
+        \hline
+        \lthead{Succesful \\ Reconstruction}&\checkmark &\checkmark &\checkmark & \texttimes& \texttimes& \texttimes&\checkmark &\texttimes &\checkmark&\checkmark  & -\\
+        \hline
+        \lthead{Reconstructed \\ Frames}    &  693      &      831  & 873       &   -     &   -       &     -     &     817   &   -      &    936    &    725       & -\\
+        \hline
+        \lthead{Feature \\ Extractor}       & 0:00:02   &  0:00:05  & 00:00:02  &   -      &    -       &    -      &0:00:02 &\texttimes &0:00:02 &0:00:02& \\
+        \hline          
+        \lthead{Exhaustive\\Matcher}        &  0:00:18  & 0:00:19   &00:00:23   &   -      &    -       &    -     &0:00:21  &\texttimes&0:00:31 & 0:00:14&\\
+        \hline          
+        \lthead{Mapper}                     & 0:25:58   &   0:21:03 &00:46:37   &   -      &    -      &    -     &0:31:53 &\texttimes &1:02:12 & 0:46:34&\\
+        \hline          
+        \lthead{Image\\Undistorter}         & 0:00:00   &  0:00:01  &0:00:00    &   -      &    -       &    -     &0:00:01  & \texttimes&0:00:00 &0:00:01&\\
+        \hline          
+        \lthead{Patch\\Match Stereo}        &  0:20:30  &  0:24:40  & 0:25:21   &   -      &    -       &    -      &0:23:37 &\texttimes &0:27:22 &0:21:18&\\
+        \hline          
+        \lthead{Stereo \\Fusion}            &  0:00:12  &  0:00:12  &0:00:17    &   -      &    -       &    -      &0:00:15 &\texttimes & 0:00:21&0:00:11 &\\
+        \hline          
+        \lthead{Total\\Time}                &           &           &           &   -      &    -       &    -      &        &     -      &       &        & \\
+        \hline
+    \end{tabular}}
+    \caption{COLMAP execution times for each scene. Era stata fatta per vedere i tempi sulle diverse scene con i 1000 frames di NeuralDiff. Adesso posso rifarla con
+    solo le scene che sono riuscitto a ricostruire (P01-01 P03-04 P04-01 P09-02 P16-02 P21-01)}\label{tab:colmap_times}
+\end{table}
+\begin{comment}
+\begin{table}[h]
+  \centering
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|X|X|X|}
+        \hline
+        \thead{Scene} & \thead{P01-01} & \thead{P03-04} & \thead{P04-01} & \thead{P05-01} & \thead{P06-03} & \thead{P08-01}& \thead{P09-02}& \thead{P13-03}& \thead{P16-01}& \thead{P21-01} \\
+        & & & & & & & & & & \\
+        \hline
+        \lthead{Succesful \\ Reconstruction}&\checkmark &\checkmark &\checkmark & & & & & & \\
+        \hline
+        \lthead{Feature \\ Extractor}       & & & & & & & & &\\
+        \hline
+        \lthead{Exhaustive\\Matcher}        & & & & & &  & & &\\
+        \hline
+        \lthead{Mapper}                     & & & & & & & & & \\
+        \hline
+        \lthead{Image\\Undistorter}         & & & & & &  & & &\\
+        \hline
+        \lthead{Patch\\Match Stereo}        & & & & & &  & & &\\
+        \hline
+        \lthead{Stereo \\Fusion}            & & & & & &  & & &\\
+        \hline
+        \lthead{Total\\Time}                & & & & & & & & & \\
+        \hline
+    \end{tabularx}
+    \caption{Your Table Caption Here}
+    \label{tab:mytable}
+\end{table}
+
+\begin{table}[h]
+  \resizebox{\textwidth}{!}{
+    \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+        \hline
+        \thead{Scene} & \thead{Feature\\Extractor} & \thead{Exhaustive\\Matcher} & \thead{Mapper} & \thead{Image\\Undistorter} & \thead{Patch\\Match Stereo} & \thead{Stereo \\Fusion} & \thead{Total\\Time} \\
+        & & & & & & & \\
+        \hline
+        A & & & & & & & \\
+        \hline
+        B & & & & & &  &\\
+        \hline
+        C & & & & & & & \\
+        \hline
+        D & & & & & &  &\\
+        \hline
+        E & & & & & &  &\\
+        \hline
+        F & & & & & &  &\\
+        \hline
+        G & & & & & & & \\
+        \hline
+    \end{tabular}}
+    \caption{Your Table Caption Here}
+    \label{tab:mytable}
+\end{table}
+
+\end{comment}

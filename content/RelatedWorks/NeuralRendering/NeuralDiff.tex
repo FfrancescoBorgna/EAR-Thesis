@@ -273,7 +273,7 @@ average precision(AP). Each AP is then averaged eith eevery frame and scene to o
 average precision (mAP).
 
 For novel view synthesis instead PSNR is used. Specifically they provided,using the 
-ground-truth masks, the PSNR of the static and of the moving parts.
+ground-truth masks, the PSNR of the static and of the moving parts.\vspace{0.4cm}
 
 \textbf{Results.} The experimentts are based on a PyTTorch implementation of the model
 that has been published on \url{https://github.com/dichotomies/NeuralDiff}, more details 
@@ -303,3 +303,35 @@ we have to remind that these metrics do not reflect the ability of the full mode
 separate foreground into objects and actor, since they are merged together in 
 the annotated masks. This ability can be seen in Figure~\ref{fig:ndiff_1}.
 \input{content/RelatedWorks/NeuralRendering/resultsNdiff.tex}
+
+\textbf{Qualitative Results.} A part from numbers, how real the scenes actually look
+is the most important thing. In Figure~\ref{fig:ndiff_qualitative} the output of the compared
+method is reported for three different scenes.It can be seen that NeuralDiff produce less ghosting artifacts, captures most moving
+objects and shows more details, especially the \textit{upgraded} version. In particular: NeRF struggles
+with the dynamic components and create blurry reconstructions; NeRF-W obtains sharper static images 
+but still struggle with dynamic regions; NeuralDiff produces sharper results but the \textit{upgraded}
+version capture more details, such as the arms in the efirst scene or the spoon in the second.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/relatedWorks/Neural/qualRes.png} 
+    \caption{Three Scenes reconstruction from NeRF, NeRF-W and NeuralDiff, NeuralDiff+C+A.
+     It can be seen that NeuralDiff produce less ghosting artifacts, captures most moving
+     objects and shows more details, especially the \textit{upgraded} version.}\label{fig:ndiff_qualitative}
+\end{figure}
+Another qualitative result is shown in Figure~\ref{fig:qual2}.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/relatedWorks/Neural/qual2.png} 
+    \caption{\textbf{Segmentation Masks.}Here the masks for which NeuralDiff scored best(top 4 rows)
+    and worst (last 2 rows) are reported.}\label{fig:qual2}
+\end{figure}
+In the best segmentation case for NeuralDiff+A, NeRF-WW create noisy results, where 
+the plate, the pasta colander and the actor's body are barely captured. NeuralDiff 
+instead manage to capture all moving objects and more body parts but misclassifies 
+floor as foreground. NeuralDiff-A better estimates the shape of the actor's body(second and third row)
+and correctly recognize the floor as static.
+
+For the failure case instead, NeuralDiff still beats NeRF-W. In detail, NeRF-W fail 
+in recognizing any foreground object. NeuralDiff performs a little better by discriminating
+some foreground objects but still including some of the static background as foreground
+(e.g. Last row, part of the sink is reported as foreground).
