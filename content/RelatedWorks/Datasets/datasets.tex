@@ -1,14 +1,14 @@
 \chapter{Datasets}
-\textcolor{red}{Motivazioni per cui abbiamo usato questi datasets?
 The choice of the following datasets was dictated by the fact that up to our knowledge these are 
-currently the largest datasets available in the egocentric scenarios. Let us see these in details.}
-\section{EPIC-Kitchens}\label{sec:EK}
-EPIC-Kitchens~\cite{EPICKITCHENS} is the largest and most varied dataset in egocentric vision up to our knowledge.
+currently the largest datasets available in the egocentric scenarios. Let us see these in details.
+
+\section{EPIC-KITCHENS}\label{sec:EK}
+EPIC-KITCHENS~\cite{EPICKITCHENS} is the largest and most varied dataset in egocentric vision up to our knowledge.
 It contains 55 hours of annotated video data recorded by a head-mounted camera of non scripted actions, 
 meaning that the actors were not following any \textit{scripted} actions(we will see this in more detail
 later).
-\subsection{Introduction/motivation}
-EPIC-Kitchens was born to fill the gap in the scarcity of annotated video datasets.
+\subsection{Motivation}
+EPIC-KITCHENS was born to fill the gap in the scarcity of annotated video datasets.
 As a leading comparison, at the time of writing significant progress have been seen in many domains
 such as image classification~\cite{residualImage},object detection~\cite{fasterRCNN},
 captioning~\cite{captioning} and visual question answering~\cite{vqa}; due to the advances in deep
@@ -66,7 +66,7 @@ while the maximum duration recorded was of 4.6h. The duuration of the recording 
 linked to the person's kitchen engagement. In Figure~\ref{fig:epic_stat} we can see some statistics
 of the data acquired.
 
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/epic_stat.png} % Replace "example-image" with your image file name
     \caption{\textbf{Top} (left to right): time of day of the recording, pie chart of high-level goals,
@@ -80,7 +80,7 @@ carried out to a microphone. The sound narration was chosen beacuse it was faste
 participants were thus more willing to provide these annotations.
 The guide lines for narrations are reported in Figure~\ref{fig:epic_guidelines}.
 
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/epic_guidelines.png} % Replace "example-image" with your image file name
     \caption{Narration Guidelines given to each participant to be followed after the completion of a recording.}\label{fig:epic_guidelines}
@@ -98,7 +98,7 @@ algorithms, which led to inaccurate transcriptions, they opted for manual transc
 marketplace that allows to do task that computers  are still unable to complete. More in detail requests to AMT are called HIT(Human Intelligence Tasks).
 To ensure consistency, the authors divided speechs in chunks of around 30 seconds by also removing silent parts and sent each chunk 3 times as HIT.
 In this way they selected just HIT which had a correspondance. An example of transcription is shown in Figure~\ref{fig:epic_trans}
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/epic_trans.png} % Replace "example-image" with your image file name
     \caption{Extracts from 6 transcription files in .sbv format}\label{fig:epic_trans}
@@ -138,12 +138,12 @@ nouns into classes, while in Figure~\ref{fig:epic_freq} the authors show the ver
 oredered by frequency of occurrence in action segments, as well as the noun classes
 ordered by number of annotated bounding boxes.
 
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/epic_cluster.png} % Replace "example-image" with your image file name
-    \caption{Sample Verb and Noun Classes}\label{fig:epic_table}
+    \caption{Example of Verbs and Nouns Classes clustered in wider groups.}\label{fig:epic_table}
 \end{figure}
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/Epic_words.png} % Replace "example-image" with your image file name
     \caption{\textbf{From Top:} Frequency of verb classes in action segments;
@@ -158,10 +158,10 @@ get an annotation for one object, for the maximum duration of 25s, which corresp
 to 50 consecutive frames at 2fps. The annotator can also state that the object is inexistent
 in at frame \textit{f}. In total they collected 454,255 bounding boxes, some examples
 are provided in Figure~\ref{fig:epic_bb}.
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/epic_bb.png} 
-    \caption{Sample consecutive action segments with keyframe object annotations}\label{fig:epic_bb}
+    \caption{Sample of consecutive action segments with keyframe object annotations}\label{fig:epic_bb}
 \end{figure}
 
 
@@ -187,7 +187,7 @@ kitchens.
 } and for each test segment report the econfidence 
 scores for each verb and noun class. In Figure~\ref{fig:epic_ar_chall} is reported
 a qualitative example of the task.
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/AR_chall.png} 
     \caption{Sample qualitative results from the challenge's baseline of the Action Recognition Task}\label{fig:epic_ar_chall}
@@ -201,7 +201,7 @@ composed of the pair of verb and noun classes. To participate to the challenge i
 on both splits and for each test segment report the econfidence 
 scores for each verb and noun class. In Figure~\ref{fig:epic_aa_chall} is reported
 a qualitative example of the task.
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/AA_ch.png} 
     \caption{Sample qualitative results from the challenge's baseline of the Action Anticipation Task}\label{fig:epic_aa_chall}
@@ -214,7 +214,7 @@ objects involved in the action. To partecipate is required to provide predicted
 bounding boxes and their confidence scores on both dataset splits. In Figure~\ref{fig:epic_od_chall}
 a qualitative example is reported.
 
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/obj_ch.png} 
     \caption{Sample qualitative results from the challenge's baseline of the Object Detection Task}\label{fig:epic_od_chall}
@@ -229,8 +229,8 @@ a qualitative example is reported.
     at \url{http://epic-kitchens.github.io}
 \end{itemize}
 
-\section{EPIC-Kitchens 100}\label{sec:EK100}
-In 2021 with~\cite{EK100} a new pipeline is introduced to extend EPIC-Kitchens dataset.
+\section{EPIC-KITCHENS 100}\label{sec:EK100}
+In 2021 with~\cite{EK100} a new pipeline is introduced to extend EPIC-KITCHENS dataset.
 EPIC-KITCHENS-100 collects 100 hours, 20M frames, 90k actions in 700 variable-length
 videos, capturing longterm unscripted actions in 45 different environments using headmounted
 cameras. Due to its novel annotation pipeline, which will be described more in detail later,
@@ -257,7 +257,7 @@ The new request for the subjects was to reecord 2-4 days of their kitchen routin
 
 \subsection{Annotation}
 An overview of the pipeline taken from the paper is reported in Figure~\ref{fig:e100_ann}.
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/AnnotationPipeline.png} 
     \caption{Annotation pipeline: \textbf{a} narrator, \textbf{b} transcriber
@@ -278,7 +278,7 @@ An important new feature is the possibility to re-record and to delete a narrati
 Each narration is first transcribed and then translated in English by a hired translator for correctness
 and consistency. The transcription process have been facilitated by providing a new transcriber
 interface showing three images sampled around the time stamp. As a matter of fact, in the 
-old EPIC-Kitchens transcriptor struggled to understand some of the narration wwithout
+old EPIC-KITCHENS transcriptor struggled to understand some of the narration wwithout
 any video context.
 
 Each narration was analyzed by 3 AMT workers using a consensus of 2 or more workers.
@@ -297,17 +297,13 @@ The attentions cared during the annotation process led to denser and more accura
 We can see the results by comparing the same action and their respective annotation from the
 two different pipelines in Figure~\ref{fig:ep100_comp}.
 
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/Epic_comp.png} 
     \caption{Comparing non-stop narrations (blue) to 'pause-and-talk' narrations (red).
     Right: timestsamps (dots) and segments (bars) for two sample sequences. "pause-and-talk"
     captures all actions including short ones. Black frames depict missed actions.}\label{fig:ep100_comp}
 \end{figure}
-
-\subsection{Challenges and Baselines}
-\textcolor{red}{With respect to EPIC-Kitchens, 4 new challenges have 
-been added.Magari non lo metto? }
 
 \section{EPIC-Fields}
 The necessity of suitable datasets and benchmarks in the unified problem of 3D geometry and video understanding, which has been
@@ -363,14 +359,14 @@ The solutions to these problems were given by:
     \item \textbf{Registering remaining frames} to the reconstruction.
 \end{itemize}
 
-\subsubsection{Filtering}
+\subsubsection{Subsampling}
 The aim of this step is to reduce the number of frames while keeping enough overlapping viewpoints for accurate reconstruction while diminishing the viewpoint skew.
-Overlap is measured \textcolor{blue}{by estimating homographies  on matched SIFT features. Given a homography H, we define visual overlap r as the fraction of image 
+Overlap is measured,citing~\cite{epic_fields} \textit{'by estimating homographies  on matched SIFT features. Given a homography H, we define visual overlap r as the fraction of image 
 area covered by the quadrilateral formed by warping the image corners by H. Windows are formed greedily, finding runs of frames 
-(i+1,...,i+k) with overlap $r\geq0.9$ to the first frame i. Filtering discards about 81.8 \% of frames}
+(i+1,...,i+k) with overlap $r\geq0.9$ to the first frame i. Filtering discards about 81.8 \% of frames'}.
 
-\subsubsection{Sparse reconstruction}
-Once filtered, frames are fed to COLMAP(Its functioning is reported in Section~\ref{sec:col}).
+Once filtered, frames are fed to COLMAP(Its functioning is reported in Section~\ref{subsec:col}).
+
 \subsubsection{Dense reconstruction, automated verification, and restart}
 The remaining frames are fed to COLMAP with initial reconstruction. The final reconstruciton is accepted if over 70\% of frames are registered succesfully.
 In the end 631 videos were obtained.
@@ -378,7 +374,7 @@ In the end 631 videos were obtained.
 In case of failure the threshold r is increase,e.g. r$\geq$0.95. This usually results in doubling the frames, but increasing success rate to 96\%.
 
 
-\subsection{Benchmarks, Experiments and Results}
+\subsection{Benchmarks}
 The authors defined three new benchmarks  to explore the combination of 3D and video understanding.
 
 \subsubsection{New-View Synthesis(NVS)}
@@ -410,23 +406,23 @@ EPIC Fields. The methods used were:
     \item \textbf{T-NeRF+~\cite{Tnerf}:} time conditioned NeRF at which was added another NeRF to model the static background.
 \end{itemize}
 
-In Table~\ref{tab:NVS_comp} I report the authors' resulting experiments, while in Figure~\ref{NVS} we can see the comparison of the output of the three methods. 
-\begin{table}
-\centering
-\begin{tabular}{lccccc}
-    \hline \multirow{2}{*}{ \textbf{Method} } & \multirow{2}{*}{ \textbf{Easy} } & \multirow{2}{*}{ \textbf{Medium} } & \multicolumn{3}{c}{ \textbf{Hard} } \\
-    \cline { 4 - 6 } & & & All & BG & FG \\
-    \hline \textbf{NeRF-W}~\cite{nerfw} & 21.13 & 19.3 & 17.93 & 18.99 & 13.54 \\
-    \textbf{T-NeRF+} ~\cite{Tnerf} & 21.58 & 19.81 & 18.44 & 19.73 & 13.74 \\
-    \textbf{NeuralDiff}~\cite{neuraldiff} & 22.14 & 19.88 & 18.36 & 19.54 & 13.37 \\
-    \hline
-\end{tabular}
-\caption{\textbf{Dynamic New View Synthesis.}Comparison of different neural rendering methods on varying difficult frames. The values
-reported corresponds to PSNR considering all pixels in each test frame.} \label{tab:NVS_comp}
-\end{table}
+%In Table~\ref{tab:NVS_comp} I report the authors' resulting experiments, while in Figure~\ref{NVS} we can see the comparison of the output of the three methods. 
+%\begin{table}
+%\centering
+%\begin{tabular}{lccccc}
+%    \hline \multirow{2}{*}{ \textbf{Method} } & \multirow{2}{*}{ \textbf{Easy} } & \multirow{2}{*}{ \textbf{Medium} } & \multicolumn{3}{c}{ \textbf{Hard} } \\
+%    \cline { 4 - 6 } & & & All & BG & FG \\
+%    \hline \textbf{NeRF-W}~\cite{nerfw} & 21.13 & 19.3 & 17.93 & 18.99 & 13.54 \\
+%    \textbf{T-NeRF+} ~\cite{Tnerf} & 21.58 & 19.81 & 18.44 & 19.73 & 13.74 \\
+%    \textbf{NeuralDiff}~\cite{neuraldiff} & 22.14 & 19.88 & 18.36 & 19.54 & 13.37 \\
+%    \hline
+%\end{tabular}
+%\caption{\textbf{Dynamic New View Synthesis.}Comparison of different neural rendering methods on varying difficult frames. The values
+%reported corresponds to PSNR considering all pixels in each test frame.} \label{tab:NVS_comp}
+%\end{table}
 
 
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/NVS.png} 
     \caption{\textbf{Dynamic New View Synthesis}. I report an example of the output for the three different methods used: NeRF-W, T-NeRF+ and 
@@ -450,27 +446,27 @@ of a 3D ground-truth make 2D segmentation accuracy the only way to assess the mo
  \end{itemize}
  As Baseline methods the authors used 4 methods: three based on 3D neural rendering techniques(NeRF-W,T-NeRF,NeuralDiff) and one based on 2D optical flow(Motion
  
- Grouping(MG)~\cite{MG}. The results are shown in Figure~\ref{fig:UDOS} and Table~\ref{tab:UDOS}.It is worth noting how 3D methods are better discovering semi-static objects.
- However none of the 3D methods explicitly consider motion. and this can be seen as MG performs better on purely dynamic motion, due to the input being the optical flow.
-\begin{figure}
+ Grouping(MG)~\cite{MG}. The results are shown in Figure~\ref{fig:UDOS}.It is worth noting how 3D methods are better discovering semi-static objects.
+ However none of the 3D methods explicitly consider motion and this can be seen as MG performs better on purely dynamic motion, due to the input being the optical flow.
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/UDOS.png} 
     \caption{\textbf{UDOS.} Here is reported the comparison of the different methods' output.
     The 2D based perform very good on dynamic objects, while 3D methods struggle a bit but can detect even semi-static objects.}\label{fig:UDOS}
 \end{figure}
-\begin{table}
-    \begin{tabular}{lcccc}
-        \hline \textbf{Method} & \textbf{3D} & \textbf{SS+Dyn} & \textbf{SS+Dyn (w/o body)} &\textbf{ Dynamic} \\
-        \hline \textbf{MG} ~\cite{MG} & - & 60.19 & 21.65 & 69.26 \\
-        \textbf{NeRF-W} ~\cite{nerfw} & $\checkmark$ & 37.26 & 22.96 & 27.41 \\
-        \textbf{T-NeRF+}~\cite{Tnerf} & $\checkmark$ & 54.23 & 31.23 & 42.68 \\
-        & & & & \\
-        \textbf{NeuralDiff}~\cite{neuraldiff}& $\checkmark$ & 62.30 & 31.11 & 55.10 \\
-        \hline
-        \end{tabular}
-        \caption{\textbf{UDOS.} Here I reported the author results for UDOS. The values visible corresponds to the mAP on segmenting semi-static(SS) 
-        and dynamic(Dyn) components of the scene.}\label{tab:UDOS}
-\end{table}
+%\begin{table}
+%    \begin{tabular}{lcccc}
+%        \hline \textbf{Method} & \textbf{3D} & \textbf{SS+Dyn} & \textbf{SS+Dyn (w/o body)} &\textbf{ Dynamic} \\
+%        \hline \textbf{MG} ~\cite{MG} & - & 60.19 & 21.65 & 69.26 \\
+%        \textbf{NeRF-W} ~\cite{nerfw} & $\checkmark$ & 37.26 & 22.96 & 27.41 \\
+%        \textbf{T-NeRF+}~\cite{Tnerf} & $\checkmark$ & 54.23 & 31.23 & 42.68 \\
+%        & & & & \\
+%        \textbf{NeuralDiff}~\cite{neuraldiff}& $\checkmark$ & 62.30 & 31.11 & 55.10 \\
+%        \hline
+%        \end{tabular}
+%        \caption{\textbf{UDOS.} Here I reported the author results for UDOS. The values visible corresponds to the mAP on segmenting semi-static(SS) 
+%        and dynamic(Dyn) components of the scene.}\label{tab:UDOS}
+%\end{table}
 
 \subsubsection{Semi-Supervised Video Object Segmentation(VOS)}
 Semi-Supervised Video Object Segmentation is a standard video understanding task which consists in propagating some given masks for one or more
@@ -504,12 +500,18 @@ Some examples of annotations are reported in Figure~\ref{fig:visor}.
      Hand Object Segmentation(HOS) and Where Did This Come From(WDTCF).}\label{fig:visor}
 \end{figure}
 
-\textcolor{red}{
-ACTIVE OBJECT: each object that is involved in the current action. It does not mean it is dynamic, since as shown in Figure~\ref{fig:visor} the table top
-is usually segmented as active.
-Non va bene perchè gli oggeti che vengono segmentati sono solo quelli rilevanti all azione descritta, quindi se sposto un bicchiere mentre sto pelando 
-le carote non viene segmentato il bicchiere -> non va bene per noi. Oppure oggetti attivi possono essere il lavandino, il tosta pane che sono
-però statici. LOC SCIVO QUA O DA QUALCHE ALTRA PARTE?}
+They segment each \textit{Active} object, namely each object that is involved in the current action. This is different, as we will see in later sections,
+from our goals, where we just want to segment \textit{moving} objects. As shown in Figure~\ref{fig:visor}, mosto of the times, when cooking the gas stove is segmented
+but it is not obviously dynamic. Or as another example. if a  object that tis not involved in the current action is moved it would not be segmented(e.g. move a chair 
+while getting something from pantry).
+
+%\textcolor{red}{
+%ACTIVE OBJECT: each object that is involved in the current action. It does not mean it is dynamic, since as shown in Figure~\ref{fig:visor} the table top
+%is usually segmented as active.
+%Non va bene perchè gli oggeti che vengono segmentati sono solo quelli rilevanti all azione descritta, quindi se sposto un bicchiere mentre sto pelando 
+%le carote non viene segmentato il bicchiere -> non va bene per noi. Oppure oggetti attivi possono essere il lavandino, il tosta pane che sono
+%però statici. LOC SCIVO QUA O DA QUALCHE ALTRA PARTE?}
+
 \section{Other Egocentric Datasets}
 \subsection{Ego4D: Around the World in 3,000 Hours of Egocentric Video~\cite{ego4d}}
 Ego4D is a massive-scale egocentric video dataset and 

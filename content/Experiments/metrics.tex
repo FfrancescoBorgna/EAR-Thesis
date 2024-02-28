@@ -1,0 +1,71 @@
+\section{Metrics}\label{sec:Metrics}
+As regards metrics we looked in literature for a way to evaluate
+our results but unfortunately each method involved a ground truth
+which for our dataset is not available. Possible ways to obtain
+a groundtruth could be manual annotations or simulating the environments.
+Both these two methods would take a considerable large amount
+of time and are also beyond the scope of this thesis.
+
+For this reason we ended up by using the metrics proposed in~\cite{neuraldiff}.
+Namely these are:
+\begin{itemize}
+    \item \textbf{PSNR}
+    \item \textbf{mAP}
+\end{itemize}
+\subsection{PSNR:Peak signal-to-noise ratio}
+The Peak Signal-to-Noise Ratio (PSNR) is a metric commonly used in image and
+video processing to quantify the quality of a reconstructed or processed signal,
+like an image or video. It gives a measures of the ratio between the 
+maximum possible power of a signal (MAX) and the power of the distortion or noise 
+that affects the signal (MSE).
+
+The formula for PSNR is usually expressed in decibels (dB) and is given by:
+
+\[ \text{PSNR} = 20 \cdot \log_{10}\left(\frac{{\text{MAX}}}{{\text{MSE}}}\right) \]
+
+where:
+\begin{itemize}
+    \item MAX is the maximum possible pixel value of the image (1 in our case).
+    \item MSE is the Mean Squared Error, which represents the average squared 
+    difference between the original signal and the reconstructed or distorted signal.
+\end{itemize}
+
+It is worth noting that a high PSNR does not guarantee that the processed signal 
+will be perceived as visually pleasing or high-quality by humans, especially in the case of perceptually sensitive applications like image and video compression.
+
+\subsection{AP:Average Precision}
+Average Precision (AP) is a metric commonly used in object detection and information retrieval
+to evaluate the performance of machine learning models. It measures the \textit{precision-recall} trade-off of a model.
+
+It can be useful to remind what \textit{Precision} and \textit{Recall} are. Namely:
+
+\begin{equation}
+    Precision=\frac{TP}{TP+FP}
+\end{equation}
+\begin{equation}
+    Recall=\frac{TP}{TP+FN}
+\end{equation}
+
+where:
+\begin{itemize}
+    \item TP=True positive
+    \item FP=False positive
+    \item TN=True negative
+\end{itemize}
+Average precision is then computed as the area below the precision-recall curve, specifically
+the curve obtained by varying the confidence threshold of the inference model as shown
+in Figure \ref{fig:auc}. That is why 
+it can also be found in literature as AUC(Area Under Curve).
+Its scalar value summarize the precision-recall performance of the model.
+A higher AP is desirable, indicating a model that effectively retrieves 
+relevant instances while minimizing false positives.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/metrics/auc.png} % Replace "example-image" with your image file name
+    \caption{Example of Precision-recall curve.We can see how the bottom line model 
+        represents the worst a model can perform, e.g. predict every sample as it is 
+        coming from the same class,if the dataset is balanced. A better model would
+        \textit{tend} to the upper-right corner, which instead represents the best
+        possible model, a model that have maximum precision and recall.}\label{fig:auc}
+\end{figure}

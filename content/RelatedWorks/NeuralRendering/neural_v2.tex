@@ -1,0 +1,339 @@
+\chapter{Neural Rendering}\label{sec:Neural}
+From CVPR 2020 tutorial~\cite{CVPRtutorial} Neural Rendering is defined as \textit{'
+ a new class of deep image and video generation approaches that 
+ enable explicit or implicit control of scene properties such as 
+ illumination, camera parameters, pose, geometry, appearance, and 
+ semantic structure. It combines generative machine learning techniques 
+ with physical knowledge from computer graphics to obtain controllable 
+ and photo-realistic outputs'}.
+
+\section{Related works}
+The actual idea of neural rendering to encode objects and scenes in 
+the weights of a MLP was already present before NeRF.
+ Hower these methods still struggled compared to other strategies based on 
+ discrete representations like triangle meshes or voxel grids. 
+ In the next paragraph I will give a quick review of the work preeceding NeRF.
+ 
+ \paragraph{Neural 3D shape representations} Implicit continous 3D shapes 
+ representation as level sets had been investigated by~\cite{nerf15,nerf32}.
+ These methods were limited by the necessity of a 3D ground truth, which is 
+ rarely available. Subsequent works reformulated the problem using differentiable
+ rendering functions that allowed to use just 2D images as ground truth. 
+ One of the main methods was~\cite{nerf42}, which uses a 
+ representation that outputs a feature vector and RGB color at each continous 
+ coordinate, proposing a differentiable rendering function consisting of a 
+ RNN(Recurrent neural network).
+ 
+ Anyway these methods have been limited to simple shapes with low complexity,
+ resulting in oversmoothed renderings.
+ 
+ \paragraph{View synthesis and image-based rendering.} Photorealistic novel views 
+ can be reconstructed if a dense sampling of images have been provided by 
+ simple light field sample interpolation techniques~\cite{nerf21,nerf5}.
+ If sparser images are available, some methods have been introduced that 
+ rely on extracting traditional geometry and appearance representations
+ from observed images. A popular class of approached uses mesh-based representations
+ of scene with diffuse~\cite{nerf48} or view-dependent~\cite{nerf2} appearance. Also there are differentiable
+ rasterizers~\cite{nerf4,nerf10} that can directly optimize mesh recontruction to reproduce
+ a set of input images using gradient descent. However due to local minima or 
+ poor conditioning of the loss landscape, the optimization is usually difficult.
+ 
+ High-quality photorealistic view synthesis is also performed by volumetric representations,
+ from a set of given RGB images. Volumetric methods can represent complex shapes and materials
+ ,well suited for gradient-based optimization. First works~\cite{nerf19} used observed images to 
+ directly predict color voxel grids.
+ Later~\cite{nerf9,nerf13,nerf17} used deep networks to color a sampled volumetric region from some given images.
+ 
+ Anyway these methods, being based on discrete sampling of the voxel grid, are restricted to low resolution due to time 
+ and computational power. With neural rendering instead a \textit{continous} representation was proposed, reducing 
+ the memory requirements and producing higher quality renderings.
+ 
+\paragraph{Background Subtraction}
+Background subtraction techniques have been used to detect moving objects 
+in videos(see~\cite{ndiff_2}). The simplest way to obtain the background would be to capture
+a background image that does not contain any foreground object. Unfortunately in some scenes
+it is not possible and it could be changed under critical situations like illumination
+changes, objects appeearing and disappearing from the scene. Some expedients have been
+introduced that try to predict the background via a background initialization step, which base
+its guess on the first few frames of the video. Anyway egocentric videos still contains too much
+challenging problems(light change,multiple different objects,moving camera,etc.) that do not allow background subtraction to be a viable solution.
+
+\paragraph{Motion segmentation}
+Motion segmentation consists in decomposing a video into individually moving 
+objects~\cite{ndiff_18}. Amongst others, it has applications in 
+robotics, traffic monitoring, sports analysis, inspection, video surveillance and compression.
+Anyway these techniques usually relies on optical flow, which can be subject to some ambiguities
+like, in our case,motion parallax. Even occlusion plays an important role. Motion segmentation
+struggles for example when an object moves in front of or behind other objects in the 
+scene, leading to ambiguity in the flow field. Also, many methods fails when a dynamic 
+object temporarilly remain static.
+
+All these problems prevent to apply traditional motion segmentation algorithms to egocentric videos.
+
+\paragraph{Discovering and segmenting objects in videos}
+Discovering and segmenting objects in videos is related to background subtraction and 
+motion segmentation.
+As instance moving objects can be segmented from the background by using a probabilistic model
+that acts on optical flow~\cite{ndiff_1}. In~\cite{ndiff_3}, pixel trajectories and
+spectral clustering are combined to produce motion segments. Some recent works revisits classical motion segmentation
+techniques from a data-driven perspective~\cite{ndiff_38}, \textit{e.g.} using 
+physical motion cues to learn 3D representations or learning a scene representation
+using neural rendering~\ref{sec:nerf}. 
+
+
+
+\section{NeRF:Representing Scenes as Neural Radiance Fields for View Synthesis}\label{sec:nerf}
+With NeRF~\cite{nerf} the authors introduced a new state-of-the-art model
+for synthesizing novel views of complex scenes by just using a set of sparse
+images and their relative positions.
+
+\paragraph*{Introduction}With this work the novel view synthesis problem of complex optimization
+ is dealt  
+by modeling the scene representation with a fully-connected neural network(MLP) without any
+convolutional layer, this is called \textit{neural radiance field}(NeRF). The network
+take as input the position of a point $(x,y,z)$ and the direction $(\theta,\phi)$ from which we are looking it
+and gives as results the color$(r,g,b)$ and density $(\sigma)$ of that point. 
+
+To render a NeRF from a viewpoint one can:$1)$ march camera rays in the 
+scene and sample some points from them $2)$ use those points as input to the neural
+network to produce an output set of colors and densities, and $3)$ use volume 
+rendering techniques to obtain a final 2D image. All the previous steps
+are differentiable such tat we can use gradient descent to optimize the model
+by minimizing the error between each image and the corresponding prediction.
+Repeating this process from multiple viewpoints encourages the network to 
+grasp the 3D scene representation. In Figure~\ref{fig:batteria} is reported an example
+,presented in the paper,of the main steps.
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=1\linewidth]{images/relatedWorks/batteria.png} 
+    \caption{\textbf{NeRF.}Optimization of a continous 5D neural radiance field
+    representation(volume density and view-dependent color at any continuous location)
+    of a scene from a seet of input images. The 2D novel views are obtained thanks
+    to classic volume rendering techniques. Here in this example, given 100
+    images acquired from different viewpoints, they sample two novel views.}\label{fig:batteria}
+\end{figure}
+
+Anyway this approch is not enough for a complex scene, in fact the optimization 
+does not converge to a sufficiently high-resolution representation. This problem
+is solved by trasforming the input coordinates with a positional encoding
+that enables the network to represent higher frequency functions.
+Summing up, their contribution consists in:
+\begin{itemize}
+    \item An approach for representing continous scenes as a 5D neural radiance fields.
+    \item A differentiable rendering pipeline based on classical volume rendering
+    techniques,used to optimize the scene representation via input images.
+    \item A positional encoding to map each input 5D coordinate into a higher dimensional
+    space which allows to represent high-frequency scene content.
+\end{itemize}
+\subsection{Method}
+A continous 3D scene is represented as a 5D vector-valued function whose input is a 3D coordinate 
+$\textbf{x}=(x,y,z)$ and 2D viewing direction $\textbf{d}=(\theta,\phi)$, and whose output is an emitted color 
+$\textbf{c} = (r,g,b)$ and volume density $\sigma$. In practice the scene is represented by an MLP network
+$F_{\Theta}:(\textbf{x},\textbf{d}) \rightarrow (\textbf{c},\sigma)$, where $\Theta$ are the weights of the network.
+
+The representation is encouraged to be multiview consistent by restricting the network to predict the 
+volume density $\sigma$ as a function of just the location \textbf{x}, while the color \textbf{c} is a
+function of both the input, location and direction. To do this the MLP $F_{\Theta}$ first processes the 
+input \textbf{x} with 8 fully-connected layers (using ReLU activation functions and 256 channels per layer),
+and outputs $\sigma$ and a 256-dimensional feature vector. The scheme is summed up in Figure~\ref{fig:mlp}.
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/relatedWorks/Neural/NeRF_mlp.png} 
+    \caption{\textbf{$F_{\Theta}$ Scheme.} The input position \textbf{x} pass through 8 Fully connected
+    (FC) layers of 256-channels. Each FC layer is followed by a ReLU activation function. This intermediate
+    result is then concatenated with the input direction (\textbf{d}) and fed to
+    one last FC with 128 channels that feeds its output to a ReLU function. The output of the ReLU
+    are the color \textbf{c} and the volume density ($\sigma$).}\label{fig:mlp}
+\end{figure}
+
+The effects of the direction in input can be seen in Figure~\ref{fig:lego}.
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=1\linewidth]{images/relatedWorks/lego.png} 
+    \caption{Here are reported the results obtained with different strategies, as written underneath each image.
+     In particular removing view dependence prevents the model from recreating the specular 
+     reflection on the bulldozer tread. Removing the Positional encoding instead we 
+     obtain a blurred image, meaning that high frequencies are not captured nor represented.}\label{fig:lego}
+\end{figure}
+
+\subsubsection{Volume Rendering with Radiance Fields}
+The implicit representation of the scene relies on the volume densities and on the color
+of every point in that scene. The color of any ray passing through the scene is rendered using
+principles from classical volume rendering~\cite{nerf16}. The volume density $\sigma(\textbf{x})$
+can be interpreted as the differential probability of a ray terminating at an infinitesimal
+particle at location \textbf{x}. While the expected color C(\textbf{r}) of camera ray 
+\textbf{r}(t) = \textbf{o}+ t\textbf{d} with near and far bounds $t_n$ and $t_f$ is:
+\begin{equation}
+    C(\textbf{r}) = \int_{t_n}^{t_f} T(t)\sigma(\textbf{r}(t))\textbf{c}(\textbf{\textbf{r}(t),\textbf{d}}) \,dt 
+\end{equation} 
+where $T(t)$ denotes the accumulated transmittance along the ray from $t_n$ to $t$,i.e:
+the probability that the ray travels from $t_n$ to $t$ without hitting any other particle.Namely:
+\begin{equation}
+    T(t) = exp(-\int_{t_n}^{t}\sigma(\textbf{r}(s))\,ds)
+\end{equation}
+To obtain a new view in our neural radiance field, we should estimate the $C(\textbf{r})$
+function for each ray passing through each pixel of the focal plane(see Figure~\ref{fig:rt}).
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/relatedWorks/Neural/ray_tracing.png} 
+    \caption{Example of rays passing through an image plane of size 3x3 pixels.}\label{fig:rt}
+\end{figure}
+This integral is approximated using a numerical method known as \textit{quadrature}.Typically deterministic 
+quadrature is used for rendering discretized voxel grids, but in our case it would limit our model's resolution
+since the network would only be queried at a fixed discrete set of locations. To solve this problem a
+\textit{stratified} sampling approach has been used, where each interval $[t_n,t_f]$ has been partitioned
+into N evenly-spaced bins, from which a random sample is then uniformly extracted. Namely:
+\begin{equation}
+    t_i  \thicksim \mathcal{U} [t_n + \frac{i-1}{N}(t_f-t_n), t_n + \frac{i}{N}(t_f-t_n)]
+\end{equation}
+In this way, even if we are using a discrete set of samples, using stratified sampling allows us to represent a continuous scene 
+representation because the network is evaluated at continuous positions during the training phase.
+Following the quadrature rule discussed in~\cite{nerf26} they used the samples to estimate $C(\textbf{r})$:
+\begin{equation}\label{eq:neural_C}
+    \widehat{C}(\textbf{r}) = \sum_{i=1}^N T_i (1-exp(-\sigma_i \delta_i))\textbf{c}_i, \quad where \quad T_i = exp(-\sum_{j=1}^{i-1}\sigma_j\delta_j)
+\end{equation}
+where $\delta_i =t_(i+1)$ is the distance between adjacent samples. It can be noticed that the function that approximate $C(\textbf{r})$ is differentiable and can be 
+reduced to traditional \textit{alpha compositing}\footnote{\textit{Alpha compositing} is a digital imaging technique used to combine multiple layers of images or graphics with transparency, known as alpha channels.}
+with alpha values being $\alpha_i = 1-exp(-\sigma_i \delta_i)$.
+
+\subsubsection{Optimizing a Neural Radiance Field}
+In the previous section the core components of a Neural Radiance Field were presented, anyway these parts alone are not able to 
+achieve state-of-the-art results. To improve the quality of the representation two improvements were found succesful:
+\begin{itemize}
+    \item \textbf{Positional Encoding} of the input coordinates, to encourage the representation of high-frequencies.
+    \item \textbf{Hierarchical Sampling} procedure that allows to efficiently sample high-frequency representation.
+\end{itemize} 
+
+\paragraph{Positional Encoding} After having found that the model $F_\Theta$ performed poorly operating solely on $xyz\theta\phi$ input, in accordance
+to the work by Rahaman \textit{et al.}~\cite{nerf35} that states that deep networks are biased towards
+learning low-frequency functions; they encode the inputs to a higher dimensional space using high frequency functions. 
+
+The new model $F_\Theta$ can thus be represented as a combinatino of functions $F_\Theta = F_\Theta'\circ \gamma$, where $\gamma$ is a function from $\mathbb{R}$ 
+to a higher dimensional space $\mathbb{R}^{2L}$, and  $F_\Theta'$ is still the basic block introduced in the previous sections.
+Formally the function used for the encoding part is:
+\begin{equation}
+    \gamma(p) = (sin(2^0 \pi p), cos(2^0 \pi p), ...,sin(2^L-1 \pi p), cos(2^L-1 \pi p))
+\end{equation}
+In particular $\gamma(\dot)$ is applied  separately to each component of \textbf{x} and \textbf{d}, after these values are normalized to lie in $[-1,1]$.
+Reporting the paper results, they found out that good values of L were: 10 for $\gamma(\textbf{x})$ and 4 for $\gamma(\textbf{d})$.
+
+\paragraph{Hierarchical Sampling} Stratified sampling allows to cover continuous
+regions but anyway is still inefficient: free space and occluded regions that do not 
+contribute to the rendered image are still sampled repeatedly. To solve this 
+problem the authors proposed a \textit{hierarchical} representation which increased
+rendering efficiency by distributing samples proportionally to their expected 
+effect on the final rendering.
+
+This solution consists in simultaneously optimize two networks: one "coarse" and
+one "fine". The first step expect to sample a set of $N_c$ points using stratified 
+sampling and feed those to the coarse model. Once this first partial result has 
+been obtained a more informed sampling of points is prooduced. The coarse sampling 
+infact allows to get a rough idea of which parts of the volume are the most relevant.
+To do this they rewrite the alpha composited color from the coarse model $\hat{C}_c(\textbf{r})$
+in Eq.~\ref{eq:neural_C} as a weighted sum of all sampled colors $c_i$ along the ray:
+\begin{equation}
+    \hat{C}_c(\textbf{r}) = \sum_{i=1}^{N_c} w_i c_i, \quad \quad w_i = T_i(1-exp(-\sigma_i \delta_i))
+\end{equation}
+By normalizing the weights as $\hat{w}_i = \frac{w_i}{\sum_{j=1}^{N_c}w_j}$ we can produce
+a piecewise-constant probability density function along the ray as seen in Figure~\ref{fig:pdf_ray}.
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/relatedWorks/Neural/pdf_rays.png} 
+    \caption{Probability Density Function of normalized coarse weights $\hat{w}_i$ along a ray with $N_c$ samples.}\label{fig:pdf_ray}
+\end{figure}
+The next $N_f$ samples are extraced from this distribution and then, combined to the previous $N_c$ samples,
+fed to the "fine" network. The final rendered color $\hat{C}_f(\textbf{r})$ is obtained using
+Eq.~\ref{eq:neural_C} with $N_c+N_f$. This procedure revealed succesful in obtaining more
+samples from regions we expect to contain visible content.
+
+\subsubsection{Implementation Details}
+To optimize a scene RGB frames are required with the corresponding camera poses and intrinsic
+parameters(for synthetic data these are easily retrievable from the scene model; while for
+real images COLMAP was used to extract them).
+At each iteration a batch of rays from the set of all pixels of all images of the dataset
+is extracted and following the sampling procedure previosuly described the actual color 
+is predicted for both the "coarse" and the "fine" model. The loss is computed as the 
+total squared error betwwen the rendered and true pixel colors for the two models:
+\begin{equation}
+    \mathcal{L} = \sum_{r\in\mathcal{R} }[\left\lVert {\hat{C}_c(\textbf{r})-C(\textbf{r})} \right\rVert_2^2+\left\lVert {\hat{C}_f(\textbf{r})-C(\textbf{r})} \right\rVert_2^2]
+\end{equation}
+
+where $\mathcal{R}$ is the set of rays of each batch, $C(\textbf{r})$ is the RGB color
+ground truth and $\hat{C}_c(\textbf{r})$,$\hat{C}_f(\textbf{r})$ are the predicted color
+for the "coarse" and the "fine" model for ray \textbf{r}.
+
+% TODO 
+As for some more specific details, they used a batch size of 4086 rays, each
+sampled at $N_c=64$ points for the "coarse" model and $N_f=128$ for the "fine"
+model. They used the Adam optimizer with a learning rate beginning at $5x10^{-4}$
+and decays exponentially to $5x10^-5$ over the course of optimization. Others parameters
+of the optimizer where left at default values: $\beta_1 = 0.9,\beta_2=0.999$ and $\epsilon=10^{-7}$.
+Each scene took them around 100-300l iterations to converge on NVIDIA V100 GPU(about 1-2 days).
+Their tensorflow implementation is provided on \url{https://github.com/bmild/nerf}.
+
+\subsection{Results}
+\begin{comment}
+To validate their results they generated and aggregated some datasets.
+The main distinction is given by synthetic scenes, denoted as\textit{ Diffuse 
+Synthetic 360$\degree$}~\cite{deepvoxels} and \textit{Realistic Synthetic 360$\degree$}, and 
+realistic scenes,\textit{Real Forward Facing}. More in detail:
+\begin{itemize}
+    \item \textit{ Diffuse Synthetic 360$\degree$}: contains four Lambertian objects 
+    with simple geometry. Each object is rendered at 512x512 pixels from viewpoints taken
+    from the upper hemisphere.
+    \item \textit{ Realistic Synthetic 360$\degree$}: new dataset that the authors introduce
+    containing images of eight objects that exhibit complicated geometry and realistic non-Lambertian\footnote{Lambertian reflectance is the property that defines an ideal "matte" or diffusely reflecting surface. The apparent brightness of a Lambertian surface to an observer is the same regardless of the observer's angle of view~\cite{lambertian}.}
+    materials. Six scenes were sampled from the upper hemisphere while the remaining two
+    are rendered from a full sphere. For each scene 100 views are captured for training and 
+    200 for testing, all at 800x800 pixels.
+    \item \textit{Real Forward Facing}: consists of 8 scenes captured with a handheld cellphone
+    (5 taken from the LLFF~\cite{LLFF} paper and 3 captured by them), captured with 20 to 62 images,
+    holding out $1/8$ of these for the test set. All images have a resolution of 1008x756 pixels.
+\end{itemize}
+
+The algorithm which have been compared were the top-performing techniques for view synthesis and 
+are the following:
+\begin{itemize}
+    \item \textbf{Neural Volumes (NV)}~\cite{neuralvol} synthesizes novel views of objects
+    lying in a confined space with a distinct background(which must be captured alone).
+    The model is based on a 3D convolutional network to predict a discretized RGB$\alpha$ voxel grid.
+    \item \textbf{Scene Representation Networks (SRN)}~\cite{srn} represent a continuous scene
+    as an opaque surface, implicitly defined by an MLP that maps spatial coordinates to a
+    feature vector. The color is then obtained by training a RNN along the ray.
+    \item \textbf{Local Light Field Fusion (LLFF)}~\cite{LLFF} is designed for producing photorealistic
+    novel views for well-sampled forward facing scenes.
+\end{itemize}
+
+%\input{content/RelatedWorks/NeuralRendering/nerf_quantitative_res.tex}
+\end{comment}
+
+A qualitative idea of the potentiality of NeRF is reported in Figure~\ref{fig:blender2} and~\ref{fig:blender1}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/relatedWorks/Neural/blender2.png} 
+    \caption{Comparison on test images from the newly introduced
+    synthetic dataset. The algorithms compared are NeRF,Local Light Field Fusion LLFF~\cite{} and Scene
+    Representation Network SRN. NeRF method is able to recover fine details in both geometry
+    and appearance. LLFF exhibits some artifacts on the microphone and some ghosting
+    artifact in the other scenes. SRN produces distorted and blurry rendering for every
+    scene. Neural Volumesstruggle capturing details we can see from
+    the ship reeconstruction.}\label{fig:blender2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/relatedWorks/Neural/blender1.png} 
+    \caption{Comparison on the test set of the real images.
+    As expected LLFF is performing pretty well being projected
+    for this specific use case(forward-facing captures of real scenes).
+    Anyway NeRF is able to represent fine geometry more consistently across
+    rendered views than LLFF as we can see in Fern's and in T-rex. NeRF
+    is also able to reproduce partially occluded scene as in the second row.
+    SRN instead completely fail to represent any high-frequency content.}\label{fig:blender1}
+\end{figure}
+%An additional validation of their design choices is given by an ablation
+%study on the various parts that have been discussed in the implementation part.
+%In particular the result of the study is reported in Table~\ref{tab:nerf_ablation}.
+%\input{content/RelatedWorks/NeuralRendering/nerf_ablation.tex}
+%
+\input{content/RelatedWorks/NeuralRendering/NeuralDiff.tex}

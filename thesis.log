@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2024.1.21)  22 FEB 2024 16:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2024.1.21)  28 FEB 2024 12:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1171,7 +1171,157 @@ Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
 \everycr=\toks60
 \minrowclearance=\skip128
 \rownum=\count534
-)) (common/package_config.tex
+)
+(/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/collcell/collcell.sty
+Package: collcell 2011/02/27 v0.5 Collect the content of a tabular cell
+\collect@cell@count=\count535
+)) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/nicematrix/nicematrix.sty (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/basiclayer/pgfcore.sty (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+ (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathutil.code.tex) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen316
+\pgfmath@count=\count536
+\pgfmath@box=\box86
+\pgfmath@toks=\toks61
+\pgfmath@stack@operand=\toks62
+\pgfmath@stack@operation=\toks63
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathcalc.code.tex) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count537
+)) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfint.code.tex) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen317
+\pgf@picmaxx=\dimen318
+\pgf@picminy=\dimen319
+\pgf@picmaxy=\dimen320
+\pgf@pathminx=\dimen321
+\pgf@pathmaxx=\dimen322
+\pgf@pathminy=\dimen323
+\pgf@pathmaxy=\dimen324
+\pgf@xx=\dimen325
+\pgf@xy=\dimen326
+\pgf@yx=\dimen327
+\pgf@yy=\dimen328
+\pgf@zx=\dimen329
+\pgf@zy=\dimen330
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen331
+\pgf@path@lasty=\dimen332
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen333
+\pgf@shorten@start@additional=\dimen334
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box87
+\pgf@hbox=\box88
+\pgf@layerbox@main=\box89
+\pgf@picture@serial@count=\count538
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen335
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen336
+\pgf@pt@y=\dimen337
+\pgf@pt@temp=\dimen338
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen339
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen340
+\pgf@sys@shading@range@num=\count539
+\pgf@shadingcount=\count540
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box90
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box91
+)
+Package: nicematrix 2024/02/13 v6.27 Enhanced arrays with the help of PGF/TikZ
+\g__nicematrix_env_int=\count541
+\g__nicematrix_NiceMatrixBlock_int=\count542
+\g__nicematrix_notes_caption_int=\count543
+\l__nicematrix_columns_width_dim=\dimen341
+\l__nicematrix_col_width_dim=\dimen342
+\g__nicematrix_row_total_int=\count544
+\g__nicematrix_col_total_int=\count545
+\g__nicematrix_last_row_node_int=\count546
+\l__nicematrix_key_nb_rows_int=\count547
+\g__nicematrix_blocks_wd_dim=\dimen343
+\g__nicematrix_blocks_ht_dim=\dimen344
+\g__nicematrix_blocks_dp_dim=\dimen345
+\l__nicematrix_width_dim=\dimen346
+\l__nicematrix_tabular_width_dim=\dimen347
+\l__nicematrix_rule_width_dim=\dimen348
+\l__nicematrix_old_iRow_int=\count548
+\l__nicematrix_old_jCol_int=\count549
+\g__nicematrix_total_X_weight_int=\count550
+\l__nicematrix_X_columns_dim=\dimen349
+\l__nicematrix_x_initial_dim=\dimen350
+\l__nicematrix_y_initial_dim=\dimen351
+\l__nicematrix_x_final_dim=\dimen352
+\l__nicematrix_y_final_dim=\dimen353
+\l__nicematrix_tmpc_dim=\dimen354
+\l__nicematrix_tmpd_dim=\dimen355
+\g__nicematrix_width_last_col_dim=\dimen356
+\g__nicematrix_width_first_col_dim=\dimen357
+\l__nicematrix_row_min_int=\count551
+\l__nicematrix_row_max_int=\count552
+\l__nicematrix_col_min_int=\count553
+\l__nicematrix_col_max_int=\count554
+\l__nicematrix_start_int=\count555
+\l__nicematrix_end_int=\count556
+\l__nicematrix_local_start_int=\count557
+\l__nicematrix_local_end_int=\count558
+\g__nicematrix_static_num_of_col_int=\count559
+\l__nicematrix_rounded_corners_dim=\dimen358
+\l__nicematrix_tab_rounded_corners_dim=\dimen359
+\l__nicematrix_offset_dim=\dimen360
+\l__nicematrix_line_width_dim=\dimen361
+\g__nicematrix_block_box_int=\count560
+\l__nicematrix_submatrix_extra_height_dim=\dimen362
+\l__nicematrix_submatrix_left_xshift_dim=\dimen363
+\l__nicematrix_submatrix_right_xshift_dim=\dimen364
+\l__nicematrix_first_row_int=\count561
+\l__nicematrix_first_col_int=\count562
+\l__nicematrix_last_row_int=\count563
+\l__nicematrix_last_col_int=\count564
+\c@tabularnote=\count565
+\c@nicematrix_draft=\count566
+\l__nicematrix_cell_space_top_limit_dim=\dimen365
+\l__nicematrix_cell_space_bottom_limit_dim=\dimen366
+\l__nicematrix_xdots_inter_dim=\dimen367
+\l__nicematrix_xdots_shorten_start_dim=\dimen368
+\l__nicematrix_xdots_shorten_end_dim=\dimen369
+\l__nicematrix_xdots_radius_dim=\dimen370
+\l__nicematrix_notes_above_space_dim=\dimen371
+\l__nicematrix_left_margin_dim=\dimen372
+\l__nicematrix_right_margin_dim=\dimen373
+\l__nicematrix_extra_left_margin_dim=\dimen374
+\l__nicematrix_extra_right_margin_dim=\dimen375
+\c__nicematrix_max_l_dim=\dimen376
+\l__nicematrix_position_int=\count567
+\l__nicematrix_multiplicity_int=\count568
+\l__nicematrix_brace_yshift_dim=\dimen377
+) (common/package_config.tex
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 26.
 Package hyperref Info: Option `colorlinks' set `true' on input line 26.
 
@@ -1183,8 +1333,7 @@ Package siunitx Info: Option "detect-all" has been deprecated in this release.
 (siunitx)             text-family-to-math = true, text-series-to-math = true"
 (siunitx)             as a replacement.
 
-) (common/new_commands.tex) (common/thesis_info.tex)
-(common/font_config.tex) (glossaries.tex)
+) (common/new_commands.tex) (common/thesis_info.tex) (common/font_config.tex) (glossaries.tex)
 \glswrite=\write6
 \glo@main@file=\write7
 \openout7 = `thesis.glo'.
@@ -1206,14 +1355,7 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 LaTeX Warning: Unused global option(s):
     [corpo=12pt,stile=standard,tipotesi=magistrale,cucitura=7mm].
 
-(thesis.aux
-
-LaTeX Warning: Label `fig:samplFreq' multiply defined.
-
-
-LaTeX Warning: Label `fig:samplFreq' multiply defined.
-
-)
+(thesis.aux)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
@@ -1238,17 +1380,17 @@ LaTeX Info: Redefining \it@ocap on input line 35.
 LaTeX Info: Redefining \it@ccap on input line 35.
  (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count535
-\scratchdimen=\dimen316
-\scratchbox=\box86
-\nofMPsegments=\count536
-\nofMParguments=\count537
-\everyMPshowfont=\toks61
-\MPscratchCnt=\count538
-\MPscratchDim=\dimen317
-\MPnumerator=\count539
-\makeMPintoPDFobject=\count540
-\everyMPtoPDFconversion=\toks62
+\scratchcounter=\count569
+\scratchdimen=\dimen378
+\scratchbox=\box92
+\nofMPsegments=\count570
+\nofMParguments=\count571
+\everyMPshowfont=\toks64
+\MPscratchCnt=\count572
+\MPscratchDim=\dimen379
+\MPnumerator=\count573
+\makeMPintoPDFobject=\count574
+\everyMPtoPDFconversion=\toks65
 ) (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -1334,7 +1476,7 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count541
+\c@lstlisting=\count575
 LaTeX Info: Redefining \microtypecontext on input line 35.
 Package microtype Info: Applying patch `item' on input line 35.
 Package microtype Info: Applying patch `toc' on input line 35.
@@ -1370,8 +1512,15 @@ LaTeX Info: Redefining \ohm on input line 35.
 Package gensymb Info: Using \textohm for \ohm on input line 35.
 LaTeX Info: Redefining \micro on input line 35.
 Package gensymb Info: Using \textmu for \micro on input line 35.
+\c__nicematrix_shift_Ldots_last_row_dim=\dimen380
+\c__nicematrix_shift_exterior_Vdots_dim=\dimen381
+\c__nicematrix_innersep_middle_dim=\dimen382
+\c@tabularnotesi=\count576
+\enitdp@tabularnotes=\count577
+\c@tabularnotes*i=\count578
+\enitdp@tabularnotes*=\count579
  (common/config.tex) (common/toptesi_config.tex
-<images/logo/Logo_PoliTo_new.png, id=77, 334.1283pt x 310.0383pt>
+<images/logo/Logo_PoliTo_new.png, id=85, 334.1283pt x 310.0383pt>
 File: images/logo/Logo_PoliTo_new.png Graphic file (type png)
 <use images/logo/Logo_PoliTo_new.png>
 Package pdftex.def Info: images/logo/Logo_PoliTo_new.png  used on input line 2.
@@ -1500,27 +1649,33 @@ Package microtype Info: Character `029' is missing
  [4
 
 
-] (thesis.lot)
-\tf@lot=\write11
-\openout11 = `thesis.lot'.
+] (thesis.lot
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5
 
 
-] (thesis.lof
+])
+\tf@lot=\write11
+\openout11 = `thesis.lot'.
+
+ [6] (thesis.lof
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6
+ [7
 
 
-])
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8])
 \tf@lof=\write12
 \openout12 = `thesis.lof'.
 
- [7] [8
+ [9] [10
 
 
-] (common/post_summary_config.tex) [9
+] (common/post_summary_config.tex) [11
 
 
 
@@ -1531,7 +1686,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Chapter 1.
-<images/method/pizza.png, id=249, 852.18375pt x 508.90125pt>
+<images/method/pizza.png, id=335, 852.18375pt x 508.90125pt>
 File: images/method/pizza.png Graphic file (type png)
 <use images/method/pizza.png>
 Package pdftex.def Info: images/method/pizza.png  used on input line 30.
@@ -1541,7 +1696,7 @@ Package pdftex.def Info: images/method/pizza.png  used on input line 30.
 ] [4 <./images/method/pizza.png>]
 
 pdfTeX warning: pdflatex (file ./images/method/DumbPipeline.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/method/DumbPipeline.pdf, id=265, 792.64331pt x 395.16432pt>
+<images/method/DumbPipeline.pdf, id=351, 792.64331pt x 395.16432pt>
 File: images/method/DumbPipeline.pdf Graphic file (type pdf)
 <use images/method/DumbPipeline.pdf>
 Package pdftex.def Info: images/method/DumbPipeline.pdf  used on input line 66.
@@ -1549,7 +1704,7 @@ Package pdftex.def Info: images/method/DumbPipeline.pdf  used on input line 66.
 [5 <./images/method/DumbPipeline.pdf>]
 
 pdfTeX warning: pdflatex (file ./images/method/MonocularPipeline.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/method/MonocularPipeline.pdf, id=299, 937.06384pt x 395.16432pt>
+<images/method/MonocularPipeline.pdf, id=385, 937.06384pt x 395.16432pt>
 File: images/method/MonocularPipeline.pdf Graphic file (type pdf)
 <use images/method/MonocularPipeline.pdf>
 Package pdftex.def Info: images/method/MonocularPipeline.pdf  used on input line 88.
@@ -1557,7 +1712,7 @@ Package pdftex.def Info: images/method/MonocularPipeline.pdf  used on input line
 
 
 pdfTeX warning: pdflatex (file ./images/method/NeuralDiffPipeline.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/method/NeuralDiffPipeline.pdf, id=301, 937.06384pt x 395.16432pt>
+<images/method/NeuralDiffPipeline.pdf, id=387, 937.06384pt x 395.16432pt>
 File: images/method/NeuralDiffPipeline.pdf Graphic file (type pdf)
 <use images/method/NeuralDiffPipeline.pdf>
 Package pdftex.def Info: images/method/NeuralDiffPipeline.pdf  used on input line 105.
@@ -1578,13 +1733,13 @@ Underfull \vbox (badness 1354) has occurred while \output is active []
  [6 <./images/method/MonocularPipeline.pdf>]
 
 pdfTeX warning: pdflatex (file ./images/method/samplingPipe.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/method/samplingPipe.pdf, id=344, 810.96077pt x 190.75667pt>
+<images/method/samplingPipe.pdf, id=431, 810.96077pt x 190.75667pt>
 File: images/method/samplingPipe.pdf Graphic file (type pdf)
 <use images/method/samplingPipe.pdf>
 Package pdftex.def Info: images/method/samplingPipe.pdf  used on input line 141.
 (pdftex.def)             Requested size: 405.47939pt x 95.3781pt.
 [7 <./images/method/NeuralDiffPipeline.pdf>]
-<images/method/overlap.png, id=379, 900.2433pt x 125.7498pt>
+<images/method/overlap.png, id=468, 900.2433pt x 125.7498pt>
 File: images/method/overlap.png Graphic file (type png)
 <use images/method/overlap.png>
 Package pdftex.def Info: images/method/overlap.png  used on input line 158.
@@ -1597,133 +1752,163 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htb') on input line 1.
 
 )
-<images/esperimenti/visor_exp.png, id=412, 535.5207pt x 138.7584pt>
+<images/esperimenti/visor_exp.png, id=500, 535.5207pt x 138.7584pt>
 File: images/esperimenti/visor_exp.png Graphic file (type png)
 <use images/esperimenti/visor_exp.png>
-Package pdftex.def Info: images/esperimenti/visor_exp.png  used on input line 24.
+Package pdftex.def Info: images/esperimenti/visor_exp.png  used on input line 26.
 (pdftex.def)             Requested size: 418.25368pt x 108.3772pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [10
 
-] [11 <./images/esperimenti/visor_exp.png>] (content/Experiments/Tabs/colmap_P01.tex
+] (content/Experiments/metrics.tex [11 <./images/esperimenti/visor_exp.png>]
+<images/metrics/auc.png, id=517, 387.4475pt x 262.9825pt>
+File: images/metrics/auc.png Graphic file (type png)
+<use images/metrics/auc.png>
+Package pdftex.def Info: images/metrics/auc.png  used on input line 65.
+(pdftex.def)             Requested size: 209.12683pt x 141.94823pt.
+) [12]
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htb') on input line 4.
+LaTeX Warning: Reference `tab:col_P01_01_frames,tab:col_P01_01_res' on page 13 undefined on input line 44.
 
-)
-<images/esperimenti/Colmap_P01_kitchen.png, id=430, 646.8165pt x 670.1838pt>
-File: images/esperimenti/Colmap_P01_kitchen.png Graphic file (type png)
-<use images/esperimenti/Colmap_P01_kitchen.png>
-Package pdftex.def Info: images/esperimenti/Colmap_P01_kitchen.png  used on input line 65.
-(pdftex.def)             Requested size: 418.25368pt x 433.36455pt.
 
+LaTeX Warning: Reference `fig:colmap_P01_frames,fig:colmap_P01_res' on page 13 undefined on input line 44.
+
+[13 <./images/metrics/auc.png>] (content/Experiments/Tabs/colmap_P01.tex)
+<images/esperimenti/ColmapComparisonP01-01.png, id=537, 597.6729pt x 572.8602pt>
+File: images/esperimenti/ColmapComparisonP01-01.png Graphic file (type png)
+<use images/esperimenti/ColmapComparisonP01-01.png>
+Package pdftex.def Info: images/esperimenti/ColmapComparisonP01-01.png  used on input line 68.
+(pdftex.def)             Requested size: 418.25368pt x 400.8945pt.
+<images/esperimenti/ColmapComparisonP01-02.png, id=538, 597.6729pt x 256.3176pt>
+File: images/esperimenti/ColmapComparisonP01-02.png Graphic file (type png)
+<use images/esperimenti/ColmapComparisonP01-02.png>
+Package pdftex.def Info: images/esperimenti/ColmapComparisonP01-02.png  used on input line 75.
+(pdftex.def)             Requested size: 418.25368pt x 179.37416pt.
+
+Underfull \vbox (badness 2368) has occurred while \output is active []
+
+ [14]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12] [13 <./images/esperimenti/Colmap_P01_kitchen.png>]
-<images/esperimenti/monocular_bozza.png, id=442, 1182.4175pt x 393.47pt>
-File: images/esperimenti/monocular_bozza.png Graphic file (type png)
-<use images/esperimenti/monocular_bozza.png>
-Package pdftex.def Info: images/esperimenti/monocular_bozza.png  used on input line 81.
-(pdftex.def)             Requested size: 418.25368pt x 139.18149pt.
-<images/esperimenti/glob.png, id=443, 955.57pt x 538.01pt>
+ [15 <./images/esperimenti/ColmapComparisonP01-01.png>]
+
+LaTeX Warning: Reference `fig:COL_all' on page 16 undefined on input line 81.
+
+<images/esperimenti/Monocular/MonocularProj-06.png, id=551, 597.6729pt x 914.2155pt>
+File: images/esperimenti/Monocular/MonocularProj-06.png Graphic file (type png)
+<use images/esperimenti/Monocular/MonocularProj-06.png>
+Package pdftex.def Info: images/esperimenti/Monocular/MonocularProj-06.png  used on input line 99.
+(pdftex.def)             Requested size: 418.25368pt x 639.7791pt.
+<images/esperimenti/glob.png, id=552, 955.57pt x 538.01pt>
 File: images/esperimenti/glob.png Graphic file (type png)
 <use images/esperimenti/glob.png>
-Package pdftex.def Info: images/esperimenti/glob.png  used on input line 86.
+Package pdftex.def Info: images/esperimenti/glob.png  used on input line 106.
 (pdftex.def)             Requested size: 418.25368pt x 235.48552pt.
- [14 <./images/esperimenti/monocular_bozza.png> <./images/esperimenti/glob.png>]
 
-LaTeX Warning: Reference `sec:Sampl' on page 15 undefined on input line 98.
+Underfull \vbox (badness 4686) has occurred while \output is active []
 
-(content/Experiments/Tabs/Epic_int_114.tex)
+ [16 <./images/esperimenti/ColmapComparisonP01-02.png>]
+Overfull \vbox (115.84874pt too high) has occurred while \output is active []
 
-pdfTeX warning: pdflatex (file ./images/esperimenti/comparison53.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/esperimenti/comparison53.pdf, id=454, 1287.65062pt x 849.26183pt>
-File: images/esperimenti/comparison53.pdf Graphic file (type pdf)
-<use images/esperimenti/comparison53.pdf>
-Package pdftex.def Info: images/esperimenti/comparison53.pdf  used on input line 114.
-(pdftex.def)             Requested size: 643.82373pt x 424.62987pt.
+ [17 <./images/esperimenti/Monocular/MonocularProj-06.png>]
+<images/esperimenti/Monocular/Globular-02.png, id=563, 504.2037pt x 552.1428pt>
+File: images/esperimenti/Monocular/Globular-02.png Graphic file (type png)
+<use images/esperimenti/Monocular/Globular-02.png>
+Package pdftex.def Info: images/esperimenti/Monocular/Globular-02.png  used on input line 111.
+(pdftex.def)             Requested size: 292.77629pt x 320.62218pt.
 
-Overfull \hbox (6.37619pt too wide) in paragraph at lines 114--115
- [][] |
- []
+Overfull \vbox (90.17822pt too high) has occurred while \output is active []
 
-[15]
+ [18 <./images/esperimenti/glob.png> <./images/esperimenti/Monocular/Globular-02.png>] (content/Experiments/Tabs/samplingSteps1000.tex) (content/Experiments/Tabs/samplingSteps700.tex)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16]
-Overfull \vbox (91.09344pt too high) has occurred while \output is active []
+ [19]
 
- [17 <./images/esperimenti/comparison53.pdf>]
-<images/esperimenti/nerf_pcd_comparison-06.png, id=514, 671.8701pt x 470.7186pt>
+pdfTeX warning: pdflatex (file ./images/esperimenti/samplingCorretto.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<images/esperimenti/samplingCorretto.pdf, id=579, 597.50829pt x 698.64915pt>
+File: images/esperimenti/samplingCorretto.pdf Graphic file (type pdf)
+<use images/esperimenti/samplingCorretto.pdf>
+Package pdftex.def Info: images/esperimenti/samplingCorretto.pdf  used on input line 136.
+(pdftex.def)             Requested size: 418.25368pt x 489.05107pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20] (content/Experiments/Tabs/Epic_int_114.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21 <./images/esperimenti/samplingCorretto.pdf>])
+<images/esperimenti/comparison53-02.png, id=649, 1287.8514pt x 721.9773pt>
+File: images/esperimenti/comparison53-02.png Graphic file (type png)
+<use images/esperimenti/comparison53-02.png>
+Package pdftex.def Info: images/esperimenti/comparison53-02.png  used on input line 157.
+(pdftex.def)             Requested size: 643.92413pt x 360.98776pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+Overfull \vbox (134.39374pt too high) has occurred while \output is active []
+
+ [23 <./images/esperimenti/comparison53-02.png>]
+
+LaTeX Warning: Reference `fig:col_p03' on page 24 undefined on input line 175.
+
+<images/esperimenti/nerf_pcd_comparison-06.png, id=662, 671.8701pt x 470.7186pt>
 File: images/esperimenti/nerf_pcd_comparison-06.png Graphic file (type png)
 <use images/esperimenti/nerf_pcd_comparison-06.png>
-Package pdftex.def Info: images/esperimenti/nerf_pcd_comparison-06.png  used on input line 131.
+Package pdftex.def Info: images/esperimenti/nerf_pcd_comparison-06.png  used on input line 181.
 (pdftex.def)             Requested size: 418.25368pt x 293.04199pt.
-<images/esperimenti/nerf_pcd_comparison-07.png, id=515, 671.8701pt x 942.8826pt>
+<images/esperimenti/Colmaps/P03_04-10.png, id=663, 764.3757pt x 496.7358pt>
+File: images/esperimenti/Colmaps/P03_04-10.png Graphic file (type png)
+<use images/esperimenti/Colmaps/P03_04-10.png>
+Package pdftex.def Info: images/esperimenti/Colmaps/P03_04-10.png  used on input line 187.
+(pdftex.def)             Requested size: 418.25368pt x 271.81088pt.
+<images/esperimenti/nerf_pcd_comparison-07.png, id=664, 671.8701pt x 942.8826pt>
 File: images/esperimenti/nerf_pcd_comparison-07.png Graphic file (type png)
 <use images/esperimenti/nerf_pcd_comparison-07.png>
-Package pdftex.def Info: images/esperimenti/nerf_pcd_comparison-07.png  used on input line 137.
+Package pdftex.def Info: images/esperimenti/nerf_pcd_comparison-07.png  used on input line 193.
 (pdftex.def)             Requested size: 470.30586pt x 660.01332pt.
 
-Overfull \hbox (13.28967pt too wide) in paragraph at lines 137--138
+Overfull \hbox (13.28967pt too wide) in paragraph at lines 193--194
 [][] |
  []
 
 
-LaTeX Warning: Float too large for page by 107.28304pt on input line 139.
+LaTeX Warning: Float too large for page by 107.28304pt on input line 195.
 
-[18 <./images/esperimenti/nerf_pcd_comparison-06.png>] (content/Experiments/Tabs/Epic_finale_114_res.tex)
-<images/esperimenti/Epic_228.png, id=523, 539.01375pt x 319.1925pt>
+(content/Experiments/Tabs/Epic114.tex) (content/Experiments/Tabs/Epic_finale_228.tex)
+<images/esperimenti/Epic_228.png, id=667, 539.01375pt x 319.1925pt>
 File: images/esperimenti/Epic_228.png Graphic file (type png)
 <use images/esperimenti/Epic_228.png>
-Package pdftex.def Info: images/esperimenti/Epic_228.png  used on input line 149.
+Package pdftex.def Info: images/esperimenti/Epic_228.png  used on input line 206.
 (pdftex.def)             Requested size: 418.25368pt x 247.68333pt.
 
 
-LaTeX Warning: Reference `' on page 19 undefined on input line 155.
+LaTeX Warning: Reference `fig:objectScenes' on page 24 undefined on input line 213.
 
-
-LaTeX Warning: Reference `' on page 19 undefined on input line 155.
-
-
-
-pdfTeX warning: pdflatex (file ./images/esperimenti/sampling_frequencies.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/esperimenti/sampling_frequencies.pdf, id=526, 790.47119pt x 931.207pt>
-File: images/esperimenti/sampling_frequencies.pdf Graphic file (type pdf)
-<use images/esperimenti/sampling_frequencies.pdf>
-Package pdftex.def Info: images/esperimenti/sampling_frequencies.pdf  used on input line 167.
-(pdftex.def)             Requested size: 418.25368pt x 492.71324pt.
-<images/esperimenti/ObjectCountsScenes-02.png, id=527, 1571.8725pt x 2105.2251pt>
+[24] [25 <./images/esperimenti/nerf_pcd_comparison-06.png>]
+<images/esperimenti/ObjectCountsScenes-02.png, id=685, 1571.8725pt x 2105.2251pt>
 File: images/esperimenti/ObjectCountsScenes-02.png Graphic file (type png)
 <use images/esperimenti/ObjectCountsScenes-02.png>
-Package pdftex.def Info: images/esperimenti/ObjectCountsScenes-02.png  used on input line 173.
+Package pdftex.def Info: images/esperimenti/ObjectCountsScenes-02.png  used on input line 225.
 (pdftex.def)             Requested size: 418.25368pt x 560.16273pt.
 
-LaTeX Warning: Float too large for page by 21.83241pt on input line 176.
 
-<images/esperimenti/ObjectCountsScenes-01.png, id=528, 1571.8725pt x 2105.2251pt>
+LaTeX Warning: Float too large for page by 21.83241pt on input line 228.
+
+<images/esperimenti/ObjectCountsScenes-01.png, id=686, 1571.8725pt x 2105.2251pt>
 File: images/esperimenti/ObjectCountsScenes-01.png Graphic file (type png)
 <use images/esperimenti/ObjectCountsScenes-01.png>
-Package pdftex.def Info: images/esperimenti/ObjectCountsScenes-01.png  used on input line 180.
+Package pdftex.def Info: images/esperimenti/ObjectCountsScenes-01.png  used on input line 232.
 (pdftex.def)             Requested size: 418.25368pt x 560.16273pt.
 
-LaTeX Warning: Float too large for page by 7.43245pt on input line 182.
+LaTeX Warning: Float too large for page by 7.43245pt on input line 234.
 
 (content/Experiments/Tabs/samplingMetriche.tex)
-<images/esperimenti/NeuralCleaner.png, id=530, 749.80125pt x 214.8025pt>
+<images/esperimenti/NeuralCleaner.png, id=688, 749.80125pt x 214.8025pt>
 File: images/esperimenti/NeuralCleaner.png Graphic file (type png)
 <use images/esperimenti/NeuralCleaner.png>
-Package pdftex.def Info: images/esperimenti/NeuralCleaner.png  used on input line 192.
+Package pdftex.def Info: images/esperimenti/NeuralCleaner.png  used on input line 244.
 (pdftex.def)             Requested size: 418.25368pt x 119.82315pt.
-) (content/conclusions.tex [19] [20] [21 <./images/esperimenti/nerf_pcd_comparison-07.png>] [22 <./images/esperimenti/Epic_228.png>] [23 <./images/esperimenti/sampling_frequencies.pdf>] [24 <./images/esperimenti/ObjectCountsScenes-02.png>] [25 <./images/esperimenti/ObjectCountsScenes-01.png>] [26 <./images/esperimenti/NeuralCleaner.png>] [27
-
-])
-Chapter 1.
-) (content/appendix.tex [28
-
-]
+ [26 <./images/esperimenti/Colmaps/P03_04-10.png>])) (content/appendix.tex [27] [28 <./images/esperimenti/nerf_pcd_comparison-07.png>] [29 <./images/esperimenti/Epic_228.png>] [30 <./images/esperimenti/ObjectCountsScenes-02.png>] [31 <./images/esperimenti/ObjectCountsScenes-01.png>] [32 <./images/esperimenti/NeuralCleaner.png>]
 Appendix A.
 (/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
@@ -1736,13 +1921,13 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [29
+ [33
 
 ]
 Appendix B.
-) [30
+) [34
 
-] [31
+] [35
 
 
 ] (thesis.aux)
@@ -1758,31 +1943,41 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 029A47D0E41EDFB3724E53A07A48C190;2098.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                thesis
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: 40FA4862F1650E1C2B50971B92A0A7E6;2506.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45703 strings out of 476395
- 903833 string characters out of 5792522
- 1964539 words of memory out of 5000000
- 66607 multiletter control sequences out of 15000+600000
- 702387 words of font info for 264 fonts, out of 8000000 for 9000
+ 53993 strings out of 476395
+ 1109745 string characters out of 5792522
+ 2130110 words of memory out of 5000000
+ 74700 multiletter control sequences out of 15000+600000
+ 704402 words of font info for 283 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 138i,17n,135p,2508b,2794s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}</Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmcsc10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmex10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr6.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr7.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt12.pfb>
-Output written on thesis.pdf (42 pages, 47338477 bytes).
+ 138i,18n,135p,2508b,2796s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{figure.caption.49} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.46} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.44} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.48} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.42} has been referenced but does not exist, replaced by a fixed one
+
+{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ts1.enc}{/Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}</Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmcsc10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmex10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr6.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr7.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri12.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy10.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy8.pfb></Users/francesco/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt12.pfb>
+Output written on thesis.pdf (48 pages, 61353770 bytes).
 PDF statistics:
- 755 PDF objects out of 1000 (max. 8388607)
- 98 named destinations out of 1000 (max. 500000)
- 92924 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 865 PDF objects out of 1000 (max. 8388607)
+ 131 named destinations out of 1000 (max. 500000)
+ 92960 words of extra memory for PDF output out of 106986 (max. 10000000)
 

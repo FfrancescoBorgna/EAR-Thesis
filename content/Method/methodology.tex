@@ -120,17 +120,17 @@ in seeking temporal windows where frames are overlapped and keeping just
 a frame per window. The overlap is computed by estimating homographies
 \footnote{A homography is a transformation that maps points from one
  image to corresponding points in another image.
-} on matched SIFT~\ref{sec:sfm} features. In Figure~\ref{fig:overlap}some examples 
+} on matched SIFT~\ref{sec:sfm} features. In Figure~\ref{fig:overlap} some examples 
 of overlaps are visualized. 
 
-This technique was proposed in EPIC-Fields~\cite{epic_fields} to obtain accurate 3D reconstructions
+\paragraph*{EF Sampling.}This technique was proposed in EPIC-Fields~\cite{epic_fields} to obtain accurate 3D reconstructions
 from egocentric videos, which present the challenging problems of: dynamic objects,long duration video(\~9min on avg) and
 the skewed distributiton of viewpoints, namely the fact that in videos there are phases of slow motion around 
 hot-spots (e.g. around the gas stove) alternating to high motion in transition actions(e.g. taking something from the pantry).
 The main idea was to remove redundant frames while maintaining enough overlap and temporal coverage to allow an accurate reconstruction.
 We will refer to this method as \textit{EF-Sampling}.
 
-We took inspiration from this technique for our sampling method that we called \textit{Intelligent Sampling}. This sampling was 
+\paragraph*{Intelligent Sampling.}TWe took inspiration from this technique for our sampling method that we called \textit{Intelligent Sampling}. This sampling was 
 used to keep only important frame, trying to remove any redundant information for the neural rendering step. The idea to maintain 
 important frame is different from the SfM step. Here we thought that a better set of images would have less overlap between itself,
 such that all the areas of the scene are covered, or at least the frames are equispaced in the scene if they are too few. In this way there should not
@@ -148,7 +148,7 @@ The actual implementation is strictly based on EF-Sampling and since its goal is
 Intelligent sampling in fact given a set of N frames perform a EF-sampling with a overlap threshold such that it gives $ N-N_{desired}$ frames.
 These frames are then discarded and the remaining $N_{desired}$ frames are kept.
 
-We also tried a less rigid approach with the \textit{AU-Sampling}. This other method is an hybrid of Intelligent-Sampling and a Uniform sampling(which
+\paragraph*{AU Sampling.}We also tried a less rigid approach with the \textit{AU-Sampling}. This other method is an hybrid of Intelligent-Sampling and a Uniform sampling(which
 is the baseline we tried to improve). In AU-Sampling we perform a Intelligent-Sampling relaxing the $N_{desired}$frames. The $N_{desired}$ frames are then 
 uniformly extracted from the 'relaxed' samples. In this way we hoped to keep some overlapping frames by relaxing the threshold and then obtain
 equitemporal spaced samples from all the duration of the video. 

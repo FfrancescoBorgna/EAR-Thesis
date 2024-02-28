@@ -1,0 +1,26 @@
+\begin{table}[t]
+    \resizebox{\textwidth}{!}{
+    \rowcolors{2}{gray!25}{white}
+    
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+    \hline \textbf{Scene} &\textbf{ Sampled Frames }&\textbf{ Sampling} &\textbf{ Durata [s]} & \textbf{PSNR }& \textbf{Improv. }& \begin{tabular}{l} 
+    \textbf{PSNR} \\
+    \textbf{statico}
+    \end{tabular} &\textbf{ Improv. }& \textbf{mAP} &\textbf{ Improv.} \\
+    \hline \multirow[t]{2}{*}{ P01-01 } & \multirow[t]{2}{*}{1089} & Intelligent & 3h $43 \mathrm{~min} 41 \mathrm{~s}$ & 23.59          &  \cellcolor{green!15}\multirow[t]{2}{*}{0.79} & 20.37 &  \cellcolor{green!15}\multirow[t]{2}{*}{0.27} & 67.55 & \cellcolor{green!15} \multirow[t]{2}{*}{1.04} \\
+    \hline &                                                        & Uniform & $3 \mathrm{~h} 43 \mathrm{~min} 1 \mathrm{~s}$ & 22.8 & & 20.10 & & 66.51 & \\
+    \hline \multirow[t]{2}{*}{ P03-04 } & \multirow[t]{2}{*}{868} & Intelligent & 3h $14 \mathrm{~min} 44 \mathrm{~s}$ & 19.90           & \cellcolor{green!15} \multirow[t]{2}{*}{0.77} & 16.73 & \multirow[t]{2}{*}{0} & 61.92                         & \cellcolor{red!15} \multirow[t]{2}{*}{-2.08} \\
+    \hline &                                                        & Uniform & 3h $10 \mathrm{~min} 48 \mathrm{~s}$ & 19.13 & & 16.73 & & 64.00 & \\
+    \hline \multirow[t]{2}{*}{ P04-01 } & \multirow[t]{2}{*}{1098} & Intelligent & 4h $10 \min 12 \mathrm{~s}$ & 24.32                   &  \cellcolor{green!15}\multirow[t]{2}{*}{0.51} & 21.23 &  \cellcolor{green!15}\multirow[t]{2}{*}{0.74} & 71.37 & \cellcolor{green!15} \multirow[t]{2}{*}{5.56} \\
+    \hline &                                                        & Uniform & 4h $2 \min 9 s$ & 23.81 & & 20.49 & & 65.81 & \\
+    \hline \multirow[t]{2}{*}{ P09-02 } & \multirow[t]{2}{*}{903} & Intelligent & $3 \mathrm{~h} 25 \mathrm{~min} 58 \mathrm{~s}$ & 23.97 &  \cellcolor{green!15}\multirow[t]{2}{*}{0.58} & 19.43 & \cellcolor{red!15} \multirow[t]{2}{*}{-0.02} & 60.05 &  \cellcolor{red!15}\multirow[t]{2}{*}{-1.18} \\
+    \hline &                                                         & Uniform & $3 \mathrm{~h} 17 \mathrm{~min} 5 \mathrm{~s}$ & 23.39 & & 19.45 & & 61.23 & \\
+    \hline \multirow[t]{2}{*}{ P16-01 } & \multirow[t]{2}{*}{1004} & Intelligent & 3h $46 \mathrm{~min} 57 \mathrm{~s}$ & 22.89         & \cellcolor{green!15} \multirow[t]{2}{*}{0.14} & 20.17 &  \cellcolor{green!15}\multirow[t]{2}{*}{0.23} & 66.89 &  \cellcolor{green!15}\multirow[t]{2}{*}{3.28} \\
+    \hline &                                                        & Uniform & 3h 43min 11s & 22.75 & & 19.94 & & 63.61 & \\
+    \hline \multirow[t]{2}{*}{ P21-01 } & \multirow[t]{2}{*}{855} & Intelligent & 3h $15 \min 59 \mathrm{~s}$ & 20.02                    & \cellcolor{green!15} \multirow[t]{2}{*}{0.91} & 15.73 &  \cellcolor{green!15}\multirow[t]{2}{*}{0.66} & 72.94 &  \cellcolor{green!15}\multirow[t]{2}{*}{4.06} \\
+    \hline &                                                        & Uniform & $3 \mathrm{~h} 7 \mathrm{~min} 50 \mathrm{~s}$ & 19.11 & & 15.07 & & 68.88 & \\
+    \hline
+    \end{tabular}}
+    \caption{NeuralDiff models trained on different scenes at $\sim$1000frames, resolution 114x64. The coloumn Improv represents
+    the difference between the previous coloumn of the Intelligent split minus the Uniform one.}\label{tab:Epic_res_114}
+\end{table}

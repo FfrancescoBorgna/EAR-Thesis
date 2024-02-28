@@ -1,11 +1,89 @@
 \chapter{Neural Rendering}\label{sec:Neural}
-From CVPR 2020 tutorial~\cite{CVPRtutorial} Neural Rendering is defined as \textit{"Neural rendering
- is a new class of deep image and video generation approaches that 
+From CVPR 2020 tutorial~\cite{CVPRtutorial} Neural Rendering is defined as \textit{'
+ a new class of deep image and video generation approaches that 
  enable explicit or implicit control of scene properties such as 
  illumination, camera parameters, pose, geometry, appearance, and 
  semantic structure. It combines generative machine learning techniques 
  with physical knowledge from computer graphics to obtain controllable 
- and photo-realistic outputs."}.
+ and photo-realistic outputs'}.
+
+\section{Related works}
+Before NeRF a promising direction in computer vision
+ consisted in encoding objects and scenes in the weights of an MLP. Hower this
+ method still struggled compared to other methods based on discrete representations
+ like triangle meshes or voxel grids. The main methods 
+ that preeceded neural rendering are reported in the following paragraphs.
+ 
+ \paragraph{Neural 3D shape representations.} Implicit continous 3D shapes 
+ representation as level sets had been investigated by~\cite{nerf15,nerf32}, optimizing
+ signed distance functions or occupancy fields in~\cite{nerf11,nerf27}.
+ These methods were limited by the necessity of a 3D ground truth, which is 
+ rarely available. Subsequent works reformulated the problem using differentiable
+ rendering functions that allowed to use just 2D images as ground truth. Two were the main methods:
+ ~\cite{nerf29} represents surfaces as 3D occupancy fields;~\cite{nerf42}use a 
+ representation that outputs a feature vector and RGB color at each continous 
+ coordinate, proposing a differentiable rendering function consisting of a 
+ RNN(Recurrent neural network).
+ 
+ Anyway these methods have been limited to simple shapes with low complexity,
+ resulting in oversmoothed renderings.
+ 
+ \paragraph{View synthesis and image-based rendering.} Photorealistic novel views 
+ can be reconstructed if a dense sampling of images have been provided by 
+ simple light field sample interpolation techniques~\cite{nerf21,nerf5}.
+ If sparser images are available, some methods have been introduced that 
+ rely on extracting traditional geometry and appearance representations
+ from observed images. A popular class of approached uses mesh-based representations
+ of scene with diffuse~\cite{nerf48} or view-dependent~\cite{nerf2} appearance. Also there are differentiable
+ rasterizers~\cite{nerf4,nerf10,nerf23} that can directly optimize mesh recontruction to reproduce
+ a set of input images using gradient descent. However due to local minima or 
+ poor conditioning of the loss landscape, the optimization is usually difficult.
+ 
+ High-quality photorealistic view synthesis is also performed by volumetric representations,
+ from a set of given RGB images. Volumetric methods can represent complex shapes and materials
+ ,well suited for gradient-based optimization. First works~\cite{nerf19} used observed images to directly predict color voxel grids.
+ Later~\cite{nerf9,nerf13,nerf17} used deep networks to color a sampled volumetric region from some given images.
+ Other works tried using a mix of convolutional networks and sampled voxel grids.
+ 
+ Anyway these methods, being based on discrete sampling of the voxel grid, are restricted to low resolution due to time 
+ and computational power. With neural rendering instead a \textit{continous} representation was proposed, reducing 
+ the memory requirements and producing higher quality renderings.
+ 
+\paragraph{Background Subtraction}
+Background subtraction techniques have been used to detect moving objects 
+in videos(see~\cite{ndiff_2}). The simplest way to obtain the background would be to capture
+a background image that does not contain any foreground object. Unfortunately in some scenes
+it is not possible and it could be changed under critical situations like illumination
+changes, objects appeearing and disappearing from the scene. Some expedients have been
+introduced that try to predict the background via a background initialization step, which base
+its guess on the first few frames of the video. Anyway egocentric videos still contains too much
+challenging problems(light change,multiple different objects,moving camera,etc.) that do not allow background subtraction to be a viable solution.
+
+\paragraph{Motion segmentation}
+Motion segmentation consists in decomposing a video into individually moving 
+objects~\cite{ndiff_18}. Amongst others, it has applications in 
+robotics, traffic monitoring, sports analysis, inspection, video surveillance and compression.
+Anyway these techniques usually relies on optical flow, which can be subject to some ambiguities
+like, in our case,motion parallax. Even occlusion plays an important role. Motion segmentation
+struggles for example when an object moves in front of or behind other objects in the 
+scene, leading to ambiguity in the flow field. Also, many methods fails when a dynamic 
+object temporarilly remain static.
+
+All these problems prevent to apply motion segmentation algorithms to egocentric videos.
+
+\paragraph{Discovering and segmenting objects in videos}
+Discovering and segmenting objects in videos is related to background subtraction and 
+motion segmentation.
+As instance moving objects can be segmented from the background by using a probabilistic model
+that acts on optical flow~\cite{ndiff_1}. In~\cite{ndiff_3}, pixel trajectories and
+spectral clustering are combined to produce motion segments. Some recent works revisits classical motion segmentation
+techniques from a data-driven perspective~\cite{ndiff_38}, \textit{e.g.} using 
+physical motion cues to learn 3D representations or learning a scene representation
+using neural rendering~\ref{sec:nerf}. 
+
+With NeuralDiff they obtain a holistic representation capable of handling occlusions
+and detachable objects.
+
 
 \section{NeRF:Representing Scenes as Neural Radiance Fields for View Synthesis}\label{sec:nerf}
 With NeRF~\cite{nerf} the authors introduced a new state-of-the-art model
@@ -49,51 +127,7 @@ Summing up, their contribution consists in:
     \item A positional encoding to map each input 5D coordinate into a higher dimensional
     space which allows to represent high-frequency scene content.
 \end{itemize}
-\subsection{Related works}
-At time of writing a promising direction in computer vision
-consisted in encoding objects and scenes in the weights of an MLP. Hower this
-method still struggled compared to other methods based on discrete representations
-like traingle meshes or voxel grids. With their work the writers of the paper 
-managed to obtain state-of-the-art results, denying past disbelief in continous 
-volumetric representation.
-
-\textbf{Neural 3D shape representations.} Implicit continous 3D shapes 
-representation as level sets had been investigated by~\cite{nerf15,nerf32}, optimizing
-signed distance functions or occupancy fields in~\cite{nerf11,nerf27}.
-These methods were limited by the necessity of a 3D ground truth, which is 
-rarely available. Subsequent works reformulated the problem using differentiable
-rendering functions that allowed to use just 2D images as ground truth. Two were the main methods:
-~\cite{nerf29} represents surfaces as 3D occupancy fields;~\cite{nerf42}use a 
-representation that outputs a feature vector and RGB color at each continous 
-
-coordinate, proposing a differentiable rendering function consisting of a RNN(Recurrent neural network).
-
-Any way these methods have been limited to simple shapes with low complexity,
-resulting in oversmoothed renderings. The authors strategy of optimizing 
-the networks will reveal themself succesful.
-
-\textbf{View synthesis and image-based rendering.} Photorealistic novel views 
-can be reconstructed if a dense sampling of images have been provided by 
-simple light field sample interpolation techniques~\cite{nerf21,nerf5}.
-If sparser images are available, some methods have been introduced that 
-rely on extracting traditional geometry and appearance representations
-from observed images. A popular class of approached uses mesh-based representations
-of scene with diffuse~\cite{nerf48} or view-dependent~\cite{nerf2} appearance. Also there are differentiable
-rasterizers~\cite{nerf4,nerf10,nerf23} that can directly optimize mesh recontruction to reproduce
-a set of input images using gradient descent. However due to local minima or 
-poor conditioning of the loss landscape, the optimization is usually difficult.
-
-High-quality photorealistic view synthesis is also performed by volumetric representations,
-from a set of given RGB images. Volumetric methods can represent complex shapes and materials
-,well suited for gradient-based optimization. First works~\cite{nerf19} used observed images to directly predict color voxel grids.
-Later~\cite{nerf9,nerf13,nerf17} used deep networks to color a sampled volumetric region from some given images.
-Other works tried using a mix of convolutional networks and sampled voxel grids.
-
-Anyway these methods, being based on discrete sampling of the voxel grid, are restricted to low resolution due to time 
-and computational power. With this paper instead a \textit{continous} representation was proposed, reducing 
-the memory requirements and producing higher quality renderings.
-
-\subsection{Implementation}
+\subsection{Method}
 A continous 3D scene is represented as a 5D vector-valued function whose input is a 3D coordinate 
 $\textbf{x}=(x,y,z)$ and 2D viewing direction $\textbf{d}=(\theta,\phi)$, and whose output is an emited color 
 $\textbf{c} = (r,g,b)$ and volume density $\sigma$. In practice the scene is represented by an MLP network

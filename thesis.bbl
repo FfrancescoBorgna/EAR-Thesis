@@ -19,6 +19,50 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{neuraldiff}{article}{}
+      \name{author}{3}{}{%
+        {{hash=49f0d0d53e2dfdabbdc348a912b58725}{%
+           family={Tschernezki},
+           familyi={T\bibinitperiod},
+           given={Vadim},
+           giveni={V\bibinitperiod}}}%
+        {{hash=a3df968b840ba01bd10cb0a23602fde1}{%
+           family={Larlus},
+           familyi={L\bibinitperiod},
+           given={Diane},
+           giveni={D\bibinitperiod}}}%
+        {{hash=85ab53268da1006b51b453d57d3566f2}{%
+           family={Vedaldi},
+           familyi={V\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{57d88292571c9469262e9188aba6f4b2}
+      \strng{fullhash}{5777be941fa1418ea4ee17e0e0f3d5a1}
+      \strng{bibnamehash}{5777be941fa1418ea4ee17e0e0f3d5a1}
+      \strng{authorbibnamehash}{5777be941fa1418ea4ee17e0e0f3d5a1}
+      \strng{authornamehash}{57d88292571c9469262e9188aba6f4b2}
+      \strng{authorfullhash}{5777be941fa1418ea4ee17e0e0f3d5a1}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{NeuralDiff: Segmenting 3D objects that move in egocentric videos}
+      \field{volume}{abs/2110.09936}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2110.09936
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2110.09936
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2110.09936
+      \endverb
+    \endentry
     \entry{epic_fields}{misc}{}
       \name{author}{8}{}{%
         {{hash=49f0d0d53e2dfdabbdc348a912b58725}{%
@@ -68,9 +112,9 @@
       \strng{authorbibnamehash}{802f267bd92a9807aa7f3a485c558837}
       \strng{authornamehash}{57d88292571c9469262e9188aba6f4b2}
       \strng{authorfullhash}{802f267bd92a9807aa7f3a485c558837}
-      \field{extraname}{1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{cs.CV}
@@ -79,50 +123,6 @@
       \field{year}{2024}
       \verb{eprint}
       \verb 2306.08731
-      \endverb
-    \endentry
-    \entry{neuraldiff}{article}{}
-      \name{author}{3}{}{%
-        {{hash=49f0d0d53e2dfdabbdc348a912b58725}{%
-           family={Tschernezki},
-           familyi={T\bibinitperiod},
-           given={Vadim},
-           giveni={V\bibinitperiod}}}%
-        {{hash=a3df968b840ba01bd10cb0a23602fde1}{%
-           family={Larlus},
-           familyi={L\bibinitperiod},
-           given={Diane},
-           giveni={D\bibinitperiod}}}%
-        {{hash=85ab53268da1006b51b453d57d3566f2}{%
-           family={Vedaldi},
-           familyi={V\bibinitperiod},
-           given={Andrea},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{57d88292571c9469262e9188aba6f4b2}
-      \strng{fullhash}{5777be941fa1418ea4ee17e0e0f3d5a1}
-      \strng{bibnamehash}{5777be941fa1418ea4ee17e0e0f3d5a1}
-      \strng{authorbibnamehash}{5777be941fa1418ea4ee17e0e0f3d5a1}
-      \strng{authornamehash}{57d88292571c9469262e9188aba6f4b2}
-      \strng{authorfullhash}{5777be941fa1418ea4ee17e0e0f3d5a1}
-      \field{extraname}{2}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprinttype}{arXiv}
-      \field{journaltitle}{CoRR}
-      \field{title}{NeuralDiff: Segmenting 3D objects that move in egocentric videos}
-      \field{volume}{abs/2110.09936}
-      \field{year}{2021}
-      \verb{eprint}
-      \verb 2110.09936
-      \endverb
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2110.09936
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2110.09936
       \endverb
     \endentry
     \entry{visor}{misc}{}
@@ -179,8 +179,8 @@
       \strng{authorbibnamehash}{00c4447f01a9cecc1343ea3319a50ab6}
       \strng{authornamehash}{b761e2698c80140befa3527b7b1083e1}
       \strng{authorfullhash}{00c4447f01a9cecc1343ea3319a50ab6}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{cs.CV}

@@ -1,8 +1,9 @@
 \section{NeuralDiff: Segmenting 3D objects that move in egocentric videos}
 NeuralDiff is a neural radiance field adapted to distinguish three different parts of
 egocentric videos:$1)$ \textit{static}, that is everything that does not move,$2)$
-\textit{foreground}, which is everything that at some point of the video moves, and $3)$ actor,
-which comprehends the body parts of the person who is wearing the camera. 
+\textit{foreground}, which is everything that at some point of the video moves, 
+and $3)$ \textit{actor},which comprehends the body parts of the person who 
+is wearing the camera. 
 
 Anyway this is not an easy task. Infact motion in egocentric vision is a 
 complex attribute to identify. We need to distinguish what is 
@@ -23,14 +24,25 @@ since they require correspondences, they reason locally, across a handful frames
 avoid explicit 3D reasoning, making it difficult to treat egocentric videos with many small
 objects that move only occasionally throughout a long sequence.
 
-With this work the authors take inspiration from neural rendering techniques~\cite{nerf}
+\paragraph{Neural rendering for dynamic videos.}
+The spread of neural rendering with NeRF (Section~\ref{sec:nerf}) paved the way 
+for new research also in dynamic scenarios(see NeRF-W~\cite{ndiff_17}). 
+Another direction tried focusing on modeling dynamic scenes mostly with monocular 
+videos as input~\cite{ndiff_15,ndiff_34}. Most of this approaches use a 
+canonical model in conjunction with a deformation network, or warp space~\cite{ndiff_34},
+starting from a canonical volume. Closer to the work presented is~\cite{ndiff_15},
+where a static NeRF model is combined with a dynamic one.
+
+Anyway none of the previous managed to segment 3D objects in such long and challenging videos.
+
+\paragraph{Contribution.}With this work the authors take inspiration from neural rendering techniques~\cite{nerf}
 to create a motion analysis tool to obtain their goal. In particular they leverage the
 ability of reconstructing accurately 3D scenes for recovering the background and then build
 on top of it the dynamic parts. In fact 3D objects that are manipulated in the video also
 present a significant structure. They usally move in "bursts", changing their state
 when they are involved in an interaction, otherwise staying rigidly attached to the 
 background. Exploiting this property  they extend the neural render to reconstruct
-the omoving object appearance using a slowly-varying time encoding. The last part that 
+the moving object appearance using a slowly-varying time encoding. The last part that 
 show unique properties in the scene is the actor due to its continuous movement
 while occluding the scene and with a motion linked to the camera.
 
@@ -38,7 +50,7 @@ Summing up they ended up with a three-stream neural rendering architecture, wher
 models respectively: \textit{static background},\textit{dynamic foreground} and
 the \textit{actor}. These are then combined to explain the video as a whole. In Figure~\ref{fig:ndiff_1}
 is reported a general overview of NeuralDiff capabilities.
-\begin{figure}[H]
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/Neural/ndiff_1.png} 
     \caption{Given an egocentric video with camera reconstruction, NeuralDiff, a neural
@@ -59,61 +71,12 @@ objects in scenes with a complex 3D structure and dynamics.
 
 For evaluating their results, they augmented the EPIC-KITCHENS dataset~\cite{EPICKITCHENS} by 
 manually segmenting all objects that move at some point. In this way they are able to 
-assess the quality of the decompositino of the different components. In addition they defined
+assess the quality of the decomposition of the different components. In addition they defined
 a new benchmark for measuring progress in the challenging task of dynamic object segmentation
 in complex videos, aiming to promote research in the area.
 
-\subsection{Related Work}
-\subsubsection{Background Subtraction}
-Background subtraction techniques have been used to detect moving objects 
-in videos(see~\cite{ndiff_2}). The simplest way to obtain the background would be to capture
-a background image that does not contain any foreground object. Unfortunately in some scenes
-it is not possible and it could be changed under critical situations like illumination
-changes, objects appeearing and disappearing from the scene. Some expedients have been
-introduced that try to predict the background via a background initialization step, which base
-its guess on the first few frames of the video. Anyway egocentric videos still contains too much
-challenging problems(light change,multiple different objects,moving camera ,etc.) that do not allow background subtraction to be a viable solution.
 
-\subsubsection{Motion segmentation}
-Motion segmentation consists in decomposing a video into individually moving 
-objects~\cite{ndiff_18}. Amongst others, it has applications in 
-robotics, traffic monitoring, sports analysis, inspection, video surveillance and compression.
-Anyway these techniques usually relies on optical flow, which can be subject to some ambiguities
-like, in our case,motion parallax. Even occlusion plays an important role. Motion segmentation
-struggles for example when an object moves in front of or behind other objects in the 
-scene, leading to ambiguity in the flow field. Also, many methods fails when a dynamic 
-object temporarilly remain static.
-
-All these problems prevent to apply motion segmentation algorithms to egocentric videos.
-
-\subsubsection{Discovering and segmenting objects in videos}
-Discovering and segmenting objects in videos is related to background subtraction and 
-motion segmentation.
-As instance moving objects can be segmented from the background by using a probabilistic model
-that acts on optical flow~\cite{ndiff_1}. In~\cite{ndiff_3}, pixel trajectories and
-spectral clustering are combined to produce motion segments. Some recent works revisits classical motion segmentation
-techniques from a data-driven perspective~\cite{ndiff_38}, \textit{e.g.} using 
-physical motion cues to learn 3D representations or learning a scene representation
-using neural rendering~\ref{sec:nerf}. 
-
-With NeuralDiff they obtain a holistic representation capable of handling occlusions
-and detachable objects.
-
-\subsubsection{Neural rendering}
-This technique allows to synthesize novel views using a neural architecture and volume rendering.
-It was introduced with NeRF (see~\cite{nerf} or Section~\ref{sec:nerf}). It was designed for static
-scenes and it poorly handles dynamic scenes and occlusions, so research was performed to
-apply it to dynamic scenes(see NeRF-W~\cite{ndiff_17}). Other research direction
-to model 3D geometry of one or more objects is studied in~\cite{ndiff_30}.
-Another direction tried focusing on modeling dynamic scenes mostly with monocular 
-videos as input~\cite{ndiff_15,ndiff_34}. Most  of this approaches use a 
-canonical model in conjunction with a deformation network, or warp space~\cite{ndiff_34},
-starting from a canonical volume. Closer to the work presented is~\cite{ndiff_15},
-where a static NeRF model is combined with a dynamic one.
-
-Anyway none of the previous managed to segment 3D objects in such long and challenging videos.
-
-\subsection{Implementation}
+\subsection{Method}
 The goal of this method is to extract a mask from an input video sequence that discern foreground
 objects from background objects. It is worth noting that in this paper \textit{background} is 
 the part of the scene that remain static throughout the entire video; while \textit{foreground}
@@ -124,7 +87,7 @@ the appearance of a static object,\textit{i.e.} the background, from different v
 The authors also suggest a modification of the basic NeRF which is capable of 
 distinguish foreground objects and it will be described in the following sections.
 
-\subsubsection{Neural rendering}
+\subsubsection{Static Components}
 As reported in Section~\ref{sec:nerf}, a video x is a collection $(x_t)_{t\in[0,...,T-1]}$
 of T RGB frames $x_t \in \mathbb{R}^{3xHxW}$. Each of these frames can be seen as 
 a function $x_t = h(B,F_t,g_t)$, where: B is the static background, $F_t$ is the variable
@@ -180,7 +143,7 @@ As done in NeRF-W~\cite{nerfw}:
     w^p(T_k) = 1 - T_k^p \in [0,1]
 \end{equation}
 
-\textbf{Smooth Dynamics} The model can now be optimized by minimizing the loss across
+\paragraph{Smooth Dynamics} The model can now be optimized by minimizing the loss across
 all input frames:
 \begin{equation}\label{eq:timeNdiff}
     \min_{f,z_1,...z_T} \frac{1}{T |\Omega|} \sum_{t=1}^{T} \sum_{u\in\Omega}\Vert x_t-f(g_t,z_t)\Vert^2 
@@ -244,38 +207,38 @@ by using:
 where $\lambda>0$ is a weight set to 0.01.
 
 \subsection{EPIC-Diff benchmark}
-The goa of this paper was to identify any 'detachable' object, namely a onject that moves independently
+The goal of this paper was to identify any 'detachable' object, namely a onject that moves independently
 from the camera. An extension of EPIC-KITCHENS~\cite{EPICKITCHENS} was introduced to give an evaluation to their method.
 
-\textbf{Data Selection.}10 videos sequences,or also called \textit{scene}, were selected from EPIC-Kitchen, each lasting 14 minutes
+\paragraph{Data Selection.}10 videos sequences,or also called \textit{scene}, were selected from EPIC-Kitchen, each lasting 14 minutes
 on average. Then 1000 frames where sampled from each and fed to COLMAP~\cite{colmap} to obtain
 camera reconstructions. The scenes followed these constraints. $1)$The videos
 should contain different viewpoints and multiple manipulated objects.$2)$ COLMAP should reconstruct
 the sequence with at least 600 frames. In the end the obtain 10 sequence with an average of 900 frames.
 
-\textbf{Data annotation}
+\paragraph{Data annotation.}
 Being an unsupervised algorithm, the only data annotations that collected were for testing and 
 validation. They uniformly hold out 56 frames on average for validation(for setting parameters)
 and for testing. The latter were manually annotated with segmentation pixelwise binary masks to assess static/dynamic components.
 The test frames are not used for training such that they can be used also to also evaluate 
 novel-view synthesis. In total they obtained 560 manual image-level segmentation masks. An example can
 be see in Figure~\ref{fig:exMasks}
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/Neural/ExampleMasks.png} 
-    \caption{Examples of frames with their corresponding manually binary pixelwise mask}\label{fig:exMasks}
+    \caption{Examples of frames with their corresponding manually segmented binary pixelwise mask}\label{fig:exMasks}
 \end{figure}
 
-\textbf{Evaluation.}The task evaluated is background subtraction. To accomplish this they
+\paragraph{Evaluation.}The task evaluated is background subtraction. To accomplish this they
 used standard segmentation metrics: each frames is demposed in its pixels and a mask is 
 extracted from the predicted frame. Then it is compared with its ground-truth calculating 
-average precision(AP). Each AP is then averaged eith eevery frame and scene to obtain mean 
+average precision(AP). Each AP is then averaged with every frame and scene to obtain mean 
 average precision (mAP).
 
 For novel view synthesis instead PSNR is used. Specifically they provided,using the 
 ground-truth masks, the PSNR of the static and of the moving parts.\vspace{0.4cm}
 
-\textbf{Results.} The experimentts are based on a PyTTorch implementation of the model
+\paragraph{Results.} The experiments are based on a PyTorch implementation of the model
 that has been published on \url{https://github.com/dichotomies/NeuralDiff}, more details 
 can be found in the paper. 
 
@@ -293,25 +256,27 @@ streams. Anyway it was designed to deal with image collection, so it struggles t
 adapt to videos. Some adjustments were done to adapt it to this task, more details
 are reported in the paper.
 
-In Table~\ref{tab:ndiff_res} are reported the results for the various model previously
-presented for the evaluation of their capacity to discover and segment 3D objects
-but also reconstruct dynamic scenes. It is worth noting that NeuralDiff largely improve
-the results with respect to other methods. Also the temporal information confirms to 
-be fundamental for improving the performance over NeRF and NeRF-W. As a third observation
-each update proposed upon the vanilla NeuralDiff proveed to be succesful. Hoewever
-we have to remind that these metrics do not reflect the ability of the full model to 
-separate foreground into objects and actor, since they are merged together in 
-the annotated masks. This ability can be seen in Figure~\ref{fig:ndiff_1}.
-\input{content/RelatedWorks/NeuralRendering/resultsNdiff.tex}
+%In Table~\ref{tab:ndiff_res} are reported the results for the various model previously
+%presented for the evaluation of their capacity to discover and segment 3D objects
+%but also reconstruct dynamic scenes. It is worth noting that NeuralDiff largely improve
+%the results with respect to other methods. Also the temporal information confirms to 
+%be fundamental for improving the performance over NeRF and NeRF-W. As a third observation
+%each update proposed upon the vanilla NeuralDiff proveed to be succesful. Hoewever
+%we have to remind that these metrics do not reflect the ability of the full model to 
+%separate foreground into objects and actor, since they are merged together in 
+%the annotated masks. This ability can be seen in Figure~\ref{fig:ndiff_1}.
+%%\input{content/RelatedWorks/NeuralRendering/resultsNdiff.tex}
 
-\textbf{Qualitative Results.} A part from numbers, how real the scenes actually look
-is the most important thing. In Figure~\ref{fig:ndiff_qualitative} the output of the compared
-method is reported for three different scenes.It can be seen that NeuralDiff produce less ghosting artifacts, captures most moving
-objects and shows more details, especially the \textit{upgraded} version. In particular: NeRF struggles
-with the dynamic components and create blurry reconstructions; NeRF-W obtains sharper static images 
-but still struggle with dynamic regions; NeuralDiff produces sharper results but the \textit{upgraded}
-version capture more details, such as the arms in the efirst scene or the spoon in the second.
-\begin{figure}
+\textbf{Qualitative Results.} We report just some qualitative results to grasp the effective 
+results obtained from their method. In Figure~\ref{fig:ndiff_qualitative} the output of the compared
+methods is reported for three different scenes.It can be seen that NeuralDiff produce less ghosting artifacts,
+captures most moving objects and shows more details, especially the \textit{upgraded} version.
+In particular: NeRF struggles with the dynamic components and create blurry
+reconstructions; NeRF-W obtains sharper static images but still struggle with
+dynamic regions; NeuralDiff produces sharper results but the \textit{upgraded}
+version capture more details, such as the arms in the efirst scene or the spoon in the
+second.
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/Neural/qualRes.png} 
     \caption{Three Scenes reconstruction from NeRF, NeRF-W and NeuralDiff, NeuralDiff+C+A.
@@ -319,7 +284,7 @@ version capture more details, such as the arms in the efirst scene or the spoon 
      objects and shows more details, especially the \textit{upgraded} version.}\label{fig:ndiff_qualitative}
 \end{figure}
 Another qualitative result is shown in Figure~\ref{fig:qual2}.
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/relatedWorks/Neural/qual2.png} 
     \caption{\textbf{Segmentation Masks.}Here the masks for which NeuralDiff scored best(top 4 rows)

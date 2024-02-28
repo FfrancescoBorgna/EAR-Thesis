@@ -4,11 +4,14 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Total Frames for each scene}}{11}{table.caption.16}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Recostruction of scene P01\_01 with details}}{12}{table.caption.18}%
-\contentsline {table}{\numberline {2.3}{\ignorespaces Results of NeuralDiff pipeline trained on various frame splits.}}{15}{table.caption.22}%
-\contentsline {table}{\numberline {2.4}{\ignorespaces Results all scenes Epic 114}}{19}{table.caption.26}%
-\contentsline {table}{\numberline {2.5}{\ignorespaces Metrics for comparing the profile of the histograms. In particular higher values of Cosine similarity and Correlation indicates similarity; while the value of the two divergences represents the distance between the two distributions.}}{20}{table.caption.31}%
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Total Frames for each scene}}{11}{table.caption.21}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Comparison of Recostruction details for scene P01\_01 using different Initial frames at same resolution of 228x128. The higher the frames, the better the reconstruction but at a higher computational time. }}{14}{table.caption.25}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces Comparison of Recostruction of scene P01\_01 using different Resolutions. The higher the resolution, the better. Too low resolution, as 114x64 in this case can lead to a unsuccessful reconstruction.}}{14}{table.caption.26}%
+\contentsline {table}{\numberline {2.4}{\ignorespaces \textbf {Split$\sim 1000$. }Number of frames resulting from the different sampling steps. In particular from Original the frames are reduced with the Homography filter to remove redundancy and keep overlap. The reconstructed frames are the ones which were successfully reconstructed by COLMAP. The obtained ones are the reconstructed frames filtered again with the homography filter. Int/Unif Samples are the reconstructed frames without the Obtaineds. The thresholds reported are referred to the last Homography filter step. }}{19}{table.caption.32}%
+\contentsline {table}{\numberline {2.5}{\ignorespaces \textbf {Split$\sim 700$. }Number of frames resulting from the different sampling steps. In particular from Original the frames are reduced with the Homography filter to remove redundancy and keep overlap. The reconstructed frames are the ones which were successfully reconstructed by COLMAP. The obtained ones are the reconstructed frames filtered again with the homography filter. Int/Unif Samples are the reconstructed frames without the Obtaineds. The thresholds reported are referred to the last Homography filter step. }}{19}{table.caption.33}%
+\contentsline {table}{\numberline {2.6}{\ignorespaces \textbf {NeuralDiff Pipeline Results on P01-01 at 114x64. }For the same scene P01-01 results of NeuralDiff pipeline trained on different amount of frames are reported.The Frames are selected using the three different sampling strategis:Intelligent,Uniform and AU(see Section~\ref {sec:sampl}). The frames are all at a 114x64 resolution.}}{22}{table.caption.36}%
+\contentsline {table}{\numberline {2.7}{\ignorespaces NeuralDiff models trained on different scenes at $\sim $1000frames, resolution 114x64. The coloumn Improv represents the difference between the previous coloumn of the Intelligent split minus the Uniform one.}}{24}{table.caption.43}%
+\contentsline {table}{\numberline {2.8}{\ignorespaces NeuralDiff models trained on different scenes at $\sim $700frames, resolution 228x128. The coloumn I-U represents the difference between the previous coloumn of the Intelligent split minus the Uniform one.}}{25}{table.caption.44}%
+\contentsline {table}{\numberline {2.9}{\ignorespaces Metrics for comparing the profile of the histograms. In particular higher values of Cosine similarity and Correlation indicates similarity; while the value of the two divergences represents the distance between the two distributions.}}{27}{table.caption.49}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,7 +1,56 @@
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
 % Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
-\begin{table}[]
+\begin{table}[t]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{|l|rrrr|}
+    \hline
+    \rowcolor[HTML]{9B9B9B} 
+    Scenes             & P01\_01\_04 & P01\_01\_06  & P01\_01\_08 & P01\_01\_09  \\ \hline
+    Initial Frames    & 1231        & 1487         & 2598        & 5223         \\ \hline
+    Reconstructed Frames  & 648         & 911          & 2045        & 4741         \\ \hline
+    %Risoluzione        & 228x114     & 228x114      & 228x114     & 228x114      \\ \hline
+    PCD points          & 152763      & 204024       & 460914      & 1079375      \\ \hline
+    Duration              & 44min 14s   & 1h 12min 34s & 3h 6min 32s & 10h 41min 8s \\ \hline
+    Feature Extraction & 7s          & 8s           & 13s         & 28s          \\ \hline
+    Exhaustive Matcher & 33s         & 49s          & 2min 32s    & 10min 22s    \\ \hline
+    Mapper             & 23min 57s   & 44min 5s     & 2h 1min 25s & 8h 18s       \\ \hline
+    Image Undistorter  & 0s          & 1s           & 1s          & 2s           \\ \hline
+    Patch Match Stereo & 19min 28s   & 27min 15s    & 1h 1min 18s & 2h 24min 16s \\ \hline
+    Stereo Fusion      & 9s          & 16s          & 1min 3s     & 5min 42s     \\ \hline
+    \end{tabular}}
+    \caption{Comparison of Recostruction details for scene P01\_01 using different Initial frames at same resolution of 228x128.
+        The higher the frames, the better the reconstruction but at a higher computational time. }\label{tab:col_P01_01_frames}
+    \end{table}
+
+
+    \begin{table}[t]
+        \centering
+        \resizebox{0.7\textwidth}{!}{
+        \begin{tabular}{|l|rrr|}
+        \hline
+        \rowcolor[HTML]{9B9B9B} 
+        Scene                 & P01\_01\_04 & P01\_01\_04& P01\_01\_04  \\ \hline
+        Initial Frames        & 1231        & 1231       & 1231         \\ \hline
+        Reconstructed Frames  & 765         & 648        & 6            \\ \hline
+        Resolution            & 456x256     & 228x114    & 114x64       \\ \hline
+        PCD points   & \textbf{629270}      & 152763     & -            \\ \hline
+        Duration              & 1h 7min 5s  & 44min 14s  & -            \\ \hline
+        Feature Extraction    & 16 s        & 7s         & -            \\ \hline
+        Exhaustive Matcher    & 42s         & 33s        & -            \\ \hline
+        Mapper                & 18min 35s   & 23min 57s  & -            \\ \hline
+        Image Undistorter     & 1s          & 0s         & -            \\ \hline
+        Patch Match Stereo    & 47min 1s    & 19min 28s  & -            \\ \hline
+        Stereo Fusion         & 30s         & 9s         & -            \\ \hline
+        \end{tabular}}
+        \caption{Comparison of Recostruction of scene P01\_01 using different Resolutions. The higher the resolution, the better.
+        Too low resolution, as 114x64 in this case can lead to a unsuccessful reconstruction.}\label{tab:col_P01_01_res}
+        \end{table}
+    \begin{comment}
+    
+    
+    \begin{table}[]
     \centering
     \resizebox{\textwidth}{!}{
     \begin{tabular}{|l|rrrrrr|}
@@ -22,3 +71,6 @@
     \end{tabular}}
     \caption{Recostruction of scene P01\_01 with details}\label{tab:col_P01_01}
     \end{table}
+
+    
+    \end{comment}

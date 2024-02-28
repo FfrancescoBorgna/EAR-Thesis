@@ -9,13 +9,15 @@ actually clean the scene from all the possible moving objects which adds
 an extra cost in terms of time, but in other scenarios 'cleaning' the environment
 could not be allowed.
 
-For this fact we evaluated our scene reconstructions on a subsample\footnote{\textcolor{red}{Come giustifichiamo l'aver preso non tutte le scene? Per motivi di tempo è accettabile?}}
-of the EPIC-KITCHENS extension proposed in NeurlDiff~\cite{neuraldiff}. In this extension
+\paragraph{EPIC-Diff.}For this fact we evaluated our scene reconstructions on a subsample\footnote{\textcolor{red}{Come giustifichiamo l'aver preso non tutte le scene? Per motivi di tempo è accettabile?}}
+of the EPIC-KITCHENS extension proposed in NeurlDiff~\cite{neuraldiff},known as EPIC-Diff. In this extension
 the authors of NeuralDiff added manually pixelwise segmented masks for ten scenes of which we just considered 
-P01-01,P03-04,P04-01,P09-02,P16-01,P21-01. We looked also for 
+P01-01,P03-04,P04-01,P09-02,P16-01,P21-01.
+
+\paragraph{VISOR.}We looked also for 
 the more recent VISOR~\cite{visor} dataset in which pixel annotations of hands 
 and active objects are given but unfortunately their definition of \textit{active}
-was not suuitable for our work. They labeled as active any object that is 
+was not suitable for our work. They labeled as active any object that is 
 included in the current action, so it is common to see as active the sink or 
 the gas stove, but in our case they should be considered as static(see Figure~\ref{fig:vis_exp}).
 \input{content/Experiments/Tabs/scene_frames.tex}
@@ -26,6 +28,7 @@ the gas stove, but in our case they should be considered as static(see Figure~\r
     static sink as active; on the right 'pour spice' static gas stove is active}\label{fig:vis_exp}
 \end{figure}
 
+\input{content/Experiments/metrics.tex}
 
 \section{COLMAP Reconstruction}
 Once we have fixed the data we were working on, we proceeded to do some experiments
@@ -35,19 +38,19 @@ of the scene have too many frames to handle, which could results in out of memor
 or at the least worst in a long computational time. Our aim was to find a good compromise
 between \textit{quality of reconstruction} and \textit{computational time}.
 
-The first thing we did was to subsample the frames using the same technique 
+\paragraph{Quantity vs Quality }The first thing we did was to subsample the frames using the same technique 
 as reported in Epic FIELDS~\cite{epic_fields} and explained in Section~\ref{sec:sampl}.
 We report the results of the COLMAP reeconstructions both quantitatively and qualitatively
-in Table~\ref{tab:col_P01_01} and Figure~\ref{fig:colmap_P01}. It is worth noting
-few things watching these two references. The first one is that the 
+in Table~\ref{tab:col_P01_01_frames,tab:col_P01_01_res} and Figure~\ref{fig:colmap_P01_frames,fig:colmap_P01_res}. It is worth noting
+few things watching these references. The first one is that the 
 resolution plays an important role in the successfulness of the reconstruction as 
-we can see from the first three coloumns of Table~\ref{tab:col_P01_01}. The same split
-of frames is reported and the central one at a resolution of 114x64 failed. This 
+we can see from Table~\ref{tab:col_P01_01_res}. The same split
+of frames is reported and the right one at a resolution of 114x64 failed. This 
 is due to the feature extractor, that in a high resolution image can retrieve 
 informations that instead are lost in low resolution frames. A lack of significant features 
 means no matching between images so the reconstruction has very few frames matched.
 The second thing is that the higher the frames the better. In fact chances of matching
-increases and also we will have more areas of the environment covered, as shown in Figure~\ref{fig:colmap_P01}.
+increases and also we will have more areas of the environment covered, as shown in Figure~\ref{fig:colmap_P01_frames}.
 We can see that augmenting the number of frames more parts of the kitchen are revealed,
 \textit{e.g.} the round table at the center of the room, the sideboard in front of the sink.
 But also some important objects that are visible from the video,like dishes on top 
@@ -62,40 +65,79 @@ was prohibitive in the number of experiments we could try.
 \input{content/Experiments/Tabs/colmap_P01.tex}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/esperimenti/Colmap_P01_kitchen.png} 
-    \caption{Varying COLMAP pcd reconstruction changing number of samples and 
-    resolution. Each row is the same reconstruction viewed from different viewpoints.From top to bottom the number of frames increase, while in the first
-    two rows the same split is compared using different resolutions.}\label{fig:colmap_P01}
+    \includegraphics[width=1\linewidth]{images/esperimenti/ColmapComparisonP01-01.png} 
+    \caption{Different COLMAP pcd reconstructions changing number of samples. 
+    Each row is the same reconstruction viewed from different viewpoints.From top to bottom the number of frames increase. We can see
+    how the number of frames positively affect the reconstruction.}\label{fig:colmap_P01_frames}
 \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/esperimenti/ColmapComparisonP01-02.png} 
+    \caption{Different COLMAP pcd reconstructions changing
+    resolution. Each row is the same reconstructions viewed from different viewpoints. The first report 
+    the reconstruction for a resolution of 456x256 and the bottom one the half resolution. It is clear 
+    how the resolution has a beneficial impact on the overall reconstruction.}\label{fig:colmap_P01_res}
+\end{figure}
+Here in Figure~\ref{fig:COL_all} I report also some visualization of other kitchens.
 
 \section{Monocular Pipeline}
 Here I report the qualitative result obtained from the Monocular Pipeline. As expected the results are really poor.
-The main reason of the failure of this technique is due to the inaccuracy of the depth estimator. Once the frames are 
-projected in the space we also have to find a threshold for the distance at which a reconstruction point is labeled as 
-dynamic or static. This make the pipeline highly scene-specific requiring each time a lot of fine tuning for a mediocre result as 
-can be seen in Figure~\ref{fig:Monoc}.
+The main reason of the failure of this technique is due to the inaccuracy of the depth estimator. In Figure~\ref{fig:Monoc} we can see
+that in some scene it seems to capture the main elements, like the hands in scene  P01-01 or the pot in scene P16-01. However others like P09-02 seem
+to completely get it wrong.
+
+Once the frames are 
+projected in the environment space we also have to find a threshold for the distance at which a reconstruction point is labeled as 
+dynamic or static. This make the pipeline highly scene-specific requiring each time a lot of fine tuning for a mediocre result.
 
 Also using a distance principle for segmentation, we can see how the scene is deteriorated in this form of globular groups of points(see Figure~\ref{fig:glob}).
-\begin{figure}
+While in Figure~\ref{fig:glob2} we can see how the segmentation of what is dynamic and what is static change changing the distance threshold. In particular the 
+scene take was P03-04 and the values reported are 0.5, 5 and 20.
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/esperimenti/monocular_bozza.png} 
-    \caption{Frame and its projection in the 3D space.}\label{fig:Monoc}
+    \includegraphics[width=1\linewidth]{images/esperimenti/Monocular/MonocularProj-06.png} 
+    \caption{Different scenes where monocular depth estimation was performed. In particular on 
+    the right we can find the frame that is instead projected(in red) on the left in the 3D reconstruction of that kitchen.
+    The red frustum(pyramid) represents the camera position and orientation in the space.}\label{fig:Monoc}
 \end{figure}
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/esperimenti/glob.png} 
-    \caption{Scene cleaned from dynamic points. (Dovrei rifarla...)}\label{fig:glob}
+    \caption{Dynamic points segmented in scene P01-01 using Monocular Pipeline.}\label{fig:glob}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{images/esperimenti/Monocular/Globular-02.png} 
+    \caption{Different Segmentation changing the distance threshold. Each point is segmented as dynamic if its distance from a pixel 
+    projected in 3D space is less than a threshold Th. The scene is P03-04 and in the 
+    left side we can find the static part while in the right side we have the dynamic points. Here we can notice 
+    how this method is pretty inaccurate.}\label{fig:glob2}
 \end{figure}
 
+\section{Sampling Frames}
+In order to work with the NeuralDiff pipeline that follows this section, we have to further downsample the frames reconstructed by COLMAP
+to have some reasonable computational times. We found that at a resolution of 114 $\sim1000$ a scene took  $\sim4h$ while at 228 $\sim700$ 
+a scene took  $\sim11h$. In Table~\ref{tab:samplingInt700} and Table~\ref{tab:samplingInt1000} we can see the number of frames kept at each sampling step.
 
+\input{content/Experiments/Tabs/samplingSteps1000.tex}
+\input{content/Experiments/Tabs/samplingSteps700.tex}
 
 \section{NeuralDiff Pipeline}
+\paragraph{Different number of samples for the same scene.}
 To evaluate our final pipeline we started by creating the splits upon which we would have trained the neural render.
 In particular we focused on one scene, P01-01, to see how the number of frames selected and the method which 
 selects them affect the pipeline performances.
+In Figure~\ref{fig:samplFreq} it is given a visualization of the three different subsampling obtained using the methods presented
+in Section~\ref{sec:sampl} for a total of 217 frames.
 
-In Figure~\ref{fig:samplFreq} it is given a visualization of the three different subsampling using the methods presented
-in Section~\ref{sec:Sampl} for a total of 217 frames.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/esperimenti/samplingCorretto.pdf} 
+    \caption{Visualization of the sampling of scene P01-01 for the three different methods: Intelligent, Uniform and AU using 217 frames in total.
+        The left box is a proposal we gave to visualize how the frames actually spread along the temporal axis, where a line is drawn in correspondence
+        of each sample. The right boxes represent instead histograms with the frequencies of the sample on the entire duration of the video.}\label{fig:samplFreq}
+\end{figure}
 
 \input{content/Experiments/Tabs/Epic_int_114.tex}
 
@@ -110,49 +152,74 @@ For example in Figure~\ref{fig:comp} we can see that in the 400 frames splits is
 uniform sampling is totally unable to detect the actor even though its mAP is higher than the Intelligent 
 one($mAP_{Uniform}61.6\% > mAP_{Intelligent}56.63\%$).
 \begin{figure}[H]
+    \hspace{-2cm}
     \centering
-    \includegraphics[scale=0.5,angle=90]{images/esperimenti/comparison53.pdf} 
-    \caption{Visualization of the output of the different models trained on differen splits.}\label{fig:comp}
+    \includegraphics[scale=0.5,angle=90]{images/esperimenti/comparison53-02.png} 
+    \caption{\textbf{Qualitative results on P01-01 at 228x128}Visualization of the output of the different models trained on different
+    sampling splits for scene P01-01. The first coloumn represent the real frame while the next ones
+    are respectively: the predicted image,which is the combination of:the static part, the foreground and the actor part.}\label{fig:comp}
 \end{figure}
-\textcolor{red}{Also for our aim to segment dynamic objects, we are interested in the static PSNR (as we obtain dynamic objects as 
-what is not static) and Figure~\ref{fig:comp} shows us that the static part is almost identical for each scene.}
+Also for our aim to segment dynamic objects, we are interested in the static PSNR (as we obtain dynamic objects as 
+what is NOT static) and Figure~\ref{fig:comp} shows us that the static part is almost identical for each scene.
 
-On the other hand,going towards qualitative results, here we present the 3D static reconstruction for P01-01.
+
+
+
+\paragraph{Qualitative Results}On the other hand,going towards qualitative results, here we present the 3D static reconstruction for P01-01.
 As shown in Figure~\ref{fig:statP01_01},the first row is the COLMAP pointcloud extracted from the sampled videosequence. Below are placed
 instead the static reconstructions for the three different sampling strategies. The first thing that comes to our eyes is 
 the overall colour which in the Intelligent sampling seem more faithful to the reality. The second thing is the segmentation of 
 the plate on the table top, which can be seen in the COLMAP row. The plate is successfully removed in the Int. sampling while
 it is still visible in the other splits, although the best model was the Unif. one according to the metrics. Another example 
-is given by the pan highlighted with the green circle. Which is removed in the Intelligent sampling while not in the others.
+is given by the pan highlighted with the green circle which is removed in the Intelligent sampling while not in the others.
+We can also look at scene P03-04 in Figure~\ref{fig:col_p03} where Intelligent method manage to remove the can highlighted
+in red while the Uniform methods can not.
 
-Other comparison with other frames splits are provided in Figure~\ref{fig:statP01_02}.
-\begin{figure}[H]
+Other comparison for the same scene P01-01 with different frames splits are provided in Figure~\ref{fig:statP01_02}. In Figure~\ref{fig:reco} we can 
+find some other static reconstructions from othere scenes.
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/esperimenti/nerf_pcd_comparison-06.png} 
     \caption{Qualitative results for the static reconstruction of P01-01 scene at 217 frames. In red is highlighted
-            a dynamic plate, while in green a dynamic pan.}\label{fig:statP01_01}
+            a dynamic plate, while in green a dynamic pan. We can see that Intelligent sampling is correctly
+            removing the objects while Uniform can not.}\label{fig:statP01_01}
 \end{figure}
-\begin{figure}
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=1\linewidth]{images/esperimenti/Colmaps/P03_04-10.png} 
+    \caption{Qualitative results for the static reconstruction of P03-04 scene. In red is highlighted
+            a dynamic can that is succesfully removed in Int. sampling while not in Uniform.}\label{fig:fig:col_p03}
+\end{figure}
+\begin{figure}[t]
     
     \adjustbox{trim={1.5cm 0 0 0}} {\includegraphics[scale=0.7]{images/esperimenti/nerf_pcd_comparison-07.png} }
     \caption{Comparative of the qualitative results for different samplings of the P01-01 scene.}\label{fig:statP01_02}
 \end{figure}
-\textcolor{red}{Bastano questi esempi sul 3D?}
 
-To further validate our results, we repeated the experiments using different scenes using a split of \~1000 frames.
- The results are reported in Table~\ref{tab:Epic_res} for resolution 114x64 and Figure~\ref{fig:Epic228} at 
+\begin{figure}[t]
+    
+    \adjustbox{trim={1.5cm 0 0 0}} {\includegraphics[scale=0.7]{images/esperimenti/Colmaps/P03_04-06.png} }
+    \caption{Qualitative results of different kitchens. On the first row is reported the COLMAP reconstruction
+    while below the corresponding cleaned pointcloud.}\label{fig:reco}
+\end{figure}
+
+
+\paragraph{NeuralDiff Pipeline on all Scenes. }
+To further validate our results, we repeated the experiments using different scenes using a split of $\sim$1000 frames and one of $\sim700$.
+ The results are reported in Table~\ref{tab:Epic_res_114} for resolution 114x64 and Table~\ref{tab:Epic_res_228} at 
  a resolution of 228x128. The results assess that our method is working.
-
-\input{content/Experiments/Tabs/Epic_finale_114_res.tex}
+ \input{content/Experiments/Tabs/Epic114.tex}
+\input{content/Experiments/Tabs/Epic_finale_228.tex}
 \begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{images/esperimenti/Epic_228.png} 
     \caption{Experiments performed on 228x128 frames for each scene}\label{fig:Epic228}
 \end{figure}
-Other than the idea behind the Intelligent sampling which was expressed in Section~\ref{sec:sampl}, we found a
+
+\paragraph{Action positions and samples positions.} Other than the idea behind the Intelligent sampling which was expressed in Section~\ref{sec:sampl}, we found a
 link between the positions of the sampled freqencies and the frequencies of the objects that were used in different 
 equispaced time intervals. In Figure~\ref{fig:samplFreq} the three methods sampling 
-frequencies are reported. In Figure~\ref{} and Figure~\ref{} instead are reported respectively
+frequencies are reported. In Figure~\ref{fig:objectP01_01} and Figure~\ref{fig:objectScenes} instead are reported respectively
 the comparison of Intelligent and Uniform sampling with the objects count for scene P01-01 with varying number of samples,
 as can be read on each sub-figure; and the comparison of Intelligent and Uniform sampling with the objects count for each scene
 with fixed sampling at \~1000 frames.
@@ -164,21 +231,15 @@ long redundant actions are filtered and only relevant frames are kept.
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{images/esperimenti/sampling_frequencies.pdf} 
-    \caption{Visualization of the sampling for the three different methods: Intelligent, Uniform and AU using 217 frames in total.}\label{fig:samplFreq}
-\end{figure}
-
-\begin{figure}
-    \centering
     \includegraphics[width=1\linewidth]{images/esperimenti/ObjectCountsScenes-02.png} 
     \caption{Comparison of frequencies for the Intelligent and Uniform sampling with the Object Count for the P01-01 scene changing the total
-    number of sampled frames.}\label{fig:samplFreq}
+    number of sampled frames.}\label{fig:objectP01_01}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{images/esperimenti/ObjectCountsScenes-01.png} 
-    \caption{Comparison of frequencies for the Intelligent and Uniform sampling with the Object Count for each scene at a fixed split \~1000 frames.}\label{fig:samplFreq}
+    \caption{Comparison of frequencies for the Intelligent and Uniform sampling with the Object Count for each scene at a fixed split \~1000 frames.}\label{fig:objectsScenes}
 \end{figure}
 
 We also tried to give a quantitative measure of similarity and dissimilarity by comparing some different metrics: Cosine Similarity, Kullback-Leibler Divergence (KLD),

@@ -1,0 +1,20 @@
+\begin{table}[t]
+    \resizebox{\textwidth}{!}{
+    \rowcolors{2}{gray!25}{white}
+\begin{tabular}{|l|r|r|r|r|r|r|}
+    \hline & \textbf{Originali} & \textbf{Sampled} & \textbf{Reconstructed} & \textbf{Obtained} & \textbf{Int/Unif Samples} &\textbf{ Threshold} \\
+    \hline P01-01 & 98935          & 5223          & 4741 & 4019 & \textbf{722} & 0.91 \\
+    \hline P03-04 & 100251          & 5060         & 4522 & 3839 & \textbf{683} &0.86 \\
+    \hline P04-01 & 69292          & 4269          & 3242 & 2463 & \textbf{779} & 0.896 \\
+    \hline P09-02 & 22187          & 4953          & 4398 & 3776 & \textbf{622} & 0.977 \\
+    \hline P16-01 & 74592          & 5531          & 5480 & 4837 & \textbf{643} &0.95 \\
+    \hline P21-01 & 415853          & 4655         & 4588 &3942  & \textbf{646} & 0.945 \\
+    \hline
+    \end{tabular}}
+    \caption{\textbf{Split$\sim700$. }Number of frames resulting from the different sampling steps. In particular from Original the frames are 
+    reduced with the Homography filter to remove redundancy and keep overlap. The reconstructed frames are the ones
+    which were successfully reconstructed by COLMAP. The obtained ones are the reconstructed frames filtered again
+    with the homography filter. Int/Unif Samples are the reconstructed frames without the Obtaineds. The thresholds
+    reported are referred to the last Homography filter step.
+    }\label{tab:samplingInt700}
+\end{table}
