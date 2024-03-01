@@ -10,9 +10,9 @@ an extra cost in terms of time, but in other scenarios 'cleaning' the environmen
 could not be allowed.
 
 \paragraph{EPIC-Diff.}For this fact we evaluated our scene reconstructions on a subsample\footnote{\textcolor{red}{Come giustifichiamo l'aver preso non tutte le scene? Per motivi di tempo è accettabile?}}
-of the EPIC-KITCHENS extension proposed in NeurlDiff~\cite{neuraldiff},known as EPIC-Diff. In this extension
-the authors of NeuralDiff added manually pixelwise segmented masks for ten scenes of which we just considered 
-P01-01,P03-04,P04-01,P09-02,P16-01,P21-01.
+of the EPIC-KITCHENS extension proposed in NeuralDiff~\cite{neuraldiff},known as EPIC-Diff. In this extension
+the authors of NeuralDiff added manually pixelwise segmented masks for ten scenes of which we just considered the 
+P01-01,P03-04,P04-01,P09-02,P16-01,P21-01 splits.
 
 \paragraph{VISOR.}We looked also for 
 the more recent VISOR~\cite{visor} dataset in which pixel annotations of hands 
@@ -41,7 +41,7 @@ between \textit{quality of reconstruction} and \textit{computational time}.
 \paragraph{Quantity vs Quality }The first thing we did was to subsample the frames using the same technique 
 as reported in Epic FIELDS~\cite{epic_fields} and explained in Section~\ref{sec:sampl}.
 We report the results of the COLMAP reeconstructions both quantitatively and qualitatively
-in Table~\ref{tab:col_P01_01_frames,tab:col_P01_01_res} and Figure~\ref{fig:colmap_P01_frames,fig:colmap_P01_res}. It is worth noting
+in Tables~\ref{tab:col_P01_01_frames},~\ref{tab:col_P01_01_res} and Figures~\ref{fig:colmap_P01_frames},~\ref{fig:colmap_P01_res}. It is worth noting
 few things watching these references. The first one is that the 
 resolution plays an important role in the successfulness of the reconstruction as 
 we can see from Table~\ref{tab:col_P01_01_res}. The same split
@@ -55,7 +55,7 @@ We can see that augmenting the number of frames more parts of the kitchen are re
 \textit{e.g.} the round table at the center of the room, the sideboard in front of the sink.
 But also some important objects that are visible from the video,like dishes on top 
 of the table. This is a keypoint to the development of our pipeline, because we need to 
-be sure that actually the scene contains points deriving from the motion of objects.
+be sure that the scene actually contains points deriving from the motion of objects.
 
 By considering these results and always keeping in mind the time of computation at our disposal
 we opted to feed the next pipeline with around five thousands frames at a resolution 
@@ -78,8 +78,12 @@ was prohibitive in the number of experiments we could try.
     the reconstruction for a resolution of 456x256 and the bottom one the half resolution. It is clear 
     how the resolution has a beneficial impact on the overall reconstruction.}\label{fig:colmap_P01_res}
 \end{figure}
-Here in Figure~\ref{fig:COL_all} I report also some visualization of other kitchens.
-
+In Figure~\ref{fig:COL_all} I give some visualization of other kitchen's reconstructions.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/esperimenti/Colmaps/Colmap-09.png} 
+    \caption{COLMAP reconstructions for scenes P03-04, P04-01, P09-02, P16-01,P21-01. Each row represents a different kitchen.}\label{fig:COL_all}
+\end{figure}
 \section{Monocular Pipeline}
 Here I report the qualitative result obtained from the Monocular Pipeline. As expected the results are really poor.
 The main reason of the failure of this technique is due to the inaccuracy of the depth estimator. In Figure~\ref{fig:Monoc} we can see
@@ -117,9 +121,9 @@ scene take was P03-04 and the values reported are 0.5, 5 and 20.
 
 \section{Sampling Frames}
 In order to work with the NeuralDiff pipeline that follows this section, we have to further downsample the frames reconstructed by COLMAP
-to have some reasonable computational times. We found that at a resolution of 114 $\sim1000$ a scene took  $\sim4h$ while at 228 $\sim700$ 
-a scene took  $\sim11h$. In Table~\ref{tab:samplingInt700} and Table~\ref{tab:samplingInt1000} we can see the number of frames kept at each sampling step.
-
+to have some reasonable computational times. We found that at a resolution of 114x64 $\sim1000$ a scene took  $\sim4h$ while at 228x128 $\sim700$ 
+a scene took  $\sim11h$. In Table~\ref{tab:samplingInt700} and Table~\ref{tab:samplingInt1000} we can see the number of frames kept at each sampling 
+step, obtained usiing Homography filter and the proposed Intelligent Sampling(see Section~\ref{sec:sampl}).
 \input{content/Experiments/Tabs/samplingSteps1000.tex}
 \input{content/Experiments/Tabs/samplingSteps700.tex}
 
@@ -131,16 +135,6 @@ selects them affect the pipeline performances.
 In Figure~\ref{fig:samplFreq} it is given a visualization of the three different subsampling obtained using the methods presented
 in Section~\ref{sec:sampl} for a total of 217 frames.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\linewidth]{images/esperimenti/samplingCorretto.pdf} 
-    \caption{Visualization of the sampling of scene P01-01 for the three different methods: Intelligent, Uniform and AU using 217 frames in total.
-        The left box is a proposal we gave to visualize how the frames actually spread along the temporal axis, where a line is drawn in correspondence
-        of each sample. The right boxes represent instead histograms with the frequencies of the sample on the entire duration of the video.}\label{fig:samplFreq}
-\end{figure}
-
-\input{content/Experiments/Tabs/Epic_int_114.tex}
-
 We then proceeded in testing the various split for P01-01 obtaining the results reported in Table~\ref{tab:EpicInt114}.
 As we can see the Intelligent sampling is actually working. The PSNR is always higher with respect to the other methods.
 It can be seen that actually all methods suffer the scarcity of frames and as a matter of fact in the last split, 217, 
@@ -151,14 +145,7 @@ the average precision is not actually assessing the ability of the model to dist
 For example in Figure~\ref{fig:comp} we can see that in the 400 frames splits is exactly present this deficit, where the 
 uniform sampling is totally unable to detect the actor even though its mAP is higher than the Intelligent 
 one($mAP_{Uniform}61.6\% > mAP_{Intelligent}56.63\%$).
-\begin{figure}[H]
-    \hspace{-2cm}
-    \centering
-    \includegraphics[scale=0.5,angle=90]{images/esperimenti/comparison53-02.png} 
-    \caption{\textbf{Qualitative results on P01-01 at 228x128}Visualization of the output of the different models trained on different
-    sampling splits for scene P01-01. The first coloumn represent the real frame while the next ones
-    are respectively: the predicted image,which is the combination of:the static part, the foreground and the actor part.}\label{fig:comp}
-\end{figure}
+
 Also for our aim to segment dynamic objects, we are interested in the static PSNR (as we obtain dynamic objects as 
 what is NOT static) and Figure~\ref{fig:comp} shows us that the static part is almost identical for each scene.
 
@@ -174,6 +161,26 @@ it is still visible in the other splits, although the best model was the Unif. o
 is given by the pan highlighted with the green circle which is removed in the Intelligent sampling while not in the others.
 We can also look at scene P03-04 in Figure~\ref{fig:col_p03} where Intelligent method manage to remove the can highlighted
 in red while the Uniform methods can not.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/esperimenti/samplingCorretto.pdf} 
+    \caption{Visualization of the sampling of scene P01-01 for the three different methods: Intelligent, Uniform and AU using 217 frames in total.
+        The left box is a proposal we gave to visualize how the frames actually spread along the temporal axis, where a line is drawn in correspondence
+        of each sample. The right boxes represent instead histograms with the frequencies of the samples on the entire duration of the video.}\label{fig:samplFreq}
+\end{figure}
+
+\input{content/Experiments/Tabs/Epic_int_114.tex}
+
+
+\begin{figure}[H]
+    \hspace{-2cm}
+    \centering
+    \includegraphics[scale=0.5,angle=90]{images/esperimenti/comparison53-02.png} 
+    \caption{\textbf{Qualitative results on P01-01 at 228x128}Visualization of the output of the different models trained on different
+    sampling splits for scene P01-01. The first coloumn represent the real frame while the next ones
+    are respectively: the predicted image,which is the combination of:the static part, the foreground and the actor part.}\label{fig:comp}
+\end{figure}
+
 
 Other comparison for the same scene P01-01 with different frames splits are provided in Figure~\ref{fig:statP01_02}. In Figure~\ref{fig:reco} we can 
 find some other static reconstructions from othere scenes.
@@ -184,74 +191,94 @@ find some other static reconstructions from othere scenes.
             a dynamic plate, while in green a dynamic pan. We can see that Intelligent sampling is correctly
             removing the objects while Uniform can not.}\label{fig:statP01_01}
 \end{figure}
-\begin{figure}[t]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{images/esperimenti/Colmaps/P03_04-10.png} 
     \caption{Qualitative results for the static reconstruction of P03-04 scene. In red is highlighted
-            a dynamic can that is succesfully removed in Int. sampling while not in Uniform.}\label{fig:fig:col_p03}
+            a dynamic can that is succesfully removed in Int. sampling while not in Uniform.}\label{fig:col_p03}
 \end{figure}
-\begin{figure}[t]
+\begin{figure}[H]
     
     \adjustbox{trim={1.5cm 0 0 0}} {\includegraphics[scale=0.7]{images/esperimenti/nerf_pcd_comparison-07.png} }
     \caption{Comparative of the qualitative results for different samplings of the P01-01 scene.}\label{fig:statP01_02}
 \end{figure}
 
-\begin{figure}[t]
-    
-    \adjustbox{trim={1.5cm 0 0 0}} {\includegraphics[scale=0.7]{images/esperimenti/Colmaps/P03_04-06.png} }
+\begin{figure}[H]
+    \centering
+    {\includegraphics[width=1\linewidth]{images/esperimenti/Colmaps/P03_04-06.png} }
     \caption{Qualitative results of different kitchens. On the first row is reported the COLMAP reconstruction
-    while below the corresponding cleaned pointcloud.}\label{fig:reco}
+    while below is the corresponding cleaned pointcloud.}\label{fig:reco}
 \end{figure}
 
 
-\paragraph{NeuralDiff Pipeline on all Scenes. }
+\paragraph{NeuralDiff Pipeline on all Scenes.}
 To further validate our results, we repeated the experiments using different scenes using a split of $\sim$1000 frames and one of $\sim700$.
  The results are reported in Table~\ref{tab:Epic_res_114} for resolution 114x64 and Table~\ref{tab:Epic_res_228} at 
  a resolution of 228x128. The results assess that our method is working.
  \input{content/Experiments/Tabs/Epic114.tex}
 \input{content/Experiments/Tabs/Epic_finale_228.tex}
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=1\linewidth]{images/esperimenti/Epic_228.png} 
-    \caption{Experiments performed on 228x128 frames for each scene}\label{fig:Epic228}
-\end{figure}
 
-\paragraph{Action positions and samples positions.} Other than the idea behind the Intelligent sampling which was expressed in Section~\ref{sec:sampl}, we found a
-link between the positions of the sampled freqencies and the frequencies of the objects that were used in different 
-equispaced time intervals. In Figure~\ref{fig:samplFreq} the three methods sampling 
-frequencies are reported. In Figure~\ref{fig:objectP01_01} and Figure~\ref{fig:objectScenes} instead are reported respectively
-the comparison of Intelligent and Uniform sampling with the objects count for scene P01-01 with varying number of samples,
+\paragraph{Sampling and Action Distributions. } Other than the idea behind the Intelligent sampling which was expressed in Section~\ref{sec:sampl}, we found a
+link between the positions of the sampled frames and the frequencies of the objects/actions that were annotated during the videos.
+In Figure~\ref{fig:samplFreq} the three sampling methods are reported. 
+In Figure~\ref{fig:objectP01_01} and Figure~\ref{fig:objectsScenes} are reported respectively
+the comparison of Intelligent and Uniform sampling with the objects count for scene P01-01 changing number of samples,
 as can be read on each sub-figure; and the comparison of Intelligent and Uniform sampling with the objects count for each scene
-with fixed sampling at \~1000 frames.
-
+with fixed sampling at $\sim1000$ frames.
+ 
 As we can see from the plots,at exception from few scenes, the profile of the Intelligent sampling looks closer
 to the one of the object counts. This is giving a further explanation of the functioning of our proposed method.
 In fact it means that our sampling is focusing on those areas where a lot of actions are performed. In this way
-long redundant actions are filtered and only relevant frames are kept. 
+long redundant actions are filtered and only relevant frames, where multiple actions happens, are kept. 
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{images/esperimenti/ObjectCountsScenes-02.png} 
     \caption{Comparison of frequencies for the Intelligent and Uniform sampling with the Object Count for the P01-01 scene changing the total
     number of sampled frames.}\label{fig:objectP01_01}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{images/esperimenti/ObjectCountsScenes-01.png} 
     \caption{Comparison of frequencies for the Intelligent and Uniform sampling with the Object Count for each scene at a fixed split \~1000 frames.}\label{fig:objectsScenes}
 \end{figure}
 
-We also tried to give a quantitative measure of similarity and dissimilarity by comparing some different metrics: Cosine Similarity, Kullback-Leibler Divergence (KLD),
-Jensen-Shannon Divergence (JSD), Correlation Coefficient. \textcolor{red}{Le devo spiegare? E' meglioo se le metto in Method?}
+\paragraph{Metrics for Profile similarity. }We also tried to give a quantitative measure of similarity and dissimilarity by comparing some 
+different metrics: Cosine Similarity, Kullback-Leibler Divergence (KLD),
+Jensen-Shannon Divergence (JSD).
+More in details:
+\begin{itemize}
+    \item \textbf{Cosine Similarity.} It is the cosine of the angle between two vectors. It is derived from the dot product:  
+    \begin{equation}
+        \mathbf{v_{1}} \cdot \mathbf{v_{2}} =\left\lVert\mathbf{v_{1}} \right\rVert \left\lVert\mathbf{v_{2}} \right\rVert \cos(\theta) 
+    \end{equation}
+    \begin{equation}
+        CosineSimilarity=\cos(\theta) = \frac{\mathbf{v_{1}} \cdot \mathbf{v_{2}} }{\left\lVert\mathbf{v_{1}} \right\rVert \left\lVert\mathbf{v_{2}} \right\rVert }
+    \end{equation}
+    In our case we took as vectors the bins of the frames histograms as vector one and the bins of the actions/objects as the second one.
+    \item \textbf{Kullback-Leibler Divergence (KLD).} It is a non symmetric measure of the difference between two probability distributions
+    P and Q. It represent the measure of the lost information when Q is used to approximate P.
+    \begin{equation}
+        D_{\mathrm{KL}}(P \| Q)=\sum_i P(i) \log _2\left(\frac{P(i)}{Q(i)}\right)
+    \end{equation}
+    \item \textbf{Jensen-Shannon Divergence (JSD).} It is based on the Kullback–Leibler divergence, but 
+    it is modifief to be symmetric and always having a finite value.
+    \begin{equation}
+        \operatorname{JSD}(P \| Q)=\frac{1}{2} D(P \| M)+\frac{1}{2} D(Q \| M)
+    \end{equation}
+    where $M = \frac{1}{2}(P+Q)$ is a mixture distribution of P and Q.
+\end{itemize}
+Clearly we do not have distributions, so we obtained them by normalizing such that their elements summed to 1. The results we have obtained
+are reported in Table~\ref{tab:samplMetrics}.
 \input{content/Experiments/Tabs/samplingMetriche.tex}
 
-\textcolor{red}{Avrei anche questa tabella ma il sampling anti/uniform sono sbagliati.
-potrei rifarli? Altrimenti non abbiamo messo la parte di simplyfing NeuralDiff? Figure~\ref{fig:NeuralCleaner}}
-\begin{figure}
-    \centering
-    \includegraphics[width=1\linewidth]{images/esperimenti/NeuralCleaner.png} 
-    \caption{Results for architecture with foreground+actor= fused}\label{fig:NeuralCleaner}
-\end{figure}
+\section{NeuralCleaner}
+As a last step, after assessing that our method was functioning, we tried to speed up the overall pipeline.
+We tried to eliminate the actor layer of the NeuralDiff pipeline since we are not interested in it, as we 
+only want to know what is moving. The foreground and actor layer are thus merged together and we tried to see
+how much we could improve by eliminating this distinction. In Table~\ref{tab:NClean} we can see the results in comparison with
+the NeuralDiff pipeline. On average we obtained a descreasing factor of $\sim30\%$.
 
-\textcolor{red}{Non ho messo da nessuna parte il risultato dei sampling. Aggiungere la tabella..!}
+\input{content/Experiments/Tabs/tabNClean.tex}
+

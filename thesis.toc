@@ -3,34 +3,7 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{List of Tables}{v}{section*.1}%
-\contentsline {chapter}{List of Figures}{vii}{section*.2}%
-\contentsline {chapter}{Acronyms}{xi}{section*.3}%
-\contentsline {part}{I\hspace {1em}Our Contribution}{2}{part.1}%
-\contentsline {chapter}{\numberline {1}Methodology}{3}{chapter.1.1}%
-\contentsline {section}{\numberline {1.1}Goals}{3}{section.1.1.1}%
-\contentsline {paragraph}{Second Goal}{3}{section*.6}%
-\contentsline {section}{\numberline {1.2}Pipelines}{4}{section.1.1.2}%
-\contentsline {paragraph}{Colmap Pipeline}{5}{section*.7}%
-\contentsline {paragraph}{Monocular Pipeline}{5}{section*.9}%
-\contentsline {paragraph}{NeuralDiff Pipeline}{6}{section*.11}%
-\contentsline {paragraph}{NeuralCleaner}{6}{section*.13}%
-\contentsline {section}{\numberline {1.3}Filtering }{7}{section.1.1.3}%
-\contentsline {chapter}{\numberline {2}Experiments}{10}{chapter.1.2}%
-\contentsline {section}{\numberline {2.1}Data selection}{10}{section.1.2.1}%
-\contentsline {paragraph}{EPIC-Diff.}{10}{section*.19}%
-\contentsline {paragraph}{VISOR.}{10}{section*.20}%
-\contentsline {section}{\numberline {2.2}Metrics}{11}{section.1.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}PSNR:Peak signal-to-noise ratio}{11}{subsection.1.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}AP:Average Precision}{12}{subsection.1.2.2.2}%
-\contentsline {section}{\numberline {2.3}COLMAP Reconstruction}{13}{section.1.2.3}%
-\contentsline {paragraph}{Quantity vs Quality }{13}{section*.24}%
-\contentsline {section}{\numberline {2.4}Monocular Pipeline}{16}{section.1.2.4}%
-\contentsline {section}{\numberline {2.5}Sampling Frames}{19}{section.1.2.5}%
-\contentsline {section}{\numberline {2.6}NeuralDiff Pipeline}{20}{section.1.2.6}%
-\contentsline {paragraph}{Different number of samples for the same scene.}{20}{section*.34}%
-\contentsline {paragraph}{Qualitative Results}{24}{section*.38}%
-\contentsline {paragraph}{NeuralDiff Pipeline on all Scenes. }{24}{section*.42}%
-\contentsline {paragraph}{Action positions and samples positions.}{25}{section*.46}%
-\contentsline {chapter}{\numberline {A}Galileo}{33}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Math Notation}{34}{appendix.B}%
-\contentsline {chapter}{Bibliography}{35}{appendix.B}%
+\contentsline {chapter}{List of Figures}{vi}{section*.2}%
+\contentsline {chapter}{Acronyms}{viii}{section*.3}%
+\contentsline {chapter}{\numberline {A}Math Notation}{3}{appendix.A}%
+\contentsline {chapter}{Bibliography}{4}{appendix.A}%

@@ -22,132 +22,89 @@
 \babel@aux{italian}{}
 \babel@aux{english}{}
 \@writefile{toc}{\contentsline {chapter}{List of Tables}{v}{section*.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{List of Figures}{vii}{section*.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Acronyms}{xi}{section*.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {part}{I\hspace  {1em}Our Contribution}{2}{part.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {1}Methodology}{3}{chapter.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{List of Figures}{vi}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Acronyms}{viii}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Math Notation}{3}{appendix.A}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {1.1}Goals}{3}{section.1.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Second Goal}{3}{section*.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Reconstruction of a pizza preparation video. The top and bottom frames give us a glance of the action performed during the video while the central pointcloud highlighht the problems of SfM in dynamic environments like the superimposition of the same object on itself or the reconstruction of objects that are not always present in the scene, e.g. the two pizzas.}}{4}{figure.caption.5}\protected@file@percent }
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:pizza}{{1.1}{4}{Reconstruction of a pizza preparation video. The top and bottom frames give us a glance of the action performed during the video while the central pointcloud highlighht the problems of SfM in dynamic environments like the superimposition of the same object on itself or the reconstruction of objects that are not always present in the scene, e.g. the two pizzas}{figure.caption.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Pipelines}{4}{section.1.1.2}\protected@file@percent }
-\abx@aux@cite{0}{neuraldiff}
-\abx@aux@segm{0}{0}{neuraldiff}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces \textbf  {Basic Pipeline.} In the Basic Pipeline a video(represented by the image of a person cooking) is subsampled through EF-Sampling, reconstructed via COLMAP, re-sampled on the reconstructed frames and then fed to NeuralDiff. At this stage the frames are decomposed in actor,foreground and background(as can be seen in the frames reported below NeuralDiff). The Clean reconstruction is obtained by running another COLMAP step on the extracted background frames.}}{5}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:dumb}{{1.2}{5}{\textbf {Basic Pipeline.} In the Basic Pipeline a video(represented by the image of a person cooking) is subsampled through EF-Sampling, reconstructed via COLMAP, re-sampled on the reconstructed frames and then fed to NeuralDiff. At this stage the frames are decomposed in actor,foreground and background(as can be seen in the frames reported below NeuralDiff). The Clean reconstruction is obtained by running another COLMAP step on the extracted background frames}{figure.caption.8}{}}
-\@writefile{toc}{\contentsline {paragraph}{Colmap Pipeline}{5}{section*.7}\protected@file@percent }
-\abx@aux@backref{1}{neuraldiff}{0}{5}{5}
-\@writefile{toc}{\contentsline {paragraph}{Monocular Pipeline}{5}{section*.9}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces \textbf  {Monocular Pipeline.} The Monocular pipeline share the first part with the Basic Pipeline. A video is subsampled,reconstructed via COLMAP, subsampled again and fed to Neuraldiff. The difference is that here the dynamic layers are projected in 3D and points closer than a distance th are segmented as dynamic.}}{6}{figure.caption.10}\protected@file@percent }
-\newlabel{fig:monoPipe}{{1.3}{6}{\textbf {Monocular Pipeline.} The Monocular pipeline share the first part with the Basic Pipeline. A video is subsampled,reconstructed via COLMAP, subsampled again and fed to Neuraldiff. The difference is that here the dynamic layers are projected in 3D and points closer than a distance th are segmented as dynamic}{figure.caption.10}{}}
-\@writefile{toc}{\contentsline {paragraph}{NeuralDiff Pipeline}{6}{section*.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{NeuralCleaner}{6}{section*.13}\protected@file@percent }
-\abx@aux@cite{0}{epic_fields}
-\abx@aux@segm{0}{0}{epic_fields}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces \textbf  {NeuralDiff Pipeline.}In this pipeline we obtain the three motion layers as in the other methods but actually the segmentation is performed querying the static neural renderer with the positions of the points belonging to the COLMAP reconstruction. Each point is segmented as dynamic if its density is less than a predefined value.}}{7}{figure.caption.12}\protected@file@percent }
-\newlabel{fig:ndiffPipe}{{1.4}{7}{\textbf {NeuralDiff Pipeline.}In this pipeline we obtain the three motion layers as in the other methods but actually the segmentation is performed querying the static neural renderer with the positions of the points belonging to the COLMAP reconstruction. Each point is segmented as dynamic if its density is less than a predefined value}{figure.caption.12}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}Filtering }{7}{section.1.1.3}\protected@file@percent }
-\newlabel{sec:sampl}{{1.3}{7}{Filtering}{section.1.1.3}{}}
-\abx@aux@backref{2}{epic_fields}{0}{7}{7}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Sampling Steps in our pipelines. The initial video is subsampled by EF-Sampling and the resulting frames are fed to COLMAP. Onve COLMAP reconstructed the scene these frames are again subsampled via Intelligent Sampling and fed to NeuralDiff.}}{8}{figure.caption.16}\protected@file@percent }
-\newlabel{fig:samplPipe}{{1.5}{8}{Sampling Steps in our pipelines. The initial video is subsampled by EF-Sampling and the resulting frames are fed to COLMAP. Onve COLMAP reconstructed the scene these frames are again subsampled via Intelligent Sampling and fed to NeuralDiff}{figure.caption.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Example of overlapping frames(X and Y). The left and central examples present the same level of overlap even though the image frames are closer together in the central example, because the number of features shared are the same. The right examples instead present a higher level of overlapping due to the bigger number of features.}}{9}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:overlap}{{1.6}{9}{Example of overlapping frames(X and Y). The left and central examples present the same level of overlap even though the image frames are closer together in the central example, because the number of features shared are the same. The right examples instead present a higher level of overlapping due to the bigger number of features}{figure.caption.18}{}}
-\abx@aux@cite{0}{neuraldiff}
-\abx@aux@segm{0}{0}{neuraldiff}
-\abx@aux@cite{0}{visor}
-\abx@aux@segm{0}{0}{visor}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Experiments}{10}{chapter.1.2}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Data selection}{10}{section.1.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{EPIC-Diff.}{10}{section*.19}\protected@file@percent }
-\abx@aux@backref{3}{neuraldiff}{0}{10}{10}
-\@writefile{toc}{\contentsline {paragraph}{VISOR.}{10}{section*.20}\protected@file@percent }
-\abx@aux@backref{4}{visor}{0}{10}{10}
-\abx@aux@cite{0}{neuraldiff}
-\abx@aux@segm{0}{0}{neuraldiff}
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Total Frames for each scene}}{11}{table.caption.21}\protected@file@percent }
-\newlabel{tab:Frames}{{2.1}{11}{Total Frames for each scene}{table.caption.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Example of VISOR active annotations, on the left 'wash a knife' include the static sink as active; on the right 'pour spice' static gas stove is active}}{11}{figure.caption.22}\protected@file@percent }
-\newlabel{fig:vis_exp}{{2.1}{11}{Example of VISOR active annotations, on the left 'wash a knife' include the static sink as active; on the right 'pour spice' static gas stove is active}{figure.caption.22}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Metrics}{11}{section.1.2.2}\protected@file@percent }
-\newlabel{sec:Metrics}{{2.2}{11}{Metrics}{section.1.2.2}{}}
-\abx@aux@backref{5}{neuraldiff}{0}{11}{11}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}PSNR:Peak signal-to-noise ratio}{11}{subsection.1.2.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}AP:Average Precision}{12}{subsection.1.2.2.2}\protected@file@percent }
-\abx@aux@cite{0}{epic_fields}
-\abx@aux@segm{0}{0}{epic_fields}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Example of Precision-recall curve.We can see how the bottom line model represents the worst a model can perform, e.g. predict every sample as it is coming from the same class,if the dataset is balanced. A better model would \textit  {tend} to the upper-right corner, which instead represents the best possible model, a model that have maximum precision and recall.}}{13}{figure.caption.23}\protected@file@percent }
-\newlabel{fig:auc}{{2.2}{13}{Example of Precision-recall curve.We can see how the bottom line model represents the worst a model can perform, e.g. predict every sample as it is coming from the same class,if the dataset is balanced. A better model would \textit {tend} to the upper-right corner, which instead represents the best possible model, a model that have maximum precision and recall}{figure.caption.23}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}COLMAP Reconstruction}{13}{section.1.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Quantity vs Quality }{13}{section*.24}\protected@file@percent }
-\abx@aux@backref{6}{epic_fields}{0}{13}{13}
-\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Comparison of Recostruction details for scene P01\_01 using different Initial frames at same resolution of 228x128. The higher the frames, the better the reconstruction but at a higher computational time. }}{14}{table.caption.25}\protected@file@percent }
-\newlabel{tab:col_P01_01_frames}{{2.2}{14}{Comparison of Recostruction details for scene P01\_01 using different Initial frames at same resolution of 228x128. The higher the frames, the better the reconstruction but at a higher computational time}{table.caption.25}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Comparison of Recostruction of scene P01\_01 using different Resolutions. The higher the resolution, the better. Too low resolution, as 114x64 in this case can lead to a unsuccessful reconstruction.}}{14}{table.caption.26}\protected@file@percent }
-\newlabel{tab:col_P01_01_res}{{2.3}{14}{Comparison of Recostruction of scene P01\_01 using different Resolutions. The higher the resolution, the better. Too low resolution, as 114x64 in this case can lead to a unsuccessful reconstruction}{table.caption.26}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Different COLMAP pcd reconstructions changing number of samples. Each row is the same reconstruction viewed from different viewpoints.From top to bottom the number of frames increase. We can see how the number of frames positively affect the reconstruction.}}{15}{figure.caption.27}\protected@file@percent }
-\newlabel{fig:colmap_P01_frames}{{2.3}{15}{Different COLMAP pcd reconstructions changing number of samples. Each row is the same reconstruction viewed from different viewpoints.From top to bottom the number of frames increase. We can see how the number of frames positively affect the reconstruction}{figure.caption.27}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Different COLMAP pcd reconstructions changing resolution. Each row is the same reconstructions viewed from different viewpoints. The first report the reconstruction for a resolution of 456x256 and the bottom one the half resolution. It is clear how the resolution has a beneficial impact on the overall reconstruction.}}{16}{figure.caption.28}\protected@file@percent }
-\newlabel{fig:colmap_P01_res}{{2.4}{16}{Different COLMAP pcd reconstructions changing resolution. Each row is the same reconstructions viewed from different viewpoints. The first report the reconstruction for a resolution of 456x256 and the bottom one the half resolution. It is clear how the resolution has a beneficial impact on the overall reconstruction}{figure.caption.28}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Monocular Pipeline}{16}{section.1.2.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Different scenes where monocular depth estimation was performed. In particular on the right we can find the frame that is instead projected(in red) on the left in the 3D reconstruction of that kitchen. The red frustum(pyramid) represents the camera position and orientation in the space.}}{17}{figure.caption.29}\protected@file@percent }
-\newlabel{fig:Monoc}{{2.5}{17}{Different scenes where monocular depth estimation was performed. In particular on the right we can find the frame that is instead projected(in red) on the left in the 3D reconstruction of that kitchen. The red frustum(pyramid) represents the camera position and orientation in the space}{figure.caption.29}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Dynamic points segmented in scene P01-01 using Monocular Pipeline.}}{18}{figure.caption.30}\protected@file@percent }
-\newlabel{fig:glob}{{2.6}{18}{Dynamic points segmented in scene P01-01 using Monocular Pipeline}{figure.caption.30}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Different Segmentation changing the distance threshold. Each point is segmented as dynamic if its distance from a pixel projected in 3D space is less than a threshold Th. The scene is P03-04 and in the left side we can find the static part while in the right side we have the dynamic points. Here we can notice how this method is pretty inaccurate.}}{18}{figure.caption.31}\protected@file@percent }
-\newlabel{fig:glob2}{{2.7}{18}{Different Segmentation changing the distance threshold. Each point is segmented as dynamic if its distance from a pixel projected in 3D space is less than a threshold Th. The scene is P03-04 and in the left side we can find the static part while in the right side we have the dynamic points. Here we can notice how this method is pretty inaccurate}{figure.caption.31}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.4}{\ignorespaces \textbf  {Split$\sim 1000$. }Number of frames resulting from the different sampling steps. In particular from Original the frames are reduced with the Homography filter to remove redundancy and keep overlap. The reconstructed frames are the ones which were successfully reconstructed by COLMAP. The obtained ones are the reconstructed frames filtered again with the homography filter. Int/Unif Samples are the reconstructed frames without the Obtaineds. The thresholds reported are referred to the last Homography filter step. }}{19}{table.caption.32}\protected@file@percent }
-\newlabel{tab:samplingInt1000}{{2.4}{19}{\textbf {Split$\sim 1000$. }Number of frames resulting from the different sampling steps. In particular from Original the frames are reduced with the Homography filter to remove redundancy and keep overlap. The reconstructed frames are the ones which were successfully reconstructed by COLMAP. The obtained ones are the reconstructed frames filtered again with the homography filter. Int/Unif Samples are the reconstructed frames without the Obtaineds. The thresholds reported are referred to the last Homography filter step}{table.caption.32}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.5}{\ignorespaces \textbf  {Split$\sim 700$. }Number of frames resulting from the different sampling steps. In particular from Original the frames are reduced with the Homography filter to remove redundancy and keep overlap. The reconstructed frames are the ones which were successfully reconstructed by COLMAP. The obtained ones are the reconstructed frames filtered again with the homography filter. Int/Unif Samples are the reconstructed frames without the Obtaineds. The thresholds reported are referred to the last Homography filter step. }}{19}{table.caption.33}\protected@file@percent }
-\newlabel{tab:samplingInt700}{{2.5}{19}{\textbf {Split$\sim 700$. }Number of frames resulting from the different sampling steps. In particular from Original the frames are reduced with the Homography filter to remove redundancy and keep overlap. The reconstructed frames are the ones which were successfully reconstructed by COLMAP. The obtained ones are the reconstructed frames filtered again with the homography filter. Int/Unif Samples are the reconstructed frames without the Obtaineds. The thresholds reported are referred to the last Homography filter step}{table.caption.33}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Sampling Frames}{19}{section.1.2.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.6}NeuralDiff Pipeline}{20}{section.1.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Different number of samples for the same scene.}{20}{section*.34}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Visualization of the sampling of scene P01-01 for the three different methods: Intelligent, Uniform and AU using 217 frames in total. The left box is a proposal we gave to visualize how the frames actually spread along the temporal axis, where a line is drawn in correspondence of each sample. The right boxes represent instead histograms with the frequencies of the sample on the entire duration of the video.}}{21}{figure.caption.35}\protected@file@percent }
-\newlabel{fig:samplFreq}{{2.8}{21}{Visualization of the sampling of scene P01-01 for the three different methods: Intelligent, Uniform and AU using 217 frames in total. The left box is a proposal we gave to visualize how the frames actually spread along the temporal axis, where a line is drawn in correspondence of each sample. The right boxes represent instead histograms with the frequencies of the sample on the entire duration of the video}{figure.caption.35}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.6}{\ignorespaces \textbf  {NeuralDiff Pipeline Results on P01-01 at 114x64. }For the same scene P01-01 results of NeuralDiff pipeline trained on different amount of frames are reported.The Frames are selected using the three different sampling strategis:Intelligent,Uniform and AU(see Section~\ref {sec:sampl}). The frames are all at a 114x64 resolution.}}{22}{table.caption.36}\protected@file@percent }
-\newlabel{tab:EpicInt114}{{2.6}{22}{\textbf {NeuralDiff Pipeline Results on P01-01 at 114x64. }For the same scene P01-01 results of NeuralDiff pipeline trained on different amount of frames are reported.The Frames are selected using the three different sampling strategis:Intelligent,Uniform and AU(see Section~\ref {sec:sampl}). The frames are all at a 114x64 resolution}{table.caption.36}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces \textbf  {Qualitative results on P01-01 at 228x128}Visualization of the output of the different models trained on different sampling splits for scene P01-01. The first coloumn represent the real frame while the next ones are respectively: the predicted image,which is the combination of:the static part, the foreground and the actor part.}}{23}{figure.caption.37}\protected@file@percent }
-\newlabel{fig:comp}{{2.9}{23}{\textbf {Qualitative results on P01-01 at 228x128}Visualization of the output of the different models trained on different sampling splits for scene P01-01. The first coloumn represent the real frame while the next ones are respectively: the predicted image,which is the combination of:the static part, the foreground and the actor part}{figure.caption.37}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.7}{\ignorespaces NeuralDiff models trained on different scenes at $\sim $1000frames, resolution 114x64. The coloumn Improv represents the difference between the previous coloumn of the Intelligent split minus the Uniform one.}}{24}{table.caption.43}\protected@file@percent }
-\newlabel{tab:Epic_res_114}{{2.7}{24}{NeuralDiff models trained on different scenes at $\sim $1000frames, resolution 114x64. The coloumn Improv represents the difference between the previous coloumn of the Intelligent split minus the Uniform one}{table.caption.43}{}}
-\@writefile{toc}{\contentsline {paragraph}{Qualitative Results}{24}{section*.38}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{NeuralDiff Pipeline on all Scenes. }{24}{section*.42}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Qualitative results for the static reconstruction of P01-01 scene at 217 frames. In red is highlighted a dynamic plate, while in green a dynamic pan.}}{25}{figure.caption.39}\protected@file@percent }
-\newlabel{fig:statP01_01}{{2.10}{25}{Qualitative results for the static reconstruction of P01-01 scene at 217 frames. In red is highlighted a dynamic plate, while in green a dynamic pan}{figure.caption.39}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.8}{\ignorespaces NeuralDiff models trained on different scenes at $\sim $700frames, resolution 228x128. The coloumn I-U represents the difference between the previous coloumn of the Intelligent split minus the Uniform one.}}{25}{table.caption.44}\protected@file@percent }
-\newlabel{tab:Epic_res_228}{{2.8}{25}{NeuralDiff models trained on different scenes at $\sim $700frames, resolution 228x128. The coloumn I-U represents the difference between the previous coloumn of the Intelligent split minus the Uniform one}{table.caption.44}{}}
-\@writefile{toc}{\contentsline {paragraph}{Action positions and samples positions.}{25}{section*.46}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Qualitative results for the static reconstruction of P03-04 scene. In red is highlighted a dynamic plate, while in green a dynamic pan.}}{26}{figure.caption.40}\protected@file@percent }
-\newlabel{fig:fig:col_p03}{{2.11}{26}{Qualitative results for the static reconstruction of P03-04 scene. In red is highlighted a dynamic plate, while in green a dynamic pan}{figure.caption.40}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.9}{\ignorespaces Metrics for comparing the profile of the histograms. In particular higher values of Cosine similarity and Correlation indicates similarity; while the value of the two divergences represents the distance between the two distributions.}}{27}{table.caption.49}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Comparative of the qualitative results for different samplings of the P01-01 scene.}}{28}{figure.caption.41}\protected@file@percent }
-\newlabel{fig:statP01_02}{{2.12}{28}{Comparative of the qualitative results for different samplings of the P01-01 scene}{figure.caption.41}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces Experiments performed on 228x128 frames for each scene}}{29}{figure.caption.45}\protected@file@percent }
-\newlabel{fig:Epic228}{{2.13}{29}{Experiments performed on 228x128 frames for each scene}{figure.caption.45}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.14}{\ignorespaces Comparison of frequencies for the Intelligent and Uniform sampling with the Object Count for the P01-01 scene changing the total number of sampled frames.}}{30}{figure.caption.47}\protected@file@percent }
-\newlabel{fig:objectP01_01}{{2.14}{30}{Comparison of frequencies for the Intelligent and Uniform sampling with the Object Count for the P01-01 scene changing the total number of sampled frames}{figure.caption.47}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.15}{\ignorespaces Comparison of frequencies for the Intelligent and Uniform sampling with the Object Count for each scene at a fixed split \~1000 frames.}}{31}{figure.caption.48}\protected@file@percent }
-\newlabel{fig:objectsScenes}{{2.15}{31}{Comparison of frequencies for the Intelligent and Uniform sampling with the Object Count for each scene at a fixed split \~1000 frames}{figure.caption.48}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.16}{\ignorespaces Results for architecture with foreground+actor= fused}}{32}{figure.caption.50}\protected@file@percent }
-\newlabel{fig:NeuralCleaner}{{2.16}{32}{Results for architecture with foreground+actor= fused}{figure.caption.50}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Galileo}{33}{appendix.A}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{sec:appendix_galileo}{{A}{33}{Action positions and samples positions}{appendix.A}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Math Notation}{34}{appendix.B}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{app:MathNotation}{{B}{34}{Action positions and samples positions}{appendix.B}{}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{35}{appendix.B}\protected@file@percent }
-\abx@aux@read@bbl@mdfivesum{762D4B0E7F3CD27D57542EF3627FBFA5}
-\abx@aux@defaultrefcontext{0}{neuraldiff}{none/global//global/global}
+\newlabel{app:MathNotation}{{A}{3}{Reasearch goals and motivations}{appendix.A}{}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{4}{appendix.A}\protected@file@percent }
+\abx@aux@read@bbl@mdfivesum{B4218F208203B679EA3DB01F37DEFD78}
+\abx@aux@read@bblrerun
+\abx@aux@defaultrefcontext{0}{EPICKITCHENS}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{residualImage}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{fasterRCNN}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{captioning}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{vqa}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{pascalImage}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{imagenet}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{COCO}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{ADE20K}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{somethingSomething}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{yt}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{movieBench}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{movieQA}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{vlogs}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{charades}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{EK100}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{epic_fields}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{visor35}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{visor5}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{neuraldiff}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerfw}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{Tnerf}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{MG}{none/global//global/global}
 \abx@aux@defaultrefcontext{0}{visor}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{ego4d}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{CVPRtutorial}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf15}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf32}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf42}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf21}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf5}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf48}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf2}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf4}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf10}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf19}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf9}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf13}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf17}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{ndiff_2}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{ndiff_18}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{ndiff_1}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{ndiff_3}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{ndiff_38}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf16}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf26}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nerf35}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{LLFF}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{ndiff_17}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{ndiff_15}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{ndiff_34}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{colmap}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{examplewebsite}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{sfm_matlab}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{open_cv}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{Lowe04_SIFT}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{BAY_SURF}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{Brief}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{ORB}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{bundle}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{schoenberger2016sfm}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{schoenberger2016mvs}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{Ranftl2021}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{Ranftl2022}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{DIML}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{megadepth}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{redweb}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{wsvd}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{diw}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{eth3d}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{sintel}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{kitti}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{nyudv2}{none/global//global/global}
+\abx@aux@defaultrefcontext{0}{tum_rgbd}{none/global//global/global}
 \gdef\svg@ink@ver@settings{{\m@ne }{inkscape}{\m@ne }}
-\gdef \@abspage@last{48}
+\gdef \@abspage@last{21}

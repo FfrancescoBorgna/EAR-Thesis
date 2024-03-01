@@ -1,3 +1,59 @@
 %\part{Intro}
-\chapter*{Introduzione}
-Qua ci andrà la introduce
+\chapter*{Introduction}
+In the last two decades, thanks to the massive technologic development that changed our daily lives
+with things like smartphones or social media, also the world of cameras changed. People wanted to 
+capture unique moments of their life and share them with their friends. To fullfill this desiree
+\textit{action cams} were introduced, tiny robust cameras that could be mounted on the observer 
+body allowing him to have full use of his arms. This permitted the recording of first-person videos,
+or also known as \textit{egocentric} videos, of activities that were  difficult if not impossible to 
+capture before.
+
+The abundance of these new types of videos promoted their study, leading to several research aimed 
+to leverage this data. A new sub-branch of Computer Vision specifically for 
+these types of problems was created and was called \textit{Egocentric Vision}. Among its tasks we can cite
+Action Recognition, Object detection and segmentation, Object Tracking etc. In addition to the advent of new branches,
+already existing studies' attention was drawn by this new datas and they tried to adapt to the new problem. Among these efforts
+we have\textit{ 3D scene reconstruction} also knwon as \textit{stereophotogrammetry}, a sub-branch of photogrammetry.
+
+3D reconstructions were,and still are, complex data to acquire and manage. As a matter of fact, the few datasets
+that contains 3D groundtruth have them acquired through static 3D scans of recording locations. This method is 
+unfortunately very expensive both in monetary terms, since the hardware scanner are costly, both in temporal terms,
+due to the fact that the record scanning takes some time but mostly for the preparation of environment which involves
+tidying it up and removing unnecessary objects. This last complication highlight also the fact that a person, possibly
+specialized or that know how the scanner works, is physically present in the site that we want to reconstruct.
+With 3D reconstruction we could avoid most of these problems as we would just need a wearable camera that are nowadays
+pretty cheap and widespread, and a person without any special training that move around
+the environment as it is. We could even have not access to the physical place as long as we are able to send there a 
+camera. Some practical examples of how we could exploit these last cited advantages are space reconstructions, obtained via rovers, or
+medical reconstructions, via medical probes we can have access to inaccessible spaces. On the other hand, talking about more ordinary things
+3D reconstructions could be used in the growing field of augmented reality applications, like in museal applications where architectures and 
+objects can be made available around the world; or also landscapes and environments replication that will be used in videogames or metaverse spaces.
+
+
+Anyway egocentric videos challenged stereophotogrammetry.
+At the beginning 3D scene reconstruction addressed collections of individually captured images and just more recently focused
+on sequentially recorded video frames with algorithms such as \textit{Structure from Motion (SfM)}. However egocentric videos presented for their nature some 
+additional intrinsic difficulties that made 3D structure reconstruction struggle, first of all the presence of the actor's body.
+While the wearer performs any sort of action he is usually present in the scene with his arms, occluding part of the scene. This fact 
+can puzzle the reconstruction process which may not find or take erroneous couples of corresponding points. As a result the 
+final pointcloud is a fuzzy representation of the true scene.
+Another problem is represented by the \textit{interactions} the actor has with his surroundings. If we take as an example a kitchen 
+scenario where a person is cooking he may be moving or trasforming objects in the scene, like slicing some vegetable or moving some pans. This temporal evolution
+is not taken into account by stereophotogrammetry. As a result we will have the different phases of transformations all captured as they coexisted
+in the same temporal instant, giving cluttered and misleading reconstructions.
+
+A possible solution could be to remove the \textit{dynamic} objects from the recorded frames but egocentric videos cause difficulty also in this sense.
+\textit{Background subtraction} and \textit{Motion segmentation}, traditional motion detector techniques, are challenged due to a not fixed background and 
+by motion parallax.
+
+\section*{Reasearch goals and motivations}
+Our research aimed to address the previously introduced problems of 3D reconstruction. We thought of combining \textit{Structure from Motion} with egocentric
+methods to enable an accurate dynamic segmentation of 3D objects. We worked with one of the largest egocentric dataset, EPIC-KITCHENS, and used COLMAP,
+ a open-source general-purpose SfM pipeline, to reconstruct the basic scenes. TO CLENAN WE THE USED NEURAL DIFF E STISSSS
+from egocentric videos.
+
+
+\begin{comment}
+Photogrammetry has its origins way before Egocentric vision, anyway with first-person videos it found  fertile
+ground to expand his objectives. 
+\end{comment}
